@@ -19,7 +19,9 @@ public class Gui extends JPanel {
 	}
 	public Gui(){
 		frame = new JFrame("The simpsons");
-		frame.setIconImage(new ImageIcon("imagen"));
+		Image img1 = new ImageIcon(this.getClass().getResource(
+				"/Imagenes/icono.jpg")).getImage();
+		frame.setIconImage(img1);
 		frame.setSize(new Dimension(500,385));
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
@@ -44,9 +46,9 @@ public class Gui extends JPanel {
 		boton.addActionListener(new OyenteBoton());
 		panelSur.add(boton);
 		
-		frame.add(panelTexto);
-		frame.add(panelImagen, BorderLayout.CENTER);
-		frame.add(panelSur, BorderLayout.SOUTH);
+		frame.getContentPane().add(panelTexto);
+		frame.getContentPane().add(panelImagen, BorderLayout.CENTER);
+		frame.getContentPane().add(panelSur, BorderLayout.SOUTH);
 		
 		}
 	private class OyenteBoton implements ActionListener{
