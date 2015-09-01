@@ -37,11 +37,12 @@ public class Gui extends JPanel {
 		
 		//Panel Sur contiene cuadro de texto y botonera
 		panelSur= new JPanel();
-		panelSur.setLayout(new GridLayout(1,2));
+		panelSur.setLayout(new GridLayout(2,1));
 		texto1= new JTextField();
 		texto1.setEditable(false);
 		texto1.setBackground(Color.WHITE);
 		panelSur.add(texto1);
+		texto1.setHorizontalAlignment(JTextField.CENTER);
 		boton=new JButton("PRESIONAME");
 		boton.setBackground(Color.WHITE);
 		boton.addActionListener(new OyenteBoton());
@@ -54,8 +55,8 @@ public class Gui extends JPanel {
 		}
 	private class OyenteBoton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			texto1.setText("Hola Super Nintendo Chalmers.");
-			texto1.setFont(new Font("Serif", Font.BOLD, 14));
+			texto1.setText("Hola Lisa, hola super Nintendo Chalmers.");
+			texto1.setFont(new Font("Arial", Font.BOLD, 20));
 		}
 	}
 }
