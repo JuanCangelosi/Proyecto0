@@ -25,7 +25,9 @@ public class Gui extends JPanel {
 		panelTexto=new JPanel();
 		texto=new JLabel();
 		panelImagen=new JPanel();
-		imagen=new JLabel(new ImageIcon("C:/Users/Juan/OneDrive/Imágenes/test.jpg"));
+		Image img = new ImageIcon(this.getClass().getResource(
+				"/Imagenes/Ralph.jpg")).getImage();
+		imagen=new JLabel(new ImageIcon(img));
 		panelImagen.add(imagen);
 		panelTexto.add(texto);
 		
@@ -38,6 +40,9 @@ public class Gui extends JPanel {
 		}
 	private class OyenteBoton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
+			Image img1 = new ImageIcon(this.getClass().getResource(
+					"/Imagenes/Ralph Gif.gif")).getImage();
+			imagen.setIcon(new ImageIcon(img1));
 			texto.setText("Hola super nintendo Chalmers");
 			panelTexto.add(texto);
 		}
