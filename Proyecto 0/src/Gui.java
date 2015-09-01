@@ -12,7 +12,7 @@ public class Gui extends JPanel {
 	private JFrame frame;
 	private JLabel imagen;
 	private JLabel texto;
-	private JTextPane texto1;
+	private JTextField texto1;
 	public static void main(String[] args) {
 		Gui window = new Gui();
 		window.frame.setVisible(true);
@@ -38,8 +38,9 @@ public class Gui extends JPanel {
 		//Panel Sur contiene cuadro de texto y botonera
 		panelSur= new JPanel();
 		panelSur.setLayout(new GridLayout(1,2));
-		texto1= new JTextPane();
+		texto1= new JTextField();
 		texto1.setEditable(false);
+		texto1.setBackground(Color.WHITE);
 		panelSur.add(texto1);
 		boton=new JButton("PRESIONAME");
 		boton.setBackground(Color.WHITE);
