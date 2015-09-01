@@ -1,3 +1,4 @@
+package Gui;
 import javax.swing.*;
 
 import java.awt.*;
@@ -13,10 +14,7 @@ public class Gui extends JPanel {
 	private JLabel imagen;
 	private JLabel texto;
 	private JTextField texto1;
-	public static void main(String[] args) {
-		Gui window = new Gui();
-		window.frame.setVisible(true);
-	}
+
 	public Gui(){
 		frame = new JFrame("The simpsons");
 		Image img1 = new ImageIcon(this.getClass().getResource(
