@@ -19,6 +19,7 @@ public class Gui extends JPanel {
 	}
 	public Gui(){
 		frame = new JFrame("The simpsons");
+		frame.setIconImage(new ImageIcon("imagen"));
 		frame.setSize(new Dimension(500,385));
 		frame.setLocationRelativeTo(null);
 		frame.setResizable(false);
@@ -50,10 +51,8 @@ public class Gui extends JPanel {
 		}
 	private class OyenteBoton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			ImageIcon img1 = new ImageIcon(this.getClass().getResource(
-					"/Imagenes/Ralph2.gif"));
-			texto1.setText("Hi, Super Nintendo Chalmers.");
-			imagen.setIcon(img1);
+			texto1.setText("Hola Super Nintendo Chalmers.");
+			texto1.setFont(new Font("Serif", Font.BOLD, 14));
 		}
 	}
 }
