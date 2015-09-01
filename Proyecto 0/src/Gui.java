@@ -17,10 +17,10 @@ public class Gui extends JPanel {
 		window.frame.setVisible(true);
 	}
 	public Gui(){
-		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 550);
+		frame = new JFrame("The simpsons");
+		frame.setSize(new Dimension(500,400));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new FlowLayout());
+		frame.getContentPane().setLayout(new BorderLayout());
 		
 		panelTexto=new JPanel();
 		texto=new JLabel();
@@ -34,8 +34,8 @@ public class Gui extends JPanel {
 		boton=new JButton("Presione Aqui");
 		boton.addActionListener(new OyenteBoton());
 		frame.add(panelTexto);
-		frame.add(panelImagen);
-		frame.add(boton);
+		frame.add(panelImagen, BorderLayout.CENTER);
+		frame.add(boton, BorderLayout.SOUTH);
 		
 		}
 	private class OyenteBoton implements ActionListener{
