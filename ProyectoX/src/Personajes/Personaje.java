@@ -9,7 +9,8 @@ public abstract class Personaje {
 		protected Celda celda;
 		
 	//Constructor
-		protected Personaje(){	
+		protected Personaje(Celda c){	
+		celda=c;
 		velocidad=3;
 		muerto=false;
 	}
