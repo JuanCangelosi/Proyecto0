@@ -1,5 +1,7 @@
 package Logica;
+import Personajes.*;
 
-public class Masacrality {
-
+public class Masacrality implements PowerUp {
+	public void dar(Bomberman b){
+	}
 }

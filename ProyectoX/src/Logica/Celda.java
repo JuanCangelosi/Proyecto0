@@ -1,4 +1,6 @@
 package Logica;
+import bomba.*;
+import Personajes.*;
 
 public class Celda {
 	protected int posX;
@@ -24,7 +26,7 @@ public class Celda {
 		return p;
 	}
 	
-	public BomberMan getBomberMan(){
+	public Bomberman getBomberMan(){
 		return bomberM;
 	}
 	
@@ -40,33 +42,50 @@ public class Celda {
 		return posY;
 	}
 	
-	public void ocuparBomberMan(BomberMan bm){
-		if(estado.serAvanzado(bm)){
-			bomberM=bm;
-			bomberM.setCelda(this);
+	public void ocuparBomberMan(Bomberman bm){
+		if(bm==null){
+			bomberM=null;
+		}
+		else{
+			if(estado.serAvanzado(bm) && b==null){
+				if(e==null){
+					bomberM=bm;
+					bomberM.setCelda(this);
+				}
+				else{
+					bomberM.morir();
+				}
+			}
 		}
 	}
 	public void ocuparEnemigo(Enemigo enem){
-		
-		if(estado.setAvanzado(enem)){
-			if(bomberM!=null){
-				bomberM.morir();
+		if(enem==null){
+			e=null;
+		}
+		else{
+			if(estado.setAvanzado(enem) && e==null && b==null ){
+				if(bomberM!=null){
+					bomberM.morir();
+				}
+				e=enem;
+				e.setCelda(this);
 			}
-			e=enem;
-			e.setCelda(this);
 		}
 	}
 	public void setBomba(Bomba bomb){
-		if(b==null && ){
+		if(b==null && e==null){
 			b=bomb;
 			b.setCelda(this);
 		}
+	}
+	public void setPowerUp(PowerUp p){
+		this.p=p;
 	}
 	public void explosion(){
 		
 	}
 	
 	public Mapa getMapa(){
-		return mapa;
+		return m;
 	}
 }
