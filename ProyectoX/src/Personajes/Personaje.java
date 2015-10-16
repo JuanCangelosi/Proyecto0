@@ -18,6 +18,10 @@ public abstract class Personaje {
 	public Celda getCelda(){
 		return celda;
 	}
+	
+	public void setCelda(Celda c){
+		celda=c;
+	}
 
 	public boolean murio(){
 		return muerto;
