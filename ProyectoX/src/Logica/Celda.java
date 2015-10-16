@@ -82,7 +82,9 @@ public class Celda {
 		this.p=p;
 	}
 	public void explosion(){
-		
+		if(estado.destruir()){
+			estado=new Piso();
+		}
 	}
 	
 	public Mapa getMapa(){
