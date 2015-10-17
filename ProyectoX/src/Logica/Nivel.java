@@ -1,9 +1,10 @@
 package Logica;
+import Personajes.*;
 
 public class Nivel {
 	protected int tiempo;
 	protected int puntaje;
-	protected BomberMan bomberman;
+	protected Bomberman bomberman;
 	protected Enemigo[] enemigos;
 	protected Mapa mapa;
 	
@@ -15,7 +16,7 @@ public class Nivel {
 		puntaje+=n;
 	}
 	
-	public BomberMan getHeroe(){
+	public Bomberman getHeroe(){
 		return bomberman;
 	}
 	

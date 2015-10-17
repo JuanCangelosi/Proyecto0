@@ -1,4 +1,5 @@
 package Logica;
+import Personajes.*;
 
 public class Logica {
 	protected Nivel nivel;
