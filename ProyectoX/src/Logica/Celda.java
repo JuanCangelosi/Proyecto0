@@ -1,5 +1,5 @@
 package Logica;
-import bomba.*;
+import Bomba.*;
 import Personajes.*;
 
 public class Celda {

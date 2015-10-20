@@ -14,6 +14,10 @@ public class Bomberman extends Personaje {
 		return a.getBomba(celda);
 	}
 	
+	public void morir(){
+		muerto=true;
+	}
+	
 	public void arriba(){
 		int x,y;
 		x= celda.getPosX();
