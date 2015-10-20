@@ -72,21 +72,12 @@ public class Mapa {
 		}
 		int cantParedesDes=0;
 		int cantPowerUps=0;
-		PowerUp powerups[]=new PowerUp[11];
-		//agregar los powerups Al arreglo
+		PowerUp powerups[]=inicializarPowerUps();
 		
-		for(int i=0; i<4; i++){
-			powerups[i]=new SpeedUp();
-		}
-		for(int i=4; i<7;i++){
-			powerups[i]=new Fatality();
-			powerups[i+3]=new Bombality();
-		}
-		powerups[11]=new Masacrality();
 		while(cantParedesDes<125){
 			int posX=0;
 			int posY=0;
-			while(posX<2 && posY<2 && celdas[posX][posY]!=null){
+			while((posX<2 && posY<2) || (posX>11 && posY>29) && celdas[posX][posY]!=null){
 				posX=1+generador.nextInt(29);
 				posY=1+generador.nextInt(11);
 			}
@@ -98,7 +89,18 @@ public class Mapa {
 			}
 		}
 	}
-	
+	private PowerUp[] inicializarPowerUps(){
+		PowerUp powerups[]=new PowerUp[11];
+		for(int i=0; i<4; i++){
+			powerups[i]=new SpeedUp();
+		}
+		for(int i=4; i<7;i++){
+			powerups[i]=new Fatality();
+			powerups[i+3]=new Bombality();
+		}
+		powerups[10]=new Masacrality();
+		return powerups;
+	}
 	
 }
 
