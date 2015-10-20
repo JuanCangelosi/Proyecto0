@@ -1,10 +1,13 @@
 package Logica;
 import Personajes.*;
-import bomba.*;
-
+import Bomba.*;
+/**
+ * Clase fatality es uno de los powerUps disponibles en el juego.
+ * el metodo dar duplica el radio de las bombas de bomberman y retorna el puntaje.
+ */
 public class Fatality implements PowerUp {
-	public void dar(Bomberman b){
-		b.fabrica().duplicarRadio();
-		b.getNivel().sumarPuntaje(35);
+	public int dar(Bomberman b){
+		b.fabrica().duplicar();
+		return 35;
 	}
 }

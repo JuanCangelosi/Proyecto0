@@ -1,11 +1,17 @@
 package Logica;
 import java.util.Random;
-import bomba.*;
+import Bomba.*;
 import Personajes.*;
-
+/**
+ * Clase Mapa representa al mapa del juego, que sera de 31x13 celdas.
+ */
 public class Mapa {
+	//atributos
 	protected Celda[][] celdas;
 	
+	/**
+	 * Crea un nuevo Mapa de 31x13, inicializando los bordes, las paredes y el piso
+	 */
 	public Mapa(){
 		celdas=new Celda[31][13];
 		inicializarBordes();
@@ -13,10 +19,15 @@ public class Mapa {
 		inicializarPiso();
 		
 	}
-	
+	/**
+	 * Retorna la celda en las coordenadas x, y
+	 */
 	public Celda getCelda(int x, int y){
 		return celdas[x][y];
 	}
+	/**
+	 * Metodo auxiliar que inicializa los bordes como paredes indestructibles
+	 */
 	
 	private void inicializarBordes(){
 		for( int i= 0; i<13; i++){
@@ -29,6 +40,9 @@ public class Mapa {
 			celdas[i][12]=new Celda(new Pared(),this,i,12);
 		}
 	}
+	/**
+	 * Metodo auxiliar que inicializa todo las celdas nulas como piso
+	 */
 	private void inicializarPiso(){
 		for(int i=0; i<31;i++){
 			for(int j=0; j<13; j++){
@@ -38,6 +52,10 @@ public class Mapa {
 			}
 		}
 	}
+	/**
+	 * Metodo auxiliar que coloca las paredes indestructibles y luego coloca las destructibles en lo que queda libre
+	 * del mapa, agregando los powerups correspondientes a las mismas.
+	 */
 	
 	private void colocarParedes(){
 		Random generador=new Random();

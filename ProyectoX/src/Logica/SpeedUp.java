@@ -1,9 +1,12 @@
 package Logica;
 import Personajes.*;
-
+/**
+ * Clase Speedup es uno de los powerUps disponibles en el juego.
+ * el metodo dar duplica la velocidad de bomberman y retorna el puntaje correspondiente.
+ */
 public class SpeedUp implements PowerUp {
-	public void dar(Bomberman b){
+	public int dar(Bomberman b){
 		b.setVelocidad(b.getVelocidad()*2);
-		b.getNivel().sumarPuntaje(30);
+		return 30;
 	}
 }

@@ -1,10 +1,13 @@
 package Logica;
 import Personajes.*;
-import bomba.*;
-
+import Bomba.*;
+/**
+ * Clase bombality es uno de los powerUps disponibles en el juego.
+ * el metodo dar duplica la cantidad de bombas de bomberman y retorna el puntaje.
+ */
 public class Bombality implements PowerUp {
-	public void dar(Bomberman b){
+	public int dar(Bomberman b){
 		b.setCantBombas(b.cantBombas()*2);
-		b.getNivel().sumarPuntaje(35);
+		return 35;
 	}
 }
