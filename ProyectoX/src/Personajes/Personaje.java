@@ -29,39 +29,11 @@ public abstract class Personaje {
 	
 	public abstract boolean esEspecial();
 	
-	public void arriba(){
-		int x,y;
-		x= celda.getPosH();
-		y= celda.getPosV();
-		Celda c= celda.getMapa().getCelda(x,y+1);
-		celda.ocuparBomberman(null);
-		c.ocuparBomberman(this);
-	}
+	public abstract void arriba();
 	
-	public void abajo(){
-		int x,y;
-		x= celda.getPosH();
-		y= celda.getPosV();
-		Celda c= celda.getMapa().getCelda(x,y-1);
-		celda.ocuparBomberman(null);
-		c.ocuparBomberman(this);
-	}
+	public abstract void abajo();
 	
-	public void izquierda(){
-		int x,y;
-		x= celda.getPosH();
-		y= celda.getPosV();
-		Celda c= celda.getMapa().getCelda(x-1,y);
-		celda.ocuparBomberman(null);
-		c.ocuparBomberman(this);
-	}
+	public abstract void izquierda();
 	
-	public void derecha(){
-		int x,y;
-		x= celda.getPosH();
-		y= celda.getPosV();
-		Celda c= celda.getMapa().getCelda(x+1,y);
-		celda.ocuparBomberman(null);
-		c.ocuparBomberman(this);
-	}
+	public abstract void derecha();
 }
