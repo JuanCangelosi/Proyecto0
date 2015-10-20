@@ -27,7 +27,9 @@ public abstract class Personaje {
 		return muerto;
 	}
 	
-	public abstract boolean esEspecial();
+	public  boolean esEspecial(){
+		return especial;
+	};
 	
 	public abstract void arriba();
 	

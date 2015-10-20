@@ -3,16 +3,41 @@ import Bomba.*;
 import Logica.*;
 public class Bomberman extends Personaje {
 	//Atributos de Instancia
-	private PrototypeFactory a;
-	protected int velocidad;
+	private AbstractFactory a;
+	protected int cantBombas;
 	//Constructor
 	public Bomberman(Celda c){
 		super(c);
-		
+		especial=false;
+		cantBombas=1;	
 	}
 	
+	
 	public Bomba colocarBomba(){
-		return a.darBomba(celda);
+		if(a.cantBombas()<cantBombas)
+			return a.darBomba(celda);
+		else 
+			return null;
+	}
+	
+	public void ponerEspecial(Boolean b){
+		especial=b;
+	}
+	
+	public void setCantBombas(int n){
+		cantBombas=n;
+	}
+	
+	public int cantBombas(){
+		return cantBombas;
+	}
+	
+	public void setVelocidad(int n){
+		velocidad=n;
+	}
+	
+	public int getVelocidad(){
+		return velocidad;
 	}
 	
 	public void morir(){
@@ -53,5 +78,9 @@ public class Bomberman extends Personaje {
 		Celda c= celda.getMapa().getCelda(x+1,y);
 		celda.ocuparBomberMan(null);
 		c.ocuparBomberMan(this);
+	}
+	
+	public AbstractFactory fabrica(){
+		return a;
 	}
 }
