@@ -1,3 +1,8 @@
+/**
+ * Clase con el proposito de brindar un bomba capaz de destruir los enemigos del mapa
+ * asi como de destruir las paredes que lo permitan
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
 package Bomba;
 
 import Logica.*;
@@ -14,11 +19,20 @@ public class Bomba {
 	}
 
 	// Metodos
+	/**
+	 * Permite modificar el radio de explosion de la bomba
+	 * @param i es la nueva magnitud de la explosion de la bomba
+	 */
 	public void setRadio(int i) {
 		radio = i;
 	}
 
 	// Consultas
+	/**
+	 * revisa celda a celda del mapa dentro del radio, destruye las destructibles
+	 *  y mata a los personajes de las transitables
+	 * @return retorna el puntaje obtenido de matar 0 o mas personajes
+	 */
 	public int explotar() {
 		int puntaje = 0;
 		for (int i = 1; i <= radio; i++) {
@@ -36,11 +50,19 @@ public class Bomba {
 		}
 		return puntaje;
 	}
-
+	
+	/**
+	 * Devuelve el radio de la bomba
+	 * @return retorna el radio de explosion de la bomba
+	 */
 	public int getRadio() {
 		return radio;
 	}
 
+	/**
+	 * Devuelve la celda en la cual la bomba esta colocada
+	 * @return retorna la celda donde se encuentra la bomba
+	 */
 	public Celda getCelda() {
 		return c;
 	}
