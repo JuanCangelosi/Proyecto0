@@ -6,7 +6,6 @@
 package Bomba;
 
 import mapa.Celda;
-import Logica.*;
 
 public class Bomba {
 	// Atributos de Instancia

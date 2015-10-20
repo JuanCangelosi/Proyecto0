@@ -4,8 +4,6 @@
  */
 package Personajes;
 
-import Logica.*;
-
 import java.util.Random;
 
 import mapa.Celda;

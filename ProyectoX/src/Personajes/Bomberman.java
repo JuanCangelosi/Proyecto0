@@ -6,7 +6,6 @@ package Personajes;
 
 import mapa.Celda;
 import Bomba.*;
-import Logica.*;
 
 public class Bomberman extends Personaje {
 	// Atributos de Instancia

@@ -6,7 +6,6 @@
 package Bomba;
 
 import mapa.Celda;
-import Logica.*;
 
 public interface AbstractFactory {
 
