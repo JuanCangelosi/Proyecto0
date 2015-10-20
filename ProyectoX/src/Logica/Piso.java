@@ -1,4 +1,5 @@
 package Logica;
+import Personajes.*;
 
 public class Piso implements EstadoCelda {
 	public boolean destruir(){

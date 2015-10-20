@@ -50,6 +50,7 @@ public class Mapa {
 		int cantPowerUps=0;
 		PowerUp powerups[]=new PowerUp[11];
 		//agregar los powerups Al arreglo
+		
 		for(int i=0; i<4; i++){
 			powerups[i]=new SpeedUp();
 		}

@@ -8,4 +8,5 @@ public class Pared implements EstadoCelda {
 	public boolean destruir(){
 		return false;
 	}
+
 }

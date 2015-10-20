@@ -1,5 +1,5 @@
 package Logica;
-import Bomba.*;
+import bomba.*;
 import Personajes.*;
 
 public class Celda {
@@ -63,7 +63,7 @@ public class Celda {
 			e=null;
 		}
 		else{
-			if(estado.setAvanzado(enem) && e==null && b==null ){
+			if(estado.serAvanzado(enem) && e==null && b==null ){
 				if(bomberM!=null){
 					bomberM.morir();
 				}

@@ -9,4 +9,5 @@ public class ParedDestruible implements EstadoCelda {
 	public boolean destruir(){
 		return true;
 	}
+
 }

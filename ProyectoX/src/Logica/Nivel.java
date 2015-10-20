@@ -36,7 +36,13 @@ public class Nivel {
 	}
 
 	public boolean gano() {
-		return enemigos.size == 0;/* Ojo que asi no gana el bomberman! */
+		boolean gano=true;
+		int i=0; 
+		while (gano && i<enemigos.length){
+			gano=enemigos[i].murio();
+			i++;
+		}
+		return gano;/* Ojo que asi no gana el bomberman! */
 	}
 
 }
