@@ -13,6 +13,11 @@ public class Rugulos extends Enemigo {
 	}
 
 	// Metodos
+	
+	/**
+	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
+	 * ataques
+	 */
 	public void loop() {
 		Random rnd = new Random();
 		int n = rnd.nextInt(4) + 1;
@@ -35,8 +40,14 @@ public class Rugulos extends Enemigo {
 			}
 		}
 	}
-
+	
 	// Consultas
+	
+	/**
+	 * Establece al enemigo como muerto
+	 * 
+	 * @return retorna el puntaje que el enemigo posee al morir
+	 */
 	public int morir() {
 		muerto = true;
 		return puntaje;
