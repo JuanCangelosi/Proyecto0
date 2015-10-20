@@ -11,36 +11,36 @@ public class Bomba {
 		radio=1;
 	}
 	
-	public void explotar(){
+	public int explotar(){
+		int puntaje=0;
 		for(int i=1; i<=radio; i++){
 			Celda c1= c.getMapa().getCelda(c.getPosX()+i, c.getPosY());
-			if(c1.getEnemigo()!= null){
-				c1.getEnemigo().morir();
-			}else
-				if(c1.getBomberMan()!=null)
-					c1.getBomberMan().morir();
+			puntaje+=c1.explosion();
+			
 			
 			c1= c.getMapa().getCelda(c.getPosX()-i, c.getPosY());
-			if(c1.getEnemigo()!= null){
-				c1.getEnemigo().morir();
-			}else
-				if(c1.getBomberMan()!=null)
-					c1.getBomberMan().morir();
+			puntaje+=c1.explosion();
+			
 			
 			c1= c.getMapa().getCelda(c.getPosX(), c.getPosY()+i);
-			if(c1.getEnemigo()!= null){
-				c1.getEnemigo().morir();
-			}else
-				if(c1.getBomberMan()!=null)
-					c1.getBomberMan().morir();
+			puntaje+=c1.explosion();
+	
 			
 			c1= c.getMapa().getCelda(c.getPosX(), c.getPosY()-i);
-			if(c1.getEnemigo()!= null){
-				c1.getEnemigo().morir();
-			}else
-				if(c1.getBomberMan()!=null)
-					c1.getBomberMan().morir();
+			puntaje+=c1.explosion();
 		}	
+		return puntaje;
 	}
 
+	public int getRadio(){
+		return radio;	
+	}
+	
+	public Celda getCelda(){
+		return c;
+	}
+	
+	public void setRadio(int i){
+		radio=i;
+	}
 }
