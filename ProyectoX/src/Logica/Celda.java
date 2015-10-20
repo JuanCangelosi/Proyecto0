@@ -81,10 +81,14 @@ public class Celda {
 	public void setPowerUp(PowerUp p){
 		this.p=p;
 	}
-	public void explosion(){
+	
+	public int explosion(){
+		int puntaje=0;
 		if(estado.destruir()){
 			estado=new Piso();
+			puntaje=10;
 		}
+		return puntaje;
 	}
 	
 	public Mapa getMapa(){
