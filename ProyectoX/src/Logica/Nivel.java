@@ -29,7 +29,7 @@ public class Nivel {
 	}
 	
 	public boolean gano(){
-		return enemigos.size ==0;
+		return enemigos.size ==0;/*Ojo que asi no gana el bomberman! */
 	}
 
 }
