@@ -60,57 +60,74 @@ public class Celda {
 	public int getPosY(){
 		return posY;
 	}
+	
 	/**
-	 * Trata de ocupar la celda con el bomberman pasado por parametro,  esta operacion tendra exito solo si no
-	 * hay enemigos (si hay enemigos en la celda bomberman morira),ni bombas en la celda y si la celda 
-	 * puede ser avanzada por el bomberman, al avanzar el bomberman puede recibir un powerup si la celda 
-	 * posee uno.
-	 * Si bomberman es nulo se eliminar al bomberman actual de la celda.
+	 * Setea, de ser posible a bomberman en la celda, liberando la celda en la que estaba antes
+	 * Si bm es nulo, entonces libera la celda.
 	 */
-	public void ocuparBomberMan(Bomberman bm){
+	public void setBomberman(Bomberman bm){
 		if(bm==null){
 			bomberM=null;
 		}
 		else{
-			if(estado.serAvanzado(bm) && b==null){
-				if(e==null){
-					bomberM=bm;
-					if(p!=null){
-						p.dar(bomberM);
-					}
-					bomberM.setCelda(this);
-				}
-				else{
-					if(!bm.esEspecial())
-					bm.morir();
-				}
+			if(e!=null){
+				bm.morir();
+			}
+			if(b!=null){
+				bm.getCelda().setBomberman(null);
+				bomberM=bm;
+				bomberM.setCelda(this);
 			}
 		}
 	}
 	/**
-	 * Trata de ocupar la celda con el enemigo pasado por parametro, esto solo tendra exito si no hay enemigos
-	 * ocupando la celda,la celda es transitable y no hay bombas en la celda. Si hay un bomberman en la celda se lo matara.
-	 * Si el enemigo pasado por parametro es nulo, se seteara el parametro enemigo de celda en nulo.
+	 * Intenta que bomberman avance la celda basandose en su estado.
 	 */
-	public void ocuparEnemigo(Enemigo enem){
+	
+	public void avanzar(Bomberman bm){
+		estado.serAvanzado(bm, this);
+	}
+	/**
+	 * Setea, de ser posible al enemigo en la celda, liberando la celda en la que estaba antes
+	 * Si bm es nulo, entonces libera la celda.
+	 */
+	public void setEnemigo(Enemigo enem){
 		if(enem==null){
 			e=null;
 		}
 		else{
-			if(estado.serAvanzado(enem) && e==null && b==null ){
-				if(bomberM!=null && !bomberM.esEspecial()){
-					bomberM.morir();
-				}
+			if(bomberM!=null){
+				bomberM.morir();
+			}
+			if(e!=null && b!=null){
+				enem.getCelda().setEnemigo(null);
 				e=enem;
-				e.setCelda(this);
+				enem.setCelda(this);
 			}
 		}
 	}
+	/**
+	 * Intenta que el enemigo avance la celda basandose en su estado.
+	 */
+	
+	public void avanzar(Enemigo enem){
+		estado.serAvanzado(enem, this);
+	}
+	/**
+	 * Intenta colocar la bomba en la celda, controlando que no haya una bomba en la misma y que la celda sea 
+	 * piso
+	 */
+	
+	public void ponerBomba(Bomba bomb){
+		if(b!=null)
+		estado.ocuparBomba(bomb,this);
+	}
+	/**
+	 * Coloca la bomba en la celda
+	 */
+	
 	public void setBomba(Bomba bomb){
-		if(b==null && e==null){
-			b=bomb;
-			b.setCelda(this);
-		}
+		b=bomb;
 	}
 	/**
 	 * Agrega un powerup a la celda
@@ -122,19 +139,21 @@ public class Celda {
 	 * La celda recibe un mensaje de explosion, lo cual mata a cualquier personaje de la celda y retorna el 
 	 * puntaje de las explosiones
 	 */
-	public int explosion(){
+	public int explotarBomba(){
 		int puntaje=0;
-		if (bomberM!=null){
-			bomberM.morir();
-		}
+		b=null;
+		puntaje=estado.destruir(b.getRadio(), b.getRadio(), b.getRadio(), b.getRadio(), this);
+		return puntaje;
+	}
+	public int explosion(int arriba, int abajo, int izq, int der){
+		int puntaje=0;
 		if(e!=null){
 			puntaje+=e.morir();
 		}
-		if(estado.destruir()){
-			estado=new Piso();
-			puntaje+=10;
+		if(bomberM!=null){
+			bomberM.morir();
 		}
-		return puntaje;
+		return puntaje+estado.destruir(arriba, abajo, izq, der,this);
 	}
 	/**
 	 * Retorna el mapa asociado a la celda
@@ -142,5 +161,12 @@ public class Celda {
 	
 	public Mapa getMapa(){
 		return m;
+	}
+	/**
+	 * Setea el estado de la celda.
+	 */
+	
+	public void setEstado(EstadoCelda est){
+		estado=est;
 	}
 }
