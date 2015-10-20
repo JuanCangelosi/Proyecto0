@@ -1,4 +1,4 @@
-package Logica;
+package PowerUp;
 import Personajes.*;
 /**
  * Clase Masacrality es uno de los powerUps disponibles en el juego.

@@ -1,6 +1,7 @@
-package Logica;
+package mapa;
 import Bomba.*;
 import Personajes.*;
+import PowerUp.PowerUp;
 /**
  * Clase celda define los comportamientos de las celdas del mapa del juego.
  */

@@ -1,4 +1,5 @@
 package Logica;
+import mapa.Nivel;
 import Personajes.*;
 
 public class Logica {

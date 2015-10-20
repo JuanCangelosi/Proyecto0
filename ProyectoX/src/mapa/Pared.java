@@ -1,4 +1,4 @@
-package Logica;
+package mapa;
 import Personajes.*;
 
 public class Pared implements EstadoCelda {

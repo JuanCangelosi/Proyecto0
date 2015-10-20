@@ -4,8 +4,8 @@
  */
 package Personajes;
 
+import mapa.Celda;
 import InteligenciaArtificial.IA;
-import Logica.Celda;
 
 public abstract class Enemigo extends Personaje implements IA {
 	// Atributos de Instancia

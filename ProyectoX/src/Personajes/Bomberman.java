@@ -4,6 +4,7 @@
  */
 package Personajes;
 
+import mapa.Celda;
 import Bomba.*;
 import Logica.*;
 

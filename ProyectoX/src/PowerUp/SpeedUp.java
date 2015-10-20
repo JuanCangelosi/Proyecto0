@@ -1,4 +1,4 @@
-package Logica;
+package PowerUp;
 import Personajes.*;
 /**
  * Clase Speedup es uno de los powerUps disponibles en el juego.

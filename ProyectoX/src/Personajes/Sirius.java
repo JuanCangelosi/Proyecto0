@@ -5,7 +5,7 @@
 package Personajes;
 
 
-import Logica.Celda;
+import mapa.Celda;
 
 public class Sirius extends Enemigo {
 

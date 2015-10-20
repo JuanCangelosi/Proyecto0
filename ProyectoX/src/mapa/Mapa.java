@@ -1,7 +1,13 @@
-package Logica;
+package mapa;
 import java.util.Random;
+
 import Bomba.*;
 import Personajes.*;
+import PowerUp.Bombality;
+import PowerUp.Fatality;
+import PowerUp.Masacrality;
+import PowerUp.PowerUp;
+import PowerUp.SpeedUp;
 /**
  * Clase Mapa representa al mapa del juego, que sera de 31x13 celdas.
  */

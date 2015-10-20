@@ -6,7 +6,7 @@ package Personajes;
 
 import java.util.Random;
 
-import Logica.Celda;
+import mapa.Celda;
 
 public class Altair extends Enemigo {
 	// Constructor

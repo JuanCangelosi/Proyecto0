@@ -5,6 +5,7 @@
  */
 package Personajes;
 
+import mapa.Celda;
 import Logica.*;
 
 public abstract class Personaje {

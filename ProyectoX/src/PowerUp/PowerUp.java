@@ -1,4 +1,4 @@
-package Logica;
+package PowerUp;
 import Personajes.*;
 /**
  * Interfaz powerup
