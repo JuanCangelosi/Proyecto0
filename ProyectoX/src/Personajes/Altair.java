@@ -1,18 +1,19 @@
 /**
- * Es el enemigo menos inteligente de Bomberman
+ * Es el enemigo de bomberman capaz de atravesar las paredes, tan inteligente como rugulos
  * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Personajes;
 
-import Logica.*;
 import java.util.Random;
 
-public class Rugulos extends Enemigo {
+import Logica.Celda;
+
+public class Altair extends Enemigo {
 	// Constructor
-	public Rugulos(Celda c) {
+	public Altair(Celda c) {
 		super(c);
-		puntaje = 15;
-		especial = false;
+		puntaje = 20;
+		especial = true;
 		velocidad = 1;
 	}
 

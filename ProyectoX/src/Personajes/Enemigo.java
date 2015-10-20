@@ -17,12 +17,6 @@ public abstract class Enemigo extends Personaje implements IA {
 	}
 
 	// Metodos Abstractos
-	/**
-	 * Establece al enemigo como muerto
-	 * 
-	 * @return retorna el puntaje que el enemigo posee al morir
-	 */
-	public abstract int morir();
 
 	/**
 	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
@@ -40,7 +34,7 @@ public abstract class Enemigo extends Personaje implements IA {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y + 1);
-		celda.ocuparBomberMan(null);
+		celda.ocuparEnemigo(null);
 		c.ocuparEnemigo(this);
 	}
 
@@ -52,7 +46,7 @@ public abstract class Enemigo extends Personaje implements IA {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y - 1);
-		celda.ocuparBomberMan(null);
+		celda.ocuparEnemigo(null);
 		c.ocuparEnemigo(this);
 	}
 
@@ -64,7 +58,7 @@ public abstract class Enemigo extends Personaje implements IA {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x - 1, y);
-		celda.ocuparBomberMan(null);
+		celda.ocuparEnemigo(null);
 		c.ocuparEnemigo(this);
 	}
 
@@ -76,7 +70,18 @@ public abstract class Enemigo extends Personaje implements IA {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x + 1, y);
-		celda.ocuparBomberMan(null);
+		celda.ocuparEnemigo(null);
 		c.ocuparEnemigo(this);
+	}
+	
+	//Consultas
+	/**
+	 * Establece al enemigo como muerto
+	 * 
+	 * @return retorna el puntaje que el enemigo posee al morir
+	 */
+	public int morir() {
+		muerto = true;
+		return puntaje;
 	}
 }
