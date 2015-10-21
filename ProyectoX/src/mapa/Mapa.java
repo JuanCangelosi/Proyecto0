@@ -52,7 +52,7 @@ public class Mapa {
 	private void inicializarPiso(){
 		for(int i=0; i<31;i++){
 			for(int j=0; j<13; j++){
-				if(celdas[i][j]!=null){
+				if(celdas[i][j]==null){
 					celdas[i][j]=new Celda(new Piso(),this,i,j);
 				}
 			}
@@ -77,7 +77,7 @@ public class Mapa {
 		while(cantParedesDes<125){
 			int posX=0;
 			int posY=0;
-			while((posX<2 && posY<2) || (posX>11 && posY>29) && celdas[posX][posY]!=null){
+			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
 				posX=1+generador.nextInt(29);
 				posY=1+generador.nextInt(11);
 			}

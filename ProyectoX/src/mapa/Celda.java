@@ -20,14 +20,14 @@ public class Celda {
 	 * Crea una nueva celda con un estado e, un mapa m y sus coordenadas X e Y
 	 */
 	
-	public Celda(EstadoCelda e, Mapa map,int x, int y){
+	public Celda(EstadoCelda es, Mapa map,int x, int y){
 		m=map;
 		bomberM=null;
 		e=null;
 		b=null;
 		posX=x;
 		posY=y;
-		estado=e;
+		estado=es;
 	}
 	/**
 	 * Retorna el powerUp asociado a la celda, en caso de no poseer ninguno retorna nulo
