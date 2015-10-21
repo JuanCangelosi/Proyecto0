@@ -27,54 +27,14 @@ public abstract class Enemigo extends Personaje implements IA {
 	// Metodos
 
 	/**
-	 * Mueve al enemigo hacia arriba
+	 * Libera la celda actual y ocupa la siguiente con Enemigo
 	 */
-	public void arriba() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x, y + 1);
-		celda.ocuparEnemigo(null);
-		c.ocuparEnemigo(this);
+	protected void ocupar(Celda c) {
+		celda.setEnemigo(null);
+		c.avanzar(this);
 	}
 
-	/**
-	 * Mueve al enemigo hacia abajo
-	 */
-	public void abajo() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x, y - 1);
-		celda.ocuparEnemigo(null);
-		c.ocuparEnemigo(this);
-	}
-
-	/**
-	 * Mueve al enemigo hacia la izquierda
-	 */
-	public void izquierda() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x - 1, y);
-		celda.ocuparEnemigo(null);
-		c.ocuparEnemigo(this);
-	}
-
-	/**
-	 * Mueve al enemigo hacia la derecha
-	 */
-	public void derecha() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x + 1, y);
-		celda.ocuparEnemigo(null);
-		c.ocuparEnemigo(this);
-	}
-	
-	//Consultas
+	// Consultas
 	/**
 	 * Establece al enemigo como muerto
 	 * 

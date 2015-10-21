@@ -6,16 +6,17 @@
 package Bomba;
 
 import mapa.Celda;
+import java.lang.Thread;
 
-public class Bomba {
+public class Bomba extends Thread {
 	// Atributos de Instancia
 	protected int radio;
 	protected Celda c;
 	protected AbstractFactory a;
 
 	// Constructor
-	public Bomba(Celda celda,AbstractFactory a) {
-		this.a=a;
+	public Bomba(Celda celda, AbstractFactory a) {
+		this.a = a;
 		c = celda;
 		radio = 1;
 	}
@@ -31,7 +32,29 @@ public class Bomba {
 		radio = i;
 	}
 
+	/**
+	 * Activa el timer de la bomba, que luego explotara
+	 */
+	public void activar() {
+		a.bombaMas();
+		run();
+		Thread.interrupted();
+	}
+	
+	/**
+	 * Espera 5 segundos y luego explota la bomba
+	 */
+	public void run() {
+		try {
+			Thread.sleep(5000);
+			explotar();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// Consultas
+
 	/**
 	 * revisa celda a celda del mapa dentro del radio, destruye las
 	 * destructibles y mata a los personajes de las transitables
@@ -41,19 +64,21 @@ public class Bomba {
 	public int explotar() {
 		int puntaje = 0;
 		a.bombaMenos();
-		for (int i = 1; i <= radio; i++) {
-			Celda c1 = c.getMapa().getCelda(c.getPosX() + i, c.getPosY());
-			puntaje += c1.explosion();
+		puntaje = c.explotarBomba();
+		/*
+		 * Celda c1 = c.getMapa().getCelda(c.getPosX() + 1, c.getPosY());
+		 * puntaje += c1.explotarBomba();
+		 * 
+		 * c1 = c.getMapa().getCelda(c.getPosX() - 1, c.getPosY()); puntaje +=
+		 * c1.explotarBomba();
+		 * 
+		 * c1 = c.getMapa().getCelda(c.getPosX(), c.getPosY() + 1); puntaje +=
+		 * c1.explotarBomba();
+		 * 
+		 * c1 = c.getMapa().getCelda(c.getPosX(), c.getPosY() - 1); puntaje +=
+		 * c1.explotarBomba();
+		 */
 
-			c1 = c.getMapa().getCelda(c.getPosX() - i, c.getPosY());
-			puntaje += c1.explosion();
-
-			c1 = c.getMapa().getCelda(c.getPosX(), c.getPosY() + i);
-			puntaje += c1.explosion();
-
-			c1 = c.getMapa().getCelda(c.getPosX(), c.getPosY() - i);
-			puntaje += c1.explosion();
-		}
 		return puntaje;
 	}
 

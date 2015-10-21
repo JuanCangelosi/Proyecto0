@@ -62,51 +62,11 @@ public class Bomberman extends Personaje {
 	}
 
 	/**
-	 * Mueve a Bomberman hacia arriba
+	 * Libera la celda actual y ocupa la siguiente con Bomberman
 	 */
-	public void arriba() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x, y + 1);
-		celda.ocuparBomberMan(null);
-		c.ocuparBomberMan(this);
-	}
-
-	/**
-	 * Mueve a Bomberman hacia abajo
-	 */
-	public void abajo() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x, y - 1);
-		celda.ocuparBomberMan(null);
-		c.ocuparBomberMan(this);
-	}
-
-	/**
-	 * Mueve a Bomberman hacia la izquierda
-	 */
-	public void izquierda() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x - 1, y);
-		celda.ocuparBomberMan(null);
-		c.ocuparBomberMan(this);
-	}
-
-	/**
-	 * Mueve a Bomberman hacia la derecha
-	 */
-	public void derecha() {
-		int x, y;
-		x = celda.getPosX();
-		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x + 1, y);
-		celda.ocuparBomberMan(null);
-		c.ocuparBomberMan(this);
+	protected void ocupar(Celda c) {
+		celda.setBomberman(null);
+		c.avanzar(this);
 	}
 
 	// Consultas

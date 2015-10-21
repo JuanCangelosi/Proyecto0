@@ -21,6 +21,12 @@ public interface AbstractFactory {
 	public void bombaMenos();
 
 	/**
+	 * Aumenta en uno la cantidad de bombas colocadas, uso exclusivo de la bomba
+	 * cada vez que explote
+	 */
+	public void bombaMas();
+
+	/**
 	 * crea un objeto Bomba y se lo retorna al Personaje
 	 * 
 	 * @param c

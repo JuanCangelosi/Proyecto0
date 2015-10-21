@@ -23,26 +23,56 @@ public abstract class Personaje {
 	// Metodos abstractos
 
 	/**
-	 * Mueve el personaje hacia arriba
+	 * Libera la celda actual y ocupa la siguiente con Bomberman o Enemigo segun
+	 * corresponda
 	 */
-	public abstract void arriba();
-
-	/**
-	 * Mueve el personaje hacia abajo
-	 */
-	public abstract void abajo();
-
-	/**
-	 * Mueve el personaje hacia la izquierda
-	 */
-	public abstract void izquierda();
-
-	/**
-	 * Mueve el personaje hacia la derecha
-	 */
-	public abstract void derecha();
+	protected abstract void ocupar(Celda c);
 
 	// Metodos
+
+	/**
+	 * Mueve al personaje hacia arriba
+	 */
+	public void arriba() {
+		int x, y;
+		x = celda.getPosX();
+		y = celda.getPosY();
+		Celda c = celda.getMapa().getCelda(x, y + 1);
+		ocupar(c);
+	}
+
+	/**
+	 * Mueve al personaje hacia abajo
+	 */
+	public void abajo() {
+		int x, y;
+		x = celda.getPosX();
+		y = celda.getPosY();
+		Celda c = celda.getMapa().getCelda(x, y - 1);
+		ocupar(c);
+	}
+
+	/**
+	 * Mueve al personaje hacia la izquierda
+	 */
+	public void izquierda() {
+		int x, y;
+		x = celda.getPosX();
+		y = celda.getPosY();
+		Celda c = celda.getMapa().getCelda(x - 1, y);
+		ocupar(c);
+	}
+
+	/**
+	 * Mueve al personaje hacia la derecha
+	 */
+	public void derecha() {
+		int x, y;
+		x = celda.getPosX();
+		y = celda.getPosY();
+		Celda c = celda.getMapa().getCelda(x + 1, y);
+		ocupar(c);
+	}
 
 	/**
 	 * Establece la celda en la que se encuentra el personaje

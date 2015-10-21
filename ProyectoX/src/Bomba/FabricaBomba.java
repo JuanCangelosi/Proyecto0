@@ -34,6 +34,14 @@ public class FabricaBomba implements AbstractFactory {
 	public void bombaMenos() {
 		cantBombas--;
 	}
+	
+	/**
+	 * Aumenta en uno la cantidad de bombas colocadas, uso exclusivo de la bomba
+	 * cada vez que explote
+	 */
+	public void bombaMas(){
+		cantBombas++;
+	}
 
 	// Consultas
 
@@ -46,7 +54,6 @@ public class FabricaBomba implements AbstractFactory {
 	 */
 	public Bomba darBomba(Celda c) {
 		Bomba b = new Bomba(c,this);
-		cantBombas++;
 		b.setRadio(radio);
 		return b;
 	}
