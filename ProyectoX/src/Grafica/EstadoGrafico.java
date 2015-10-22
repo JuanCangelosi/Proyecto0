@@ -8,12 +8,12 @@ public class EstadoGrafico extends EntidadGrafica{
 	private static final long serialVersionUID = 1L;
 	protected BufferedImage imageA;
 	
-	protected EstadoGrafico(int x, int y) {
+	public EstadoGrafico(int x, int y) {
 		super(x, y);
 		
 	}
 	
-	protected EstadoGrafico(){
+	public EstadoGrafico(){
 		super(0 ,0);
 		
 	}
