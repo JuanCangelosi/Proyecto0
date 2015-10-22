@@ -16,5 +16,5 @@ public interface EstadoCelda {
 	public int explosionAbajo(Celda c,int r);
 	public int explosionIzq(Celda c,int r);
 	public int explosionDer(Celda c,int r);
-	public EstadoGrafico getEntidadGrafica();
+	public void setImagen(EstadoGrafico e);
 }

@@ -1,5 +1,6 @@
 package mapa;
 import Bomba.*;
+import Grafica.*;
 import Personajes.*;
 import PowerUp.PowerUp;
 /**
@@ -15,6 +16,7 @@ public class Celda {
 	protected Enemigo e;
 	protected Mapa m;
 	protected PowerUp p;
+	protected EstadoGrafico estadog;
 	//constructor
 	/**
 	 * Crea una nueva celda con un estado e, un mapa m y sus coordenadas X e Y
@@ -30,6 +32,8 @@ public class Celda {
 		estado=es;
 		es.getEntidadGrafica().setX(posX*32);
 		es.getEntidadGrafica().setY(posY*32);
+		estadog=new EstadoGrafico(posX,posY);
+		estado.setImagen(estadog);
 	}
 	/**
 	 * Retorna el powerUp asociado a la celda, en caso de no poseer ninguno retorna nulo
@@ -154,7 +158,7 @@ public class Celda {
 		int puntaje=0;
 		int radio=b.getRadio();
 		b=null;
-		estado.destruir(this);
+		puntaje+=estado.destruir(this);
 		if(e!=null)
 			puntaje+=e.morir();
 		if(bomberM!=null)
@@ -221,11 +225,10 @@ public class Celda {
 		return m;
 	}
 	
-	/**
-	 * Setea el estado de la celda.
-	 */
-	
-	public void setEstado(EstadoCelda est){
-		estado=est;
+	public EntidadGrafica getEntidadGrafica(){
+		return estado.getEntidadGrafica();
+	}
+	public void mostrarPowerUp(){
+		estado.mostrarPowerUp(p.getEntidadGrafica());
 	}
 }

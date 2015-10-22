@@ -9,19 +9,7 @@ import Grafica.*;
  * por bomberman en modos dios y por Altair.
  */
 public class ParedDestruible implements EstadoCelda {
-	protected EstadoGrafico eg;
-	/**
-	 * Crea una nueva paredDestruible y su entidad grafica correspondiente
-	 */
-	public ParedDestruible(){
-		eg=new ParedDestruibleGrafico();
-	}
-	/**
-	 * Retorna el estado grafico asociada a la pared Destruible
-	 */
-	public EstadoGrafico getEntidadGrafica(){
-		return eg;
-	}
+
 	/**
 	 * La pared Destruible solo puede ser avanzada por bomberman si es especial
 	 */
@@ -49,6 +37,7 @@ public class ParedDestruible implements EstadoCelda {
 	public int destruir(Celda c){
 		c.setEstado(new Piso());
 		c.getMapa().decrementarPared();
+		c.mostrarPowerUp();
 		return 10;
 	}
 	/**
@@ -92,6 +81,9 @@ public class ParedDestruible implements EstadoCelda {
 		if(r!=0)
 		return punt+c.getMapa().getCelda(c.getPosX(),c.getPosY()+1).explosionDer(r-1);
 		else return punt;
+	}
+	public void setImagen(EstadoGrafico e){
+		e.setParedDestruible();
 	}
 
 }

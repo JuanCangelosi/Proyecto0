@@ -4,11 +4,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class SiriusGrafico extends PersonajeGrafico{
+public class AltairGrafico extends PersonajeGrafico{
 
-	private static final long serialVersionUID = 1L;
-
-	public SiriusGrafico(int x, int y) {
+	public AltairGrafico(int x, int y) {
 		super(x, y);
 		try {
 			
@@ -33,6 +31,5 @@ public class SiriusGrafico extends PersonajeGrafico{
 			e.printStackTrace();
 		}
 	}
-
 
 }

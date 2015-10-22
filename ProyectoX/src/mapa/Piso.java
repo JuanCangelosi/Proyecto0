@@ -1,3 +1,4 @@
+
 package mapa;
 import Bomba.Bomba;
 import PowerUp.*;
@@ -9,20 +10,7 @@ import Grafica.*;
  * Clase piso representa las celdas transitables por todos los personajes del juego
  */
 public class Piso implements EstadoCelda {
-	protected EstadoGrafico eg;
 	
-	/**
-	 * Crea un nuevo Piso y su entidad grafica correspondiente
-	 */
-	public Piso(){
-		eg=new PisoGrafico();
-	}
-	/**
-	 * Retorna el estado grafico asociada a piso
-	 */
-	public EstadoGrafico getEntidadGrafica(){
-		return eg;
-	}
 	/**
 	 * El piso no puede ser destruido, entonces se retorna 0
 	 */
@@ -87,5 +75,8 @@ public class Piso implements EstadoCelda {
 		if(r!=0)
 		return c.getMapa().getCelda(c.getPosX(),c.getPosY()+1).explosionDer(r-1);
 		else return 0;
+	}
+	public void setImagen(EstadoGrafico e){
+		e.setPiso();
 	}
 }

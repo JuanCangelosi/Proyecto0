@@ -9,19 +9,7 @@ import Grafica.*;
  * explosiones.
  */
 public class Pared implements EstadoCelda {
-	protected EstadoGrafico eg;
-	/**
-	 * Crea una pared y su entidad grafica.
-	 */
-	public Pared(){
-		eg=new ParedGrafico();
-	}
-	/**
-	 * Retorna el estadografico asociado a la pared
-	 */
-	public EstadoGrafico getEntidadGrafica(){
-		return eg;
-	}
+	
 	/**
 	 * Una pared no puede ser avanzada por nadie
 	 */
@@ -68,6 +56,9 @@ public class Pared implements EstadoCelda {
 	 */
 	public int explosionDer(Celda c,int r){
 		return 0;
+	}
+	public void setImagen(EstadoGrafico e){
+		e.setPared();
 	}
 
 }

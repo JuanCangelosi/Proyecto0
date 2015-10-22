@@ -37,9 +37,10 @@ public class Juego extends JFrame {
         setLayout(null);
 		
 		contentPane = new JLayeredPane();
-		logica      = new Logica();
-		
 		setContentPane(contentPane);
+		logica      = new Logica(this);
+		
+		
 
 
 		addKeyListener(new KeyAdapter() {
