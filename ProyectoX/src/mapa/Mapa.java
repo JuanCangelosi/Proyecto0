@@ -124,7 +124,7 @@ public class Mapa {
 				posX=1+generador.nextInt(11);
 				posY=1+generador.nextInt(29);
 			}
-			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
+			celdas[posX][posY]=new Celda(new Piso(),this,posY,posX);
 			celdas[posX][posY].setEnemigo(enemigos[i]);
 		}
 		celdas[12][29]=new Celda(new Piso(),this,29,12);
