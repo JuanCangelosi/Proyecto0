@@ -3,13 +3,14 @@ import Bomba.Bomba;
 import Grafica.EntidadGrafica;
 import Personajes.*;
 import PowerUp.PowerUp;
+import Grafica.*
 
-public class Pared implements EstadoCelda {
-	protected EntidadGrafica eg;
+;public class Pared implements EstadoCelda {
+	protected EstadoGrafico eg;
 	public Pared(){
-		eg=new ParedGrafica();
+		eg=new ParedGrafico();
 	}
-	public EntidadGrafica getEntidadGrafica(){
+	public EstadoGrafico getEntidadGrafica(){
 		return eg;
 	}
 	public boolean serAvanzado(Bomberman b, Celda c){

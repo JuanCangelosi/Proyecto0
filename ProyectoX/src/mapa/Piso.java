@@ -3,12 +3,13 @@ import Bomba.Bomba;
 import Grafica.EntidadGrafica;
 import Personajes.*;
 import PowerUp.PowerUp;
-
+import Grafica.*;
 public class Piso implements EstadoCelda {
+	protected EstadoGrafico eg;
 	public Piso(){
 		eg=new PisoGrafico();
 	}
-	public EntidadGrafica getEntidadGrafica(){
+	public EstadoGrafico getEntidadGrafica(){
 		return eg;
 	}
 	public int destruir(Celda c){
