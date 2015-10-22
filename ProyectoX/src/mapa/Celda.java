@@ -28,8 +28,8 @@ public class Celda {
 		posX=x;
 		posY=y;
 		estado=es;
-		es.getEntidadGrafica().setX(posX);
-		es.getEntidadGrafica().setY(posY);
+		es.getEntidadGrafica().setX(posX*32);
+		es.getEntidadGrafica().setY(posY*32);
 	}
 	/**
 	 * Retorna el powerUp asociado a la celda, en caso de no poseer ninguno retorna nulo
