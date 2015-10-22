@@ -2,7 +2,6 @@ package Grafica;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -15,7 +14,7 @@ public class BombaGrafica extends EntidadGrafica{
 	protected BombaGrafica(int x, int y) {
 		super(x, y);
 		try {
-			imageA = ImageIO.read(new File("/home/luciano/Documents/workspace/GraficaTest/src/Imagenes/bom1.png"));
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

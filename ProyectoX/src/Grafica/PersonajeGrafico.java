@@ -13,7 +13,10 @@ public abstract class PersonajeGrafico extends EntidadGrafica{
 		super(x, y);
 	}
 	
-	public abstract void mover(int dir);
+	public abstract void arriba();
+	public abstract void abajo();
+	public abstract void izquierda();
+	public abstract void derecha();
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
