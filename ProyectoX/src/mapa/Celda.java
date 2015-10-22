@@ -147,8 +147,8 @@ public class Celda {
 		this.p=p;
 	}
 	/**
-	 * La celda recibe un mensaje de explosion, lo cual mata a cualquier personaje de la celda y retorna el 
-	 * puntaje de las explosiones
+	 * La celda recibe un mensaje de explosion, matando a todo personaje de la celda, liberando la bomba y
+	 * enviando los mensajes explosion a las celdas adyacentes. Retorna el puntaje obtenido de la explosion.
 	 */
 	public int explotarBomba(){
 		int puntaje=0;
@@ -165,6 +165,10 @@ public class Celda {
 		puntaje+=m.getCelda(posX+1,posY).explosionDer(radio);
 		return puntaje;
 	}
+	/**
+	 * Mata a todos los personajes de la celda y luego se chequea el estado para enviar el mensaje a las celdas
+	 * adyacentes
+	 */
 	public int explosionArriba(int r){
 		int puntaje=0;
 		if(e!=null)
@@ -173,6 +177,10 @@ public class Celda {
 			bomberM.morir();
 		return puntaje+estado.explosionArriba(this,r);
 	}
+	/**
+	 * Mata a todos los personajes de la celda y luego se chequea el estado para enviar el mensaje a las celdas
+	 * adyacentes
+	 */
 	public int explosionAbajo(int r){
 		int puntaje=0;
 		if(e!=null)
@@ -181,6 +189,10 @@ public class Celda {
 			bomberM.morir();
 		return puntaje+estado.explosionAbajo(this,r);
 	}
+	/**
+	 * Mata a todos los personajes de la celda y luego se chequea el estado para enviar el mensaje a las celdas
+	 * adyacentes
+	 */
 	public int explosionIzq(int r){
 		int puntaje=0;
 		if(e!=null)
@@ -189,6 +201,10 @@ public class Celda {
 			bomberM.morir();
 		return puntaje+estado.explosionIzq(this,r);
 	}
+	/**
+	 * Mata a todos los personajes de la celda y luego se chequea el estado para enviar el mensaje a las celdas
+	 * adyacentes
+	 */
 	public int explosionDer(int r){
 		int puntaje=0;
 		if(e!=null)
@@ -204,6 +220,7 @@ public class Celda {
 	public Mapa getMapa(){
 		return m;
 	}
+	
 	/**
 	 * Setea el estado de la celda.
 	 */

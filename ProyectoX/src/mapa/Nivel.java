@@ -1,7 +1,9 @@
 package mapa;
 
 import Personajes.*;
-
+/**
+ * Clase nivel representa el nivel en que se esta jugando.
+ */
 public class Nivel {
 	protected int tiempo;
 	protected int puntaje;
@@ -10,6 +12,10 @@ public class Nivel {
 
 	public Nivel() {
 		mapa = new Mapa();
+		bomberman=new Bomberman(mapa.getCelda(1,1));
+		mapa.getCelda(1,1).setBomberman(bomberman);
+		puntaje=0;
+		
 	}
 
 	public void sumarPuntaje(int n) {
@@ -23,9 +29,7 @@ public class Nivel {
 	public Mapa getMapa() {
 		return mapa;
 	}
-/*
 	public boolean gano() {
-
+		return mapa.getCantParedesDest()==0;
 	}
-*/
 }

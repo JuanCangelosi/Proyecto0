@@ -15,6 +15,7 @@ public class Mapa {
 	//atributos
 	protected Celda[][] celdas;
 	protected Enemigo[] enemigos;
+	protected int paredesDest=125;
 	
 	/**
 	 * Crea un nuevo Mapa de 31x13, inicializando los bordes, las paredes y el piso
@@ -78,7 +79,7 @@ public class Mapa {
 		int cantPowerUps=0;
 		PowerUp powerups[]=inicializarPowerUps();
 		
-		while(cantParedesDes<125){
+		while(cantParedesDes<paredesDest){
 			int posX=0;
 			int posY=0;
 			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
@@ -93,6 +94,9 @@ public class Mapa {
 			}
 		}
 	}
+	/**
+	 * Metodo auxiliar que inicializa el arreglo de enemigos
+	 */
 	private void inicializarEnemigos(){
 		enemigos[0]=new Rugulos(null);
 		enemigos[1]=new Rugulos(null);
@@ -101,7 +105,9 @@ public class Mapa {
 		enemigos[4]=new Altair(null);
 		enemigos[5]=new Sirius(null);
 	}
-	
+	/**
+	 * Metodo auxiliar que coloca los enemigosen las celdas correspondientes
+	 */
 	private void colocarEnemigos(){
 		Random generador=new Random();
 		int posX=0;
@@ -117,7 +123,9 @@ public class Mapa {
 		celdas[29][12]=new Celda(new Piso(),this,29,12);
 		celdas[29][12].setEnemigo(enemigos[5]);
 	}
-	
+	/**
+	 * Metodo auxiliar que crea y devuelve un arreglo de powerUps
+	 */
 	private PowerUp[] inicializarPowerUps(){
 		PowerUp powerups[]=new PowerUp[11];
 		for(int i=0; i<4; i++){
@@ -130,6 +138,11 @@ public class Mapa {
 		powerups[10]=new Masacrality();
 		return powerups;
 	}
-	
+	public int getCantParedesDest(){
+		return paredesDest;
+	}
+	public void decrementarPared(){
+		paredesDest--;
+	}
 }
 
