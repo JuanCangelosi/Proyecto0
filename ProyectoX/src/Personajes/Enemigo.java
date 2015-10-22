@@ -29,8 +29,8 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	/**
 	 * Libera la celda actual y ocupa la siguiente con Enemigo
 	 */
-	protected void ocupar(Celda c) {
-		c.avanzar(this);
+	protected void ocupar(Celda c, int n) {
+		c.avanzar(this,n);
 	}
 
 	// Consultas
@@ -41,7 +41,6 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	 */
 	public int morir() {
 		muerto = true;
-		Thread.interrupted();
 		return puntaje;
 	}
 }

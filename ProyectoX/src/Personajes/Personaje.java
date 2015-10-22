@@ -28,7 +28,7 @@ public abstract class Personaje {
 	 * Libera la celda actual y ocupa la siguiente con Bomberman o Enemigo segun
 	 * corresponda
 	 */
-	protected abstract void ocupar(Celda c);
+	protected abstract void ocupar(Celda c, int n);
 
 	// Metodos
 
@@ -40,7 +40,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y + 1);
-		ocupar(c);
+		ocupar(c,0);
 		}
 
 	/**
@@ -51,7 +51,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y - 1);
-		ocupar(c);
+		ocupar(c,1);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x - 1, y);
-		ocupar(c);
+		ocupar(c,3);
 	}
 
 	/**
@@ -73,7 +73,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x + 1, y);
-		ocupar(c);
+		ocupar(c,4);
 	}
 
 	/**

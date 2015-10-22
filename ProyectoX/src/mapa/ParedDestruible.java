@@ -13,22 +13,19 @@ public class ParedDestruible implements EstadoCelda {
 	/**
 	 * La pared Destruible solo puede ser avanzada por bomberman si es especial
 	 */
-	public boolean serAvanzado(Bomberman b,PowerUp p, Celda c){
-		boolean exito=false;
+	public void serAvanzado(Bomberman b,PowerUp p, Celda c, int n){
 		if(b.esEspecial()){
-			exito=c.setBomberman(b);
+			c.setBomberman(b,n);
 		}
-		return exito;
+
 	}
 	/**
 	 * La pared destruible solo puede ser avanzada por el enemigo que es especial, es decir rugulos.
 	 */
-	public boolean serAvanzado(Enemigo e, Celda c){
-		boolean exito=false;
+	public void serAvanzado(Enemigo e, Celda c, int n){
 		if(e.esEspecial()){
-			exito=c.setEnemigo(e);
+			c.setEnemigo(e,n);
 		}
-		return exito;
 	}
 	/**
 	 * Al ser destruida la pared retorna el puntaje de la destruccion y setea el estado de la celda c en piso

@@ -9,8 +9,8 @@ import PowerUp.*;
  */
 public interface EstadoCelda {
 	public int destruir(Celda c);
-	public boolean serAvanzado(Bomberman b,PowerUp p,Celda c);
-	public boolean serAvanzado(Enemigo e, Celda c);
+	public void serAvanzado(Bomberman b,PowerUp p,Celda c,int n);
+	public void serAvanzado(Enemigo e, Celda c, int n);
 	public void ocuparBomba(Bomba b,Celda c);
 	public int explosionArriba(Celda c,int r);
 	public int explosionAbajo(Celda c,int r);

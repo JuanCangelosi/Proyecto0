@@ -50,7 +50,6 @@ public class Bomba extends Thread {
 		try {
 			Thread.sleep(5000);
 			explotar();
-			Thread.interrupted();
 		} catch (InterruptedException e) {
 			
 		}

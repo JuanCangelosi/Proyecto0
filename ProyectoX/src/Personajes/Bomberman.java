@@ -66,8 +66,8 @@ public class Bomberman extends Personaje {
 	/**
 	 * Libera la celda actual y ocupa la siguiente con Bomberman
 	 */
-	protected void ocupar(Celda c) {
-		c.avanzar(this);
+	protected void ocupar(Celda c, int n) {
+		c.avanzar(this,n);
 	}
 
 	// Consultas
