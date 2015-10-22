@@ -8,7 +8,7 @@ import java.util.Random;
 
 import mapa.Celda;
 
-public class Rugulos extends Enemigo {
+public class Rugulos extends Enemigo{
 	// Constructor
 	public Rugulos(Celda c) {
 		super(c);
@@ -23,7 +23,7 @@ public class Rugulos extends Enemigo {
 	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
 	 * ataques
 	 */
-	public void loop() {
+	public void run() {
 		Random rnd = new Random();
 		int n = rnd.nextInt(4) + 1;
 		switch (n) {

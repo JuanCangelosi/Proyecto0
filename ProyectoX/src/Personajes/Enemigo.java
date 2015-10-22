@@ -5,14 +5,13 @@
 package Personajes;
 
 import mapa.Celda;
-import InteligenciaArtificial.IA;
 
-public abstract class Enemigo extends Personaje implements IA {
+public abstract class Enemigo extends Personaje implements Runnable {
 	// Atributos de Instancia
 	protected int puntaje;
 
 	// Constructor
-	protected Enemigo(Celda c) {
+	protected Enemigo(Celda c){
 		super(c);
 	}
 
@@ -22,7 +21,7 @@ public abstract class Enemigo extends Personaje implements IA {
 	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
 	 * ataques
 	 */
-	public abstract void loop();
+	public abstract void run();
 
 	// Metodos
 
@@ -42,6 +41,7 @@ public abstract class Enemigo extends Personaje implements IA {
 	 */
 	public int morir() {
 		muerto = true;
+		Thread.interrupted();
 		return puntaje;
 	}
 }

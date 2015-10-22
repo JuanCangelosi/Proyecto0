@@ -23,7 +23,7 @@ public class Sirius extends Enemigo {
 	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
 	 * ataques
 	 */
-	public void loop() {
+	public void run() {
 		/* A completar */
 	}
 }
