@@ -15,7 +15,14 @@ public class ParedDestruible implements EstadoCelda {
 	 */
 	public void serAvanzado(Bomberman b,PowerUp p, Celda c, int n){
 		if(b.esEspecial()){
-			c.setBomberman(b,n);
+			c.setBomberman(b);
+			PersonajeGrafico pg= b.grafico();
+			switch(n){
+			case 0: {pg.arriba(); break;}
+			case 1: {pg.abajo(); break;}
+			case 2: {pg.izquierda(); break;}
+			case 3: {pg.derecha(); break;}
+			}
 		}
 
 	}
@@ -24,7 +31,14 @@ public class ParedDestruible implements EstadoCelda {
 	 */
 	public void serAvanzado(Enemigo e, Celda c, int n){
 		if(e.esEspecial()){
-			c.setEnemigo(e,n);
+			c.setEnemigo(e);
+			PersonajeGrafico pg= e.grafico();
+			switch(n){
+			case 0: {pg.arriba(); break;}
+			case 1: {pg.abajo(); break;}
+			case 2: {pg.izquierda(); break;}
+			case 3: {pg.derecha(); break;}
+			}
 		}
 	}
 	/**

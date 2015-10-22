@@ -3,6 +3,7 @@ package mapa;
 import Bomba.Bomba;
 import PowerUp.*;
 import Grafica.EntidadGrafica;
+import Grafica.PersonajeGrafico;
 import Personajes.*;
 import PowerUp.PowerUp;
 import Grafica.*;
@@ -25,8 +26,15 @@ public class Piso implements EstadoCelda {
 	 * encuentra desocupada si powerup no es nulo,es decir el piso posee un
 	 * powerup, se lo otorga a bomberman
 	 */
-	public void serAvanzado(Bomberman b, PowerUp p, Celda c) {
+	public void serAvanzado(Bomberman b, PowerUp p, Celda c, int n) {
 		c.setBomberman(b);
+		PersonajeGrafico pg= b.grafico();
+		switch(n){
+		case 0: {pg.arriba(); break;}
+		case 1: {pg.abajo(); break;}
+		case 2: {pg.izquierda(); break;}
+		case 3: {pg.derecha(); break;}
+		}
 		if (p != null) {
 			p.dar(b);
 			c.setPowerUp(null);
@@ -38,8 +46,15 @@ public class Piso implements EstadoCelda {
 	 * El enemigo puede avanzar por el piso, pero solo si la celda se encuentra
 	 * desocupada.
 	 */
-	public void serAvanzado(Enemigo e, Celda c) {
+	public void serAvanzado(Enemigo e, Celda c,int n) {
 		c.setEnemigo(e);
+		PersonajeGrafico pg= e.grafico();
+		switch(n){
+		case 0: {pg.arriba(); break;}
+		case 1: {pg.abajo(); break;}
+		case 2: {pg.izquierda(); break;}
+		case 3: {pg.derecha(); break;}
+		}
 	}
 
 	/**

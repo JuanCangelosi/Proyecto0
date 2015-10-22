@@ -78,7 +78,7 @@ public class Celda {
 	 * Setea, de ser posible a bomberman en la celda, liberando la celda en la
 	 * que estaba antes Si bm es nulo, entonces libera la celda.
 	 */
-	public void setBomberman(Bomberman bm,int n) {
+	public void setBomberman(Bomberman bm) {
 		if (bm == null) {
 			bomberM = null;
 		} else {
@@ -87,16 +87,9 @@ public class Celda {
 			}
 			if (b != null) {
 				if (bm.getCelda() != null)
-					bm.getCelda().setBomberman(null,0);
+					bm.getCelda().setBomberman(null);
 				bomberM = bm;
 				bomberM.setCelda(this);
-				PersonajeGrafico pg= bm.grafico();
-				switch(n){
-				case 0: {pg.arriba(); break;}
-				case 1: {pg.abajo(); break;}
-				case 2: {pg.izquierda(); break;}
-				case 3: {pg.derecha(); break;}
-				}
 			}
 		}
 	}
@@ -113,7 +106,7 @@ public class Celda {
 	 * Setea, de ser posible al enemigo en la celda, liberando la celda en la
 	 * que estaba antes Si bm es nulo, entonces libera la celda.
 	 */
-	public void setEnemigo(Enemigo enem,int n) {
+	public void setEnemigo(Enemigo enem) {
 		if (enem == null) {
 			e = null;
 		} else {
@@ -122,16 +115,9 @@ public class Celda {
 			}
 			if (e != null && b != null) {
 				if (enem.getCelda() != null)
-					enem.getCelda().setEnemigo(null,0);
+					enem.getCelda().setEnemigo(null);
 				e = enem;
 				enem.setCelda(this);
-				PersonajeGrafico pg= enem.grafico();
-				switch(n){
-				case 0: {pg.arriba(); break;}
-				case 1: {pg.abajo(); break;}
-				case 2: {pg.izquierda(); break;}
-				case 3: {pg.derecha(); break;}
-				}
 			}
 		}
 	}
