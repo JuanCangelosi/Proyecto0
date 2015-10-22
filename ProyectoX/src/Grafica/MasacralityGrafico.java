@@ -1,6 +1,6 @@
 package Grafica;
 
-public class MasacralityGrafico extends EntidadGrafica{
+public class MasacralityGrafico extends PowerupGrafico{
 
 	public MasacralityGrafico(int x, int y) {
 		super(x, y);

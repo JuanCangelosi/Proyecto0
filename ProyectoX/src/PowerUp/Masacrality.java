@@ -6,7 +6,7 @@ import Grafica.*;
  * el metodo dar vuelve especial a bomberman (godmode) y retorna el puntaje del powerup.
  */
 public class Masacrality implements PowerUp {
-	protected EntidadGrafica eg;
+	protected PowerupGrafico eg;
 	
 	public Masacrality(){
 		eg=new MasacralityGrafico();

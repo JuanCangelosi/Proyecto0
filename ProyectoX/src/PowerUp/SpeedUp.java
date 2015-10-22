@@ -6,7 +6,7 @@ import Grafica.*;
  * el metodo dar duplica la velocidad de bomberman y retorna el puntaje correspondiente.
  */
 public class SpeedUp implements PowerUp {
-	protected EntidadGrafica eg;
+	protected PowerupGrafico eg;
 	
 	public SpeedUp(){
 		eg=new SpeedUpGrafico();

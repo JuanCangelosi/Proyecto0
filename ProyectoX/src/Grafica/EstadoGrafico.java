@@ -2,6 +2,9 @@ package Grafica;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class EstadoGrafico extends EntidadGrafica{
 
@@ -27,6 +30,43 @@ public class EstadoGrafico extends EntidadGrafica{
 	public void setY(int y){
 		this.y = y;
 		setBounds(x,y,width,height);
+		
+	}
+	
+	public void mostrarPowerUp(PowerupGrafico p){
+		
+			imageA = p.imagen();
+
+		
+	}
+	
+	public void setPared(){
+		try {
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/pared.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+	public void setPiso(){
+		try {
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/piso.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+	public void setParedDestruible(){
+		try {
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/paredDestruible.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		
 	}
 	

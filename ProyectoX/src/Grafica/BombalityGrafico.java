@@ -1,6 +1,6 @@
 package Grafica;
 
-public class BombalityGrafico extends EntidadGrafica{
+public class BombalityGrafico extends PowerupGrafico{
 
 	public BombalityGrafico(int x, int y) {
 		super(x, y);

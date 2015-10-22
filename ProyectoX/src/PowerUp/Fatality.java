@@ -8,7 +8,7 @@ import Bomba.*;
  * el metodo dar duplica el radio de las bombas de bomberman y retorna el puntaje.
  */
 public class Fatality implements PowerUp {
-	protected EntidadGrafica eg;
+	protected PowerupGrafico eg;
 	
 	public Fatality(){
 		eg=new FatalityGrafico();

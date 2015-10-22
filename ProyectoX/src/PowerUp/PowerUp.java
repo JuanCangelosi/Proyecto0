@@ -9,6 +9,6 @@ public interface PowerUp {
 	 * El metodo dar otorga a bomberman el powerup correspondiente y retorna el puntaje asociado al powerup.
 	 * 
 	 */
-	public EntidadGrafica getEntidadGrafica();
+	public PowerupGrafico getEntidadGrafica();
 	public int dar(Bomberman b);
 }

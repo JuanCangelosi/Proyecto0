@@ -241,7 +241,7 @@ public class Celda {
 	}
 
 	public void mostrarPowerUp() {
-		estado.mostrarPowerUp(p.getEntidadGrafica());
+		estadog.mostrarPowerUp(p.getEntidadGrafica());
 	}
 	public void setEstado(EstadoCelda est){
 		estado=est;

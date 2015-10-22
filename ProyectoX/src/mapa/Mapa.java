@@ -16,6 +16,7 @@ public class Mapa {
 	protected Celda[][] celdas;
 	protected Enemigo[] enemigos;
 	protected int paredesDest=125;
+	protected Bomberman bomberman;
 	
 	/**
 	 * Crea un nuevo Mapa de 31x13, inicializando los bordes, las paredes y el piso
@@ -28,6 +29,8 @@ public class Mapa {
 		inicializarEnemigos();
 		colocarEnemigos();
 		inicializarPiso();
+		bomberman=new Bomberman(getCelda(1,1));
+		getCelda(1,1).setBomberman(bomberman);
 		
 	}
 	/**
@@ -35,6 +38,10 @@ public class Mapa {
 	 */
 	public Celda getCelda(int x, int y){
 		return celdas[x][y];
+	}
+	
+	public Enemigo getEnemigo(int x){
+		return enemigos[x];
 	}
 	/**
 	 * Metodo auxiliar que inicializa los bordes como paredes indestructibles
@@ -143,6 +150,10 @@ public class Mapa {
 	}
 	public void decrementarPared(){
 		paredesDest--;
+	}
+	
+	public Bomberman getHeroe() {
+		return bomberman;
 	}
 }
 
