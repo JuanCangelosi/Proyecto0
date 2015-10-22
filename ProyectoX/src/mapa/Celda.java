@@ -91,7 +91,7 @@ public class Celda {
 	 */
 	
 	public boolean avanzar(Bomberman bm){
-		return estado.serAvanzado(bm, this);
+		return estado.serAvanzado(bm,p, this);
 	}
 	/**
 	 * Setea, de ser posible al enemigo en la celda, liberando la celda en la que estaba antes

@@ -1,11 +1,11 @@
 package mapa;
 import Bomba.Bomba;
-import Grafica.EntidadGrafica;
+import PowerUp.*;
 import Personajes.*;
 import PowerUp.PowerUp;
-import Grafica.*
+import Grafica.*;
 
-;public class Pared implements EstadoCelda {
+public class Pared implements EstadoCelda {
 	protected EstadoGrafico eg;
 	public Pared(){
 		eg=new ParedGrafico();
@@ -13,7 +13,7 @@ import Grafica.*
 	public EstadoGrafico getEntidadGrafica(){
 		return eg;
 	}
-	public boolean serAvanzado(Bomberman b, Celda c){
+	public boolean serAvanzado(Bomberman b,PowerUp p, Celda c){
 		return false;
 	}
 	public boolean serAvanzado(Enemigo e, Celda c){

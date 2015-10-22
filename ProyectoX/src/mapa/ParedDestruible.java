@@ -1,10 +1,10 @@
 package mapa;
 
 import Bomba.Bomba;
-import Grafica.EntidadGrafica;
 import Personajes.*;
-import PowerUp.PowerUp;
+import PowerUp.*;
 import Grafica.*;
+
 public class ParedDestruible implements EstadoCelda {
 	protected EstadoGrafico eg;
 	
@@ -14,7 +14,7 @@ public class ParedDestruible implements EstadoCelda {
 	public EstadoGrafico getEntidadGrafica(){
 		return eg;
 	}
-	public boolean serAvanzado(Bomberman b, Celda c){
+	public boolean serAvanzado(Bomberman b,PowerUp p, Celda c){
 		boolean exito=false;
 		if(b.esEspecial()){
 			exito=c.setBomberman(b);
