@@ -11,7 +11,7 @@ public class BombaGrafica extends EntidadGrafica{
 	private static final long serialVersionUID = 1L;
 	private BufferedImage imageA;
 
-	protected BombaGrafica(int x, int y) {
+	public BombaGrafica(int x, int y) {
 		super(x, y);
 		try {
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
