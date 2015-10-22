@@ -13,17 +13,35 @@ public class BombaGrafica extends EntidadGrafica{
 
 	public BombaGrafica(int x, int y) {
 		super(x, y);
+		imageA = null;
+
+	}
+	
+	public void colocarBomba(){
 		try {
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		repaint();
+		
+	}
+	
+	public void explotarBomba(){
+		try {
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/fire-middle1.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		repaint();
+		
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-	    g.drawImage(imageA, 0, 0, this);
+		if(imageA!=null)
+			g.drawImage(imageA, 0, 0, this);
 	}
-
 
 }
