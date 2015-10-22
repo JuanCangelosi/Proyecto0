@@ -14,14 +14,18 @@ import PowerUp.SpeedUp;
 public class Mapa {
 	//atributos
 	protected Celda[][] celdas;
+	protected Enemigo[] enemigos;
 	
 	/**
 	 * Crea un nuevo Mapa de 31x13, inicializando los bordes, las paredes y el piso
 	 */
 	public Mapa(){
 		celdas=new Celda[31][13];
+		enemigos=new Enemigo[6];
 		inicializarBordes();
 		colocarParedes();
+		inicializarEnemigos();
+		colocarEnemigos();
 		inicializarPiso();
 		
 	}
@@ -88,6 +92,29 @@ public class Mapa {
 				cantPowerUps++;
 			}
 		}
+	}
+	private void inicializarEnemigos(){
+		enemigos[0]=new Rugulos(null);
+		enemigos[1]=new Rugulos(null);
+		enemigos[2]=new Rugulos(null);
+		enemigos[3]=new Altair(null);
+		enemigos[4]=new Altair(null);
+		enemigos[5]=new Sirius(null);
+	}
+	private void colocarEnemigos(){
+		Random generador=new Random();
+		int posX=0;
+		int posY=0;
+		for(int i=0; i<enemigos.length-1;i++){
+			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
+				posX=1+generador.nextInt(29);
+				posY=1+generador.nextInt(11);
+			}
+			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
+			celdas[posX][posY].setEnemigo(enemigos[i]);
+		}
+		celdas[29][12]=new Celda(new Piso(),this,29,12);
+		celdas[29][12].setEnemigo(enemigos[5]);
 	}
 	private PowerUp[] inicializarPowerUps(){
 		PowerUp powerups[]=new PowerUp[11];

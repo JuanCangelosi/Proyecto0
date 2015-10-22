@@ -1,11 +1,12 @@
 package mapa;
 import Bomba.Bomba;
 import Personajes.*;
+import PowerUp.PowerUp;
 
-public class Piso implements EstadoCelda {
-	public int destruir(int arriba, int abajo, int izq, int der, Celda c){
+public class Piso implements EstadoCelda {	
+	public int destruir(Celda c){
 		c.setEstado(new Piso());
-		return c.explosion(arriba-1,abajo-1,izq-1,der-1);
+		return c.explosion();
 	}
 	public void serAvanzado(Bomberman b, Celda c){
 		c.setBomberman(b);

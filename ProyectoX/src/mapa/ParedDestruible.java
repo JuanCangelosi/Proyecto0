@@ -2,6 +2,7 @@ package mapa;
 
 import Bomba.Bomba;
 import Personajes.*;
+import PowerUp.PowerUp;
 
 public class ParedDestruible implements EstadoCelda {
 	public void serAvanzado(Bomberman b, Celda c){
@@ -12,10 +13,10 @@ public class ParedDestruible implements EstadoCelda {
 		if(e.esEspecial())
 		c.setEnemigo(e);
 	}
-	public int destruir(int arriba, int abajo, int izq, int der, Celda c){
+	public int destruir(Celda c){
 		c.setEstado(new Piso());
 		int puntaje=10;
-		return puntaje+c.explosion(arriba-1,abajo-1,izq-1,der-1);
+		return puntaje+c.explosion();
 	}
 	public void ocuparBomba(Bomba b,Celda c){
 	}

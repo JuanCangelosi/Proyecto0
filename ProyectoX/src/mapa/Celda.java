@@ -74,7 +74,8 @@ public class Celda {
 				bm.morir();
 			}
 			if(b!=null){
-				bm.getCelda().setBomberman(null);
+				if(bm.getCelda()!=null)
+					bm.getCelda().setBomberman(null);
 				bomberM=bm;
 				bomberM.setCelda(this);
 			}
@@ -100,7 +101,8 @@ public class Celda {
 				bomberM.morir();
 			}
 			if(e!=null && b!=null){
-				enem.getCelda().setEnemigo(null);
+				if(enem.getCelda()!=null)
+					enem.getCelda().setEnemigo(null);
 				e=enem;
 				enem.setCelda(this);
 			}
@@ -153,7 +155,7 @@ public class Celda {
 		if(bomberM!=null){
 			bomberM.morir();
 		}
-		return puntaje+estado.destruir(arriba, abajo, izq, der,this);
+		return puntaje+estado.destruir();
 	}
 	/**
 	 * Retorna el mapa asociado a la celda

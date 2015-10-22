@@ -10,6 +10,9 @@ public class Nivel {
 	protected Mapa mapa;
 
 	public Nivel() {
+		enemigos=new Enemigo[6];
+		enemigos[0]=new Rugulos(null);
+		enemigos
 		mapa = new Mapa();
 	}
 
