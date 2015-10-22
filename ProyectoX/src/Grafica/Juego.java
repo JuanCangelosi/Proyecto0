@@ -48,19 +48,19 @@ public class Juego extends JFrame {
 			public void keyPressed(KeyEvent arg0) {
 				
 				if(arg0.getKeyCode() == KeyEvent.VK_UP)
-					logica.getNivel().getHeroe().arriba();
+					logica.getNivel().getMapa().getHeroe().arriba();
 				
 				else if(arg0.getKeyCode() == KeyEvent.VK_DOWN)
-					logica.getNivel().getHeroe().abajo();
+					logica.getNivel().getMapa().getHeroe().abajo();
 				
 				else if(arg0.getKeyCode() == KeyEvent.VK_LEFT)
-					logica.getNivel().getHeroe().izquierda();
+					logica.getNivel().getMapa().getHeroe().izquierda();
 				
 				else if(arg0.getKeyCode() == KeyEvent.VK_RIGHT)
-					logica.getNivel().getHeroe().derecha();
+					logica.getNivel().getMapa().getHeroe().derecha();
 				
 				else if(arg0.getKeyCode() == KeyEvent.VK_SPACE)
-					logica.getNivel().getHeroe().colocarBomba();
+					logica.getNivel().getMapa().getHeroe().colocarBomba();
 				
 			}
 		});

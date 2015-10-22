@@ -42,7 +42,7 @@ public class EstadoGrafico extends EntidadGrafica{
 	
 	public void setPared(){
 		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/pared.png"));
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/pared2.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -17,7 +17,7 @@ public class Bombality implements PowerUp {
 		return 35;
 	}
 	
-	public EntidadGrafica getEntidadGrafica(){
+	public PowerupGrafico getEntidadGrafica(){
 		return eg;
 	}
 }

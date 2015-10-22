@@ -17,7 +17,7 @@ public class SpeedUp implements PowerUp {
 		return 30;
 	}
 	
-	public EntidadGrafica getEntidadGrafica(){
+	public PowerupGrafico getEntidadGrafica(){
 		return eg;
 	}
 }

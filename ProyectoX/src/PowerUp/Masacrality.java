@@ -15,7 +15,7 @@ public class Masacrality implements PowerUp {
 		b.ponerEspecial(true);
 		return 50;
 	}
-	public EntidadGrafica getEntidadGrafica(){
+	public PowerupGrafico getEntidadGrafica(){
 		return eg;
 	}
 }

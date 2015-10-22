@@ -48,14 +48,14 @@ public class Mapa {
 	 */
 	
 	private void inicializarBordes(){
-		for( int i= 0; i<13; i++){
-			celdas[i][0]=new Celda(new Pared(),this,i,0);
-			celdas[i][30]=new Celda(new Pared(),this,i,30);
+		for( int i= 1; i<12; i++){
+			celdas[i][0]=new Celda(new Pared(),this,0,i);
+			celdas[i][30]=new Celda(new Pared(),this,30,i);
 		}
 		//los bordes ya se inicializaron con el loop superior
-		for(int i=1; i<30; i++){
-			celdas[0][i]=new Celda(new Pared(),this,0,i);
-			celdas[12][i]=new Celda(new Pared(),this,12,i);
+		for(int i=0; i<31; i++){
+			celdas[0][i]=new Celda(new Pared(),this,i,0);
+			celdas[12][i]=new Celda(new Pared(),this,i,12);
 		}
 	}
 	/**
@@ -65,7 +65,7 @@ public class Mapa {
 		for(int i=0; i<31;i++){
 			for(int j=0; j<13; j++){
 				if(celdas[j][i]==null){
-					celdas[j]i]=new Celda(new Piso(),this,j,i);
+					celdas[j][i]=new Celda(new Piso(),this,i,j);
 				}
 			}
 		}
@@ -79,7 +79,7 @@ public class Mapa {
 		Random generador=new Random();
 		for(int i=2;i<=28;i=(i+2)){
 			for(int j=2;j<=10;j=(j+2)){
-				celdas[j][i]=new Celda(new Pared(),this,j,i);
+				celdas[j][i]=new Celda(new Pared(),this,i,j);
 			}
 		}
 		int cantParedesDes=0;
@@ -89,11 +89,11 @@ public class Mapa {
 		while(cantParedesDes<paredesDest){
 			int posX=0;
 			int posY=0;
-			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
-				posX=1+generador.nextInt(29);
-				posY=1+generador.nextInt(11);
+			while((posX<2 && posY<2) || (posX>10 && posY>28) || celdas[posX][posY]!=null){
+				posX=1+generador.nextInt(11);
+				posY=1+generador.nextInt(29);
 			}
-			celdas[posX][posY]=new Celda(new ParedDestruible(),this,posX,posY);
+			celdas[posX][posY]=new Celda(new ParedDestruible(),this,posY,posX);
 			cantParedesDes++;
 			if(cantPowerUps<powerups.length){
 				celdas[posX][posY].setPowerUp(powerups[cantPowerUps]);
@@ -105,12 +105,12 @@ public class Mapa {
 	 * Metodo auxiliar que inicializa el arreglo de enemigos
 	 */
 	private void inicializarEnemigos(){
-		enemigos[0]=new Rugulos(null);
+		/*enemigos[0]=new Rugulos(celdas[10][13]);
 		enemigos[1]=new Rugulos(null);
 		enemigos[2]=new Rugulos(null);
 		enemigos[3]=new Altair(null);
 		enemigos[4]=new Altair(null);
-		enemigos[5]=new Sirius(null);
+		enemigos[5]=new Sirius(null);*/
 	}
 	/**
 	 * Metodo auxiliar que coloca los enemigosen las celdas correspondientes
@@ -121,14 +121,14 @@ public class Mapa {
 		int posY=0;
 		for(int i=0; i<enemigos.length-1;i++){
 			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
-				posX=1+generador.nextInt(29);
-				posY=1+generador.nextInt(11);
+				posX=1+generador.nextInt(11);
+				posY=1+generador.nextInt(29);
 			}
 			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
 			celdas[posX][posY].setEnemigo(enemigos[i]);
 		}
-		celdas[29][12]=new Celda(new Piso(),this,29,12);
-		celdas[29][12].setEnemigo(enemigos[5]);
+		celdas[12][29]=new Celda(new Piso(),this,29,12);
+		celdas[12][29].setEnemigo(enemigos[5]);
 	}
 	/**
 	 * Metodo auxiliar que crea y devuelve un arreglo de powerUps
