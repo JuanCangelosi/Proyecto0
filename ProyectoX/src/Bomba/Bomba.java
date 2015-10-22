@@ -6,6 +6,7 @@
 package Bomba;
 
 import mapa.Celda;
+import Grafica.BombaGrafica;
 import java.lang.Thread;
 
 public class Bomba extends Thread {
@@ -13,6 +14,7 @@ public class Bomba extends Thread {
 	protected int radio;
 	protected Celda c;
 	protected AbstractFactory a;
+	protected BombaGrafica b;
 
 	// Constructor
 	public Bomba(Celda celda, AbstractFactory a) {
@@ -37,6 +39,7 @@ public class Bomba extends Thread {
 	 */
 	public void activar() {
 		a.bombaMas();
+		b.colocarBomba();
 		run();
 	}
 	
@@ -64,6 +67,7 @@ public class Bomba extends Thread {
 	public int explotar() {
 		int puntaje = 0;
 		a.bombaMenos();
+		b.explotarBomba();
 		puntaje = c.explotarBomba();
 		/*
 		 * Celda c1 = c.getMapa().getCelda(c.getPosX() + 1, c.getPosY());
