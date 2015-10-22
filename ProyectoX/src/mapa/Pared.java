@@ -13,5 +13,17 @@ public class Pared implements EstadoCelda {
 	}
 	public void ocuparBomba(Bomba b,Celda c){
 	}
+	public int explosionArriba(Celda c,int r){
+		return 0;
+	}
+	public int explosionAbajo(Celda c,int r){
+		return 0;
+	}
+	public int explosionIzq(Celda c,int r){
+		return 0;
+	}
+	public int explosionDer(Celda c,int r){
+		return 0;
+	}
 
 }

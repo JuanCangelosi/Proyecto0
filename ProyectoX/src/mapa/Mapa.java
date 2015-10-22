@@ -101,6 +101,7 @@ public class Mapa {
 		enemigos[4]=new Altair(null);
 		enemigos[5]=new Sirius(null);
 	}
+	
 	private void colocarEnemigos(){
 		Random generador=new Random();
 		int posX=0;
@@ -116,6 +117,7 @@ public class Mapa {
 		celdas[29][12]=new Celda(new Piso(),this,29,12);
 		celdas[29][12].setEnemigo(enemigos[5]);
 	}
+	
 	private PowerUp[] inicializarPowerUps(){
 		PowerUp powerups[]=new PowerUp[11];
 		for(int i=0; i<4; i++){

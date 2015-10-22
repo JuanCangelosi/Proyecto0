@@ -143,19 +143,50 @@ public class Celda {
 	 */
 	public int explotarBomba(){
 		int puntaje=0;
+		int radio=b.getRadio();
 		b=null;
-		puntaje=estado.destruir(b.getRadio(), b.getRadio(), b.getRadio(), b.getRadio(), this);
+		estado.destruir(this);
+		if(e!=null)
+			puntaje+=e.morir();
+		if(bomberM!=null)
+			bomberM.morir();
+		puntaje+=m.getCelda(posX,posY+1).explosionArriba(radio);
+		puntaje+=m.getCelda(posX,posY-1).explosionAbajo(radio);
+		puntaje+=m.getCelda(posX-1,posY).explosionIzq(radio);
+		puntaje+=m.getCelda(posX+1,posY).explosionDer(radio);
 		return puntaje;
 	}
-	public int explosion(int arriba, int abajo, int izq, int der){
+	public int explosionArriba(int r){
 		int puntaje=0;
-		if(e!=null){
+		if(e!=null)
 			puntaje+=e.morir();
-		}
-		if(bomberM!=null){
+		if(bomberM!=null)
 			bomberM.morir();
-		}
-		return puntaje+estado.destruir();
+		return puntaje+estado.explosionArriba(this,r);
+	}
+	public int explosionAbajo(int r){
+		int puntaje=0;
+		if(e!=null)
+			puntaje+=e.morir();
+		if(bomberM!=null)
+			bomberM.morir();
+		return puntaje+estado.explosionAbajo(this,r);
+	}
+	public int explosionIzq(int r){
+		int puntaje=0;
+		if(e!=null)
+			puntaje+=e.morir();
+		if(bomberM!=null)
+			bomberM.morir();
+		return puntaje+estado.explosionIzq(this,r);
+	}
+	public int explosionDer(int r){
+		int puntaje=0;
+		if(e!=null)
+			puntaje+=e.morir();
+		if(bomberM!=null)
+			bomberM.morir();
+		return puntaje+estado.explosionDer(this,r);
 	}
 	/**
 	 * Retorna el mapa asociado a la celda
