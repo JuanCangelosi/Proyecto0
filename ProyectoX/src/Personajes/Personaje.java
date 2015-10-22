@@ -28,7 +28,7 @@ public abstract class Personaje {
 	 * Libera la celda actual y ocupa la siguiente con Bomberman o Enemigo segun
 	 * corresponda
 	 */
-	protected abstract boolean ocupar(Celda c);
+	protected abstract void ocupar(Celda c);
 
 	// Metodos
 
@@ -40,10 +40,8 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y + 1);
-		if (ocupar(c)){
-			p.arriba();
+		ocupar(c);
 		}
-	}
 
 	/**
 	 * Mueve al personaje hacia abajo
@@ -53,9 +51,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y - 1);
-		if (ocupar(c)){
-			p.abajo();
-		}
+		ocupar(c);
 	}
 
 	/**
@@ -66,9 +62,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x - 1, y);
-		if (ocupar(c)){
-			p.izquierda();
-		}
+		ocupar(c);
 	}
 
 	/**
@@ -79,9 +73,7 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x + 1, y);
-		if (ocupar(c)){
-			p.derecha();
-		}
+		ocupar(c);
 	}
 
 	/**
@@ -122,5 +114,13 @@ public abstract class Personaje {
 	 */
 	public boolean esEspecial() {
 		return especial;
+	}
+	
+	/**
+	 * Retorna la entidad grafica del personaje
+	 * @return Retorna la entidad grafica del personaje
+	 */
+	public PersonajeGrafico grafico(){
+		return p;
 	}
 }

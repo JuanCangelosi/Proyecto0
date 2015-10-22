@@ -29,12 +29,8 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	/**
 	 * Libera la celda actual y ocupa la siguiente con Enemigo
 	 */
-	protected boolean ocupar(Celda c) {
-		celda.setEnemigo(null);
-		if (c.avanzar(this))
-			return true;
-		else
-			return false;
+	protected void ocupar(Celda c) {
+		c.avanzar(this);
 	}
 
 	// Consultas
