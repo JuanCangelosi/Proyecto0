@@ -5,13 +5,14 @@
 package Personajes;
 
 import java.util.Random;
-
+import Grafica.*;
 import mapa.Celda;
 
 public class Rugulos extends Enemigo{
 	// Constructor
 	public Rugulos(Celda c) {
 		super(c);
+		p=new RugulosGrafico(celda.getPosX()*32,celda.getPosY()*32);
 		puntaje = 15;
 		especial = false;
 		velocidad = 1;

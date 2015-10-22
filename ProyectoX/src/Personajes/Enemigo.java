@@ -14,7 +14,6 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	// Constructor
 	protected Enemigo(Celda c) {
 		super(c);
-		p=new EnemigoGrafico(celda.getPosX()*32,celda.getPosY()*32);
 	}
 
 	// Metodos Abstractos

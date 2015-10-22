@@ -5,13 +5,14 @@
 package Personajes;
 
 import java.util.Random;
-
+import Grafica.*;
 import mapa.Celda;
 
 public class Altair extends Enemigo {
 	// Constructor
 	public Altair(Celda c) {
 		super(c);
+		p=new AltairGrafico(celda.getPosX()*32,celda.getPosY()*32);
 		puntaje = 20;
 		especial = true;
 		velocidad = 1;
