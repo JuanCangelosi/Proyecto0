@@ -1,7 +1,6 @@
 package PowerUp;
 import Personajes.*;
-import Bomba.*;
-import Grafica.EntidadGrafica;
+import Grafica.*;
 /**
  * Clase bombality es uno de los powerUps disponibles en el juego.
  * el metodo dar duplica la cantidad de bombas de bomberman y retorna el puntaje.
