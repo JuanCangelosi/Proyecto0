@@ -1,12 +1,22 @@
 package mapa;
 import Bomba.Bomba;
+import Grafica.EntidadGrafica;
 import Personajes.*;
 import PowerUp.PowerUp;
 
-public class Pared implements EstadoCelda {	
-	public void serAvanzado(Bomberman b, Celda c){
+public class Pared implements EstadoCelda {
+	protected EntidadGrafica eg;
+	public Pared(){
+		eg=new ParedGrafica();
 	}
-	public void serAvanzado(Enemigo e, Celda c){
+	public EntidadGrafica getEntidadGrafica(){
+		return eg;
+	}
+	public boolean serAvanzado(Bomberman b, Celda c){
+		return false;
+	}
+	public boolean serAvanzado(Enemigo e, Celda c){
+		return false;
 	}
 	public int destruir(Celda c){
 		return 0;

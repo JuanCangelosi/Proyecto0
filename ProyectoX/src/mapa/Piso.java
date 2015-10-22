@@ -1,17 +1,24 @@
 package mapa;
 import Bomba.Bomba;
+import Grafica.EntidadGrafica;
 import Personajes.*;
 import PowerUp.PowerUp;
 
-public class Piso implements EstadoCelda {	
+public class Piso implements EstadoCelda {
+	public Piso(){
+		eg=new PisoGrafico();
+	}
+	public EntidadGrafica getEntidadGrafica(){
+		return eg;
+	}
 	public int destruir(Celda c){
 		return 0;
 	}
-	public void serAvanzado(Bomberman b, Celda c){
-		c.setBomberman(b);
+	public boolean serAvanzado(Bomberman b, Celda c){
+		return true && c.setBomberman(b);
 	}
-	public void serAvanzado(Enemigo e, Celda c){
-		c.setEnemigo(e);
+	public boolean serAvanzado(Enemigo e, Celda c){
+		return true && c.setEnemigo(e);
 	}
 	public void ocuparBomba(Bomba b,Celda c){
 		c.setBomba(b);

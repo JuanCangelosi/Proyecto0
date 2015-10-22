@@ -1,17 +1,30 @@
 package mapa;
 
 import Bomba.Bomba;
+import Grafica.EntidadGrafica;
 import Personajes.*;
 import PowerUp.PowerUp;
 
 public class ParedDestruible implements EstadoCelda {
-	public void serAvanzado(Bomberman b, Celda c){
-		if(b.esEspecial())
-		c.setBomberman(b);
+	public ParedDestruible(){
+		eg=new ParedDestruibleGrafica();
 	}
-	public void serAvanzado(Enemigo e, Celda c){
-		if(e.esEspecial())
-		c.setEnemigo(e);
+	public EntidadGrafica getEntidadGrafica(){
+		return eg;
+	}
+	public boolean serAvanzado(Bomberman b, Celda c){
+		boolean exito=false;
+		if(b.esEspecial()){
+			exito=c.setBomberman(b);
+		}
+		return exito;
+	}
+	public boolean serAvanzado(Enemigo e, Celda c){
+		boolean exito=false;
+		if(e.esEspecial()){
+			exito=c.setEnemigo(e);
+		}
+		return exito;
 	}
 	public int destruir(Celda c){
 		c.setEstado(new Piso());

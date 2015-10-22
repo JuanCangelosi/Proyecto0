@@ -65,7 +65,8 @@ public class Celda {
 	 * Setea, de ser posible a bomberman en la celda, liberando la celda en la que estaba antes
 	 * Si bm es nulo, entonces libera la celda.
 	 */
-	public void setBomberman(Bomberman bm){
+	public boolean setBomberman(Bomberman bm){
+		boolean exito=false;
 		if(bm==null){
 			bomberM=null;
 		}
@@ -78,21 +79,24 @@ public class Celda {
 					bm.getCelda().setBomberman(null);
 				bomberM=bm;
 				bomberM.setCelda(this);
+				exito=true;
 			}
 		}
+		return exito;
 	}
 	/**
 	 * Intenta que bomberman avance la celda basandose en su estado.
 	 */
 	
-	public void avanzar(Bomberman bm){
-		estado.serAvanzado(bm, this);
+	public boolean avanzar(Bomberman bm){
+		return estado.serAvanzado(bm, this);
 	}
 	/**
 	 * Setea, de ser posible al enemigo en la celda, liberando la celda en la que estaba antes
 	 * Si bm es nulo, entonces libera la celda.
 	 */
-	public void setEnemigo(Enemigo enem){
+	public boolean setEnemigo(Enemigo enem){
+		boolean exito=false;
 		if(enem==null){
 			e=null;
 		}
@@ -105,15 +109,18 @@ public class Celda {
 					enem.getCelda().setEnemigo(null);
 				e=enem;
 				enem.setCelda(this);
+				exito=true;
 			}
 		}
+		return exito;
 	}
+	
 	/**
 	 * Intenta que el enemigo avance la celda basandose en su estado.
 	 */
 	
-	public void avanzar(Enemigo enem){
-		estado.serAvanzado(enem, this);
+	public boolean avanzar(Enemigo enem){
+		return estado.serAvanzado(enem, this);
 	}
 	/**
 	 * Intenta colocar la bomba en la celda, controlando que no haya una bomba en la misma y que la celda sea 
