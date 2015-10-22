@@ -4,6 +4,7 @@
  */
 package Personajes;
 
+import Grafica.BombermanGrafico;
 import mapa.Celda;
 
 public abstract class Enemigo extends Personaje implements Runnable {
@@ -11,8 +12,9 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	protected int puntaje;
 
 	// Constructor
-	protected Enemigo(Celda c){
+	protected Enemigo(Celda c) {
 		super(c);
+		p=new EnemigoGrafico(celda.getPosX()*32,celda.getPosY()*32);
 	}
 
 	// Metodos Abstractos
@@ -28,9 +30,12 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	/**
 	 * Libera la celda actual y ocupa la siguiente con Enemigo
 	 */
-	protected void ocupar(Celda c) {
+	protected boolean ocupar(Celda c) {
 		celda.setEnemigo(null);
-		c.avanzar(this);
+		if (c.avanzar(this))
+			return true;
+		else
+			return false;
 	}
 
 	// Consultas

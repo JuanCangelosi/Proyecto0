@@ -5,6 +5,7 @@
  */
 package Personajes;
 
+import Grafica.PersonajeGrafico;
 import mapa.Celda;
 
 public abstract class Personaje {
@@ -13,6 +14,7 @@ public abstract class Personaje {
 	protected boolean muerto;
 	protected boolean especial;
 	protected Celda celda;
+	protected PersonajeGrafico p;
 
 	// Constructor
 	protected Personaje(Celda c) {
@@ -26,7 +28,7 @@ public abstract class Personaje {
 	 * Libera la celda actual y ocupa la siguiente con Bomberman o Enemigo segun
 	 * corresponda
 	 */
-	protected abstract void ocupar(Celda c);
+	protected abstract boolean ocupar(Celda c);
 
 	// Metodos
 
@@ -38,7 +40,9 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y + 1);
-		ocupar(c);
+		if (ocupar(c)){
+			p.arriba();
+		}
 	}
 
 	/**
@@ -49,7 +53,9 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x, y - 1);
-		ocupar(c);
+		if (ocupar(c)){
+			p.abajo();
+		}
 	}
 
 	/**
@@ -60,7 +66,9 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x - 1, y);
-		ocupar(c);
+		if (ocupar(c)){
+			p.izquierda();
+		}
 	}
 
 	/**
@@ -71,7 +79,9 @@ public abstract class Personaje {
 		x = celda.getPosX();
 		y = celda.getPosY();
 		Celda c = celda.getMapa().getCelda(x + 1, y);
-		ocupar(c);
+		if (ocupar(c)){
+			p.derecha();
+		}
 	}
 
 	/**

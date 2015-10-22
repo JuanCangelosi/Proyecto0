@@ -6,6 +6,7 @@ package Personajes;
 
 import mapa.Celda;
 import Bomba.*;
+import Grafica.BombermanGrafico;
 
 public class Bomberman extends Personaje {
 	// Atributos de Instancia
@@ -15,6 +16,7 @@ public class Bomberman extends Personaje {
 	// Constructor
 	public Bomberman(Celda c) {
 		super(c);
+		p=new BombermanGrafico(celda.getPosX()*32,celda.getPosY()*32);
 		velocidad = 3;
 		especial = false;
 		cantBombas = 1;
@@ -64,9 +66,12 @@ public class Bomberman extends Personaje {
 	/**
 	 * Libera la celda actual y ocupa la siguiente con Bomberman
 	 */
-	protected void ocupar(Celda c) {
+	protected boolean ocupar(Celda c) {
 		celda.setBomberman(null);
-		c.avanzar(this);
+		if (c.avanzar(this))
+			return true;
+		else
+			return false;
 	}
 
 	// Consultas
