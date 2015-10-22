@@ -6,7 +6,7 @@ import Grafica.*;
  * el metodo dar duplica la cantidad de bombas de bomberman y retorna el puntaje.
  */
 public class Bombality implements PowerUp {
-protected PowerupGrafico eg;
+	protected PowerupGrafico eg;
 	
 	public Bombality(){
 		eg=new BombalityGrafico();

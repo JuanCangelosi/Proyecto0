@@ -22,7 +22,7 @@ public class Mapa {
 	 * Crea un nuevo Mapa de 31x13, inicializando los bordes, las paredes y el piso
 	 */
 	public Mapa(){
-		celdas=new Celda[31][13];
+		celdas=new Celda[13][31];
 		enemigos=new Enemigo[6];
 		inicializarBordes();
 		colocarParedes();
@@ -49,13 +49,13 @@ public class Mapa {
 	
 	private void inicializarBordes(){
 		for( int i= 0; i<13; i++){
-			celdas[0][i]=new Celda(new Pared(),this,0,i);
-			celdas[30][i]=new Celda(new Pared(),this,30,i);
+			celdas[i][0]=new Celda(new Pared(),this,i,0);
+			celdas[i][30]=new Celda(new Pared(),this,i,30);
 		}
 		//los bordes ya se inicializaron con el loop superior
 		for(int i=1; i<30; i++){
-			celdas[i][0]=new Celda(new Pared(),this,i,0);
-			celdas[i][12]=new Celda(new Pared(),this,i,12);
+			celdas[0][i]=new Celda(new Pared(),this,0,i);
+			celdas[12][i]=new Celda(new Pared(),this,12,i);
 		}
 	}
 	/**
@@ -64,8 +64,8 @@ public class Mapa {
 	private void inicializarPiso(){
 		for(int i=0; i<31;i++){
 			for(int j=0; j<13; j++){
-				if(celdas[i][j]==null){
-					celdas[i][j]=new Celda(new Piso(),this,i,j);
+				if(celdas[j][i]==null){
+					celdas[j]i]=new Celda(new Piso(),this,j,i);
 				}
 			}
 		}
@@ -79,7 +79,7 @@ public class Mapa {
 		Random generador=new Random();
 		for(int i=2;i<=28;i=(i+2)){
 			for(int j=2;j<=10;j=(j+2)){
-				celdas[i][j]=new Celda(new Pared(),this,i,j);
+				celdas[j][i]=new Celda(new Pared(),this,j,i);
 			}
 		}
 		int cantParedesDes=0;
