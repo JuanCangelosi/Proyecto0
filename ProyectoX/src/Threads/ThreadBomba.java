@@ -13,15 +13,11 @@ public class ThreadBomba extends Thread {
 	/**
 	 * Espera 5 segundos y luego explota la bomba
 	 */
+	@Override
 	public void run() {
 		try {
-			while (true) {
-				if (b != null) {
-					sleep(5000);
-					b.explotar();
-				}
-				sleep(1000);
-			}
+			sleep(5000);
+			b.explotar();
 		} catch (InterruptedException e) {
 
 		}

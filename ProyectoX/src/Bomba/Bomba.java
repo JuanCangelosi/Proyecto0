@@ -22,7 +22,7 @@ public class Bomba{
 		this.a = a;
 		c = celda;
 		radio = 1;
-		b=new BombaGrafica(celda.getPosX()*32,celda.getPosY()*32);
+		b=new BombaGrafica(celda.getPosY()*32,celda.getPosX()*32);
 		t=new ThreadBomba(this);
 	}
 
@@ -43,7 +43,7 @@ public class Bomba{
 	public void activar() {
 		a.bombaMas();
 		b.colocarBomba();
-		t.run();
+		t.start();
 	}
 	
 
