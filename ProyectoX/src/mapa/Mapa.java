@@ -49,13 +49,13 @@ public class Mapa {
 	
 	private void inicializarBordes(){
 		for( int i= 1; i<12; i++){
-			celdas[i][0]=new Celda(new Pared(),this,0,i);
-			celdas[i][30]=new Celda(new Pared(),this,30,i);
+			celdas[i][0]=new Celda(new Pared(),this,i,0);
+			celdas[i][30]=new Celda(new Pared(),this,i,30);
 		}
 		//los bordes ya se inicializaron con el loop superior
 		for(int i=0; i<31; i++){
-			celdas[0][i]=new Celda(new Pared(),this,i,0);
-			celdas[12][i]=new Celda(new Pared(),this,i,12);
+			celdas[0][i]=new Celda(new Pared(),this,0,i);
+			celdas[12][i]=new Celda(new Pared(),this,12,i);
 		}
 	}
 	/**
@@ -65,7 +65,7 @@ public class Mapa {
 		for(int i=0; i<31;i++){
 			for(int j=0; j<13; j++){
 				if(celdas[j][i]==null){
-					celdas[j][i]=new Celda(new Piso(),this,i,j);
+					celdas[j][i]=new Celda(new Piso(),this,j,i);
 				}
 			}
 		}
@@ -79,7 +79,7 @@ public class Mapa {
 		Random generador=new Random();
 		for(int i=2;i<=28;i=(i+2)){
 			for(int j=2;j<=10;j=(j+2)){
-				celdas[j][i]=new Celda(new Pared(),this,i,j);
+				celdas[j][i]=new Celda(new Pared(),this,j,i);
 			}
 		}
 		int cantParedesDes=0;
@@ -93,7 +93,7 @@ public class Mapa {
 				posX=1+generador.nextInt(11);
 				posY=1+generador.nextInt(29);
 			}
-			celdas[posX][posY]=new Celda(new ParedDestruible(),this,posY,posX);
+			celdas[posX][posY]=new Celda(new ParedDestruible(),this,posX,posY);
 			cantParedesDes++;
 			if(cantPowerUps<powerups.length){
 				celdas[posX][posY].setPowerUp(powerups[cantPowerUps]);
@@ -124,7 +124,7 @@ public class Mapa {
 				posX=1+generador.nextInt(10);
 				posY=1+generador.nextInt(28);
 			}
-			celdas[posX][posY]=new Celda(new Piso(),this,posY,posX);
+			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
 			celdas[posX][posY].setEnemigo(enemigos[i]);
 		}
 		celdas[11][29]=new Celda(new Piso(),this,29,11);

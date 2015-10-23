@@ -33,7 +33,7 @@ public class Celda {
 		posX = x;
 		posY = y;
 		estado = es;
-		estadog = new EstadoGrafico(posX * 32, posY * 32);
+		estadog = new EstadoGrafico(posY * 32, posX * 32);
 		estado.setImagen(estadog);
 	}
 
