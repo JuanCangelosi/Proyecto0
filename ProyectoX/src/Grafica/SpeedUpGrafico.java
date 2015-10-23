@@ -17,9 +17,11 @@ public class SpeedUpGrafico extends PowerupGrafico{
 	public void mostrar(){
 		try {
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/speedup.png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
-		}	
+		}
+		repaint();	
 	}
 
 }

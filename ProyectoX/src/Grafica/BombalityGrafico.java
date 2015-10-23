@@ -18,9 +18,11 @@ public class BombalityGrafico extends PowerupGrafico{
 	public void mostrar() {
 		try {
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/bombality.png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		repaint();
 		
 	}
 

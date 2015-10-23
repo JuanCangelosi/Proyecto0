@@ -54,7 +54,8 @@ public class ParedDestruible implements EstadoCelda {
 		c.setEstado(new Piso());
 		c.getMapa().decrementarPared();
 		c.getEntidadGrafica().setPiso();
-		//c.mostrarPowerUp();
+		if(c.getPowerUp()!=null)
+			c.mostrarPowerUp();
 		return 10;
 	}
 	/**

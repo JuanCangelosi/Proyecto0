@@ -18,9 +18,11 @@ public class MasacralityGrafico extends PowerupGrafico{
 	public void mostrar() {
 		try {
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/masacrality.png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		repaint();
 	}
 
 }
