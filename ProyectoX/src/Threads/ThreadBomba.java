@@ -18,6 +18,8 @@ public class ThreadBomba extends Thread {
 		try {
 			sleep(5000);
 			b.explotar();
+			sleep(2000);
+			b.getBombaGrafica().setVisible(false);
 		} catch (InterruptedException e) {
 
 		}

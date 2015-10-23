@@ -51,7 +51,7 @@ public class BombaGrafica extends EntidadGrafica{
 	
 	public void explotarBomba(){
 		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/fire-middle1.png"));
+			image = ImageIO.read(getClass().getResource("/Imagenes/fire-middle1.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	

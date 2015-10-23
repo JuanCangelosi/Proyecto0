@@ -60,7 +60,7 @@ public class Juego extends JFrame {
 					Bomba b1 = logica.getNivel().getMapa().getHeroe()
 							.colocarBomba();
 					if (b1 != null) {
-						contentPane.add(b1.getBombaGrafica(), 50);
+						contentPane.add(b1.getBombaGrafica(), 2);
 					}
 
 				}
