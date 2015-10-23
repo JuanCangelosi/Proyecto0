@@ -105,12 +105,12 @@ public class Mapa {
 	 * Metodo auxiliar que inicializa el arreglo de enemigos
 	 */
 	private void inicializarEnemigos(){
-		/*enemigos[0]=new Rugulos(celdas[10][13]);
+		enemigos[0]=new Rugulos(celdas[10][13]);
 		enemigos[1]=new Rugulos(null);
 		enemigos[2]=new Rugulos(null);
 		enemigos[3]=new Altair(null);
 		enemigos[4]=new Altair(null);
-		enemigos[5]=new Sirius(null);*/
+		enemigos[5]=new Sirius(null);
 	}
 	/**
 	 * Metodo auxiliar que coloca los enemigosen las celdas correspondientes
