@@ -5,15 +5,19 @@
 package Personajes;
 
 import Grafica.BombermanGrafico;
+import Threads.*;
 import mapa.Celda;
 
-public abstract class Enemigo extends Personaje implements Runnable {
+public abstract class Enemigo extends Personaje{
 	// Atributos de Instancia
 	protected int puntaje;
+	protected ThreadEnemigo t;
 
 	// Constructor
 	protected Enemigo(Celda c) {
 		super(c);
+		t=new ThreadEnemigo(this);
+		t.start();
 	}
 
 	// Metodos Abstractos
@@ -22,7 +26,7 @@ public abstract class Enemigo extends Personaje implements Runnable {
 	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
 	 * ataques
 	 */
-	public abstract void run();
+	public abstract void loop();
 
 	// Metodos
 

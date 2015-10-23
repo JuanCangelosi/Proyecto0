@@ -24,7 +24,7 @@ public class Rugulos extends Enemigo{
 	 * Describe el comportamiento del enemigo, en relacion a sus movimientos y
 	 * ataques
 	 */
-	public void run() {
+	public void loop() {
 		Random rnd = new Random();
 		int n = rnd.nextInt(4) + 1;
 		switch (n) {
