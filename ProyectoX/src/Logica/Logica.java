@@ -16,7 +16,7 @@ public class Logica {
 				gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getEntidadGrafica(),new Integer(1));
 		
 		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),new Integer(3));
-		for(int i=0; i<6; i++){
+		for(int i=0; i<5; i++){
 			gui.getContentPane().add(nivel.getMapa().getEnemigo(i).grafico(), new Integer(3));
 		}
 		

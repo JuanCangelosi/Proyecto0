@@ -30,7 +30,11 @@ public class Mapa {
 		inicializarPiso();
 		bomberman=new Bomberman(getCelda(1,1));
 		getCelda(1,1).setBomberman(bomberman);
-		
+		enemigos[0].darThread().start();
+		enemigos[1].darThread().start();
+		enemigos[2].darThread().start();
+		enemigos[3].darThread().start();
+		enemigos[4].darThread().start();
 	}
 	/**
 	 * Retorna la celda en las coordenadas x, y
@@ -105,17 +109,17 @@ public class Mapa {
 	 */
 	private void inicializarEnemigos(Celda[] aux){
 		enemigos[0]=new Rugulos(aux[0]);
-		enemigos[0].darThread().start();
+		aux[0].setEnemigo(enemigos[0]);
 		enemigos[1]=new Rugulos(aux[1]);
-		enemigos[1].darThread().start();
+		aux[1].setEnemigo(enemigos[1]);
 		enemigos[2]=new Rugulos(aux[2]);
-		enemigos[2].darThread().start();
+		aux[2].setEnemigo(enemigos[2]);
 		enemigos[3]=new Altair(aux[3]);
-		enemigos[3].darThread().start();
+		aux[3].setEnemigo(enemigos[3]);
 		enemigos[4]=new Altair(aux[4]);
-		enemigos[4].darThread().start();
-		enemigos[5]=new Sirius(aux[5]);
-		enemigos[5].darThread().start();
+		aux[4].setEnemigo(enemigos[4]);
+		enemigos[4]=new Sirius(aux[5]);
+		aux[5].setEnemigo(enemigos[5]);
 	}
 	/**
 	 * Metodo auxiliar que coloca los enemigosen las celdas correspondientes
