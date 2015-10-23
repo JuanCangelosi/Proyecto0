@@ -61,24 +61,26 @@ public class Piso implements EstadoCelda {
 	 * desocupada.
 	 */
 	public void serAvanzado(Enemigo e, Celda c, int n) {
-		c.setEnemigo(e);
-		PersonajeGrafico pg = e.grafico();
-		switch (n) {
-		case 0: {
-			pg.arriba();
-			break;
-		}
-		case 1: {
-			pg.abajo();
-			break;
-		}
-		case 2: {
-			pg.izquierda();
-			break;
-		}
-		case 3: {
-			pg.derecha();
-			break;
+		if (c.getBomba() == null) {
+			c.setEnemigo(e);
+			PersonajeGrafico pg = e.grafico();
+			switch (n) {
+			case 0: {
+				pg.arriba();
+				break;
+			}
+			case 1: {
+				pg.abajo();
+				break;
+			}
+			case 2: {
+				pg.izquierda();
+				break;
+			}
+			case 3: {
+				pg.derecha();
+				break;
+			}
 		}
 		}
 	}
