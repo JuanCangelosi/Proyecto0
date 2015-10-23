@@ -26,7 +26,6 @@ public class Mapa {
 		enemigos=new Enemigo[6];
 		inicializarBordes();
 		colocarParedes();
-		inicializarEnemigos();
 		colocarEnemigos();
 		inicializarPiso();
 		bomberman=new Bomberman(getCelda(1,1));
@@ -104,18 +103,19 @@ public class Mapa {
 	/**
 	 * Metodo auxiliar que inicializa el arreglo de enemigos
 	 */
-	private void inicializarEnemigos(){
-		enemigos[0]=new Rugulos(celdas[10][13]);
-		enemigos[1]=new Rugulos(null);
-		enemigos[2]=new Rugulos(null);
-		enemigos[3]=new Altair(null);
-		enemigos[4]=new Altair(null);
-		enemigos[5]=new Sirius(null);
+	private void inicializarEnemigos(Celda[] aux){
+		enemigos[0]=new Rugulos(aux[0]);
+		enemigos[1]=new Rugulos(aux[1]);
+		enemigos[2]=new Rugulos(aux[2]);
+		enemigos[3]=new Altair(aux[3]);
+		enemigos[4]=new Altair(aux[4]);
+		enemigos[5]=new Sirius(aux[5]);
 	}
 	/**
 	 * Metodo auxiliar que coloca los enemigosen las celdas correspondientes
 	 */
 	private void colocarEnemigos(){
+		Celda[] aux=new Celda[6];
 		Random generador=new Random();
 		int posX=0;
 		int posY=0;
@@ -125,12 +125,11 @@ public class Mapa {
 				posY=1+generador.nextInt(28);
 			}
 			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
-			celdas[posX][posY].setEnemigo(enemigos[i]);
-			enemigos[i].darThread().start();
+			aux[i]=celdas[posX][posY];
 		}
 		celdas[11][29]=new Celda(new Piso(),this,29,11);
-		celdas[11][29].setEnemigo(enemigos[5]);
-		enemigos[5].darThread().start();
+		aux[5]=celdas[11][29];
+		inicializarEnemigos(aux);
 	}
 	/**
 	 * Metodo auxiliar que crea y devuelve un arreglo de powerUps
