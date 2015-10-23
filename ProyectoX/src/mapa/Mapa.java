@@ -89,7 +89,7 @@ public class Mapa {
 		while(cantParedesDes<paredesDest){
 			int posX=0;
 			int posY=0;
-			while((posX<2 && posY<2) || (posX>10 && posY>28) || celdas[posX][posY]!=null){
+			while((posX<3 && posY<3) || (posX>10 && posY>27) || celdas[posX][posY]!=null){
 				posX=1+generador.nextInt(10);
 				posY=1+generador.nextInt(28);
 			}
@@ -120,15 +120,15 @@ public class Mapa {
 		int posX=0;
 		int posY=0;
 		for(int i=0; i<enemigos.length-1;i++){
-			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
+			while((posX<3 && posY<3) || (posX>11 && posY>28) || celdas[posX][posY]!=null){
 				posX=1+generador.nextInt(10);
 				posY=1+generador.nextInt(28);
 			}
 			celdas[posX][posY]=new Celda(new Piso(),this,posY,posX);
 			celdas[posX][posY].setEnemigo(enemigos[i]);
 		}
-		celdas[12][29]=new Celda(new Piso(),this,29,12);
-		celdas[12][29].setEnemigo(enemigos[5]);
+		celdas[11][29]=new Celda(new Piso(),this,29,11);
+		celdas[11][29].setEnemigo(enemigos[5]);
 	}
 	/**
 	 * Metodo auxiliar que crea y devuelve un arreglo de powerUps
