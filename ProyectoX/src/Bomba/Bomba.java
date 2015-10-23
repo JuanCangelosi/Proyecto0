@@ -102,5 +102,9 @@ public class Bomba extends Thread {
 	public Celda getCelda() {
 		return c;
 	}
+	
+	public BombaGrafica getBombaGrafica(){
+		return b;
+	}
 
 }
