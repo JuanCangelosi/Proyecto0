@@ -13,9 +13,9 @@ public class Logica {
 		
 		for(int i=0; i< 13; i++)
 			for(int j=0; j<31; j++)
-				gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getEntidadGrafica(),0);
+				gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getEntidadGrafica(),new Integer(1));
 		
-		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),100);
+		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),new Integer(3));
 		
 		
 				
