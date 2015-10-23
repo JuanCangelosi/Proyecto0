@@ -32,6 +32,9 @@ public class ParedDestruible implements EstadoCelda {
 	 */
 	public void serAvanzado(Enemigo e, Celda c, int n){
 		if(e.esEspecial()){
+			if (c.getBomba() == null && c.getEnemigo() == null) {
+				if (e.getCelda() != null)
+					e.getCelda().setEnemigo(null);
 			c.setEnemigo(e);
 			PersonajeGrafico pg= e.grafico();
 			switch(n){
@@ -40,6 +43,7 @@ public class ParedDestruible implements EstadoCelda {
 			case 2: {pg.izquierda(); break;}
 			case 3: {pg.derecha(); break;}
 			}
+		}
 		}
 	}
 	/**

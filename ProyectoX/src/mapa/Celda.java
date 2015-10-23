@@ -111,14 +111,10 @@ public class Celda {
 			if (bomberM != null) {
 				bomberM.morir();
 			}
-			if (e == null) {
-				if (enem.getCelda() != null)
-					enem.getCelda().setEnemigo(null);
 				e = enem;
 				enem.setCelda(this);
 			}
 		}
-	}
 
 	/**
 	 * Intenta que el enemigo avance la celda basandose en su estado.
