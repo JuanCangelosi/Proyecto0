@@ -90,8 +90,8 @@ public class Mapa {
 			int posX=0;
 			int posY=0;
 			while((posX<2 && posY<2) || (posX>10 && posY>28) || celdas[posX][posY]!=null){
-				posX=1+generador.nextInt(11);
-				posY=1+generador.nextInt(29);
+				posX=1+generador.nextInt(10);
+				posY=1+generador.nextInt(28);
 			}
 			celdas[posX][posY]=new Celda(new ParedDestruible(),this,posY,posX);
 			cantParedesDes++;
@@ -121,8 +121,8 @@ public class Mapa {
 		int posY=0;
 		for(int i=0; i<enemigos.length-1;i++){
 			while((posX<2 && posY<2) || (posX>11 && posY>29) || celdas[posX][posY]!=null){
-				posX=1+generador.nextInt(11);
-				posY=1+generador.nextInt(29);
+				posX=1+generador.nextInt(10);
+				posY=1+generador.nextInt(28);
 			}
 			celdas[posX][posY]=new Celda(new Piso(),this,posY,posX);
 			celdas[posX][posY].setEnemigo(enemigos[i]);
