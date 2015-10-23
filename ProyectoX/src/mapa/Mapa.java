@@ -133,7 +133,7 @@ public class Mapa {
 			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
 			aux[i]=celdas[posX][posY];
 		}
-		celdas[11][29]=new Celda(new Piso(),this,29,11);
+		celdas[11][29]=new Celda(new Piso(),this,11,29);
 		aux[5]=celdas[11][29];
 		inicializarEnemigos(aux);
 	}
