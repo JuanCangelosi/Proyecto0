@@ -17,7 +17,6 @@ public abstract class Enemigo extends Personaje{
 	protected Enemigo(Celda c) {
 		super(c);
 		t=new ThreadEnemigo(this);
-		t.start();
 	}
 
 	// Metodos Abstractos
@@ -47,5 +46,13 @@ public abstract class Enemigo extends Personaje{
 		muerto = true;
 		t.detener();
 		return puntaje;
+	}
+	
+	/**
+	 * retorna el thread para ser activado cuando se inicia el mapa
+	 * @return retorna el thread del enemigo
+	 */
+	public Thread darThread(){
+		return t;
 	}
 }
