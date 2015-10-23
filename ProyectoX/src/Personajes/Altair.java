@@ -12,7 +12,7 @@ public class Altair extends Enemigo {
 	// Constructor
 	public Altair(Celda c) {
 		super(c);
-		p=new AltairGrafico(celda.getPosX()*32,celda.getPosY()*32);
+		p=new AltairGrafico(celda.getPosY()*32,celda.getPosX()*32);
 		puntaje = 20;
 		especial = true;
 		velocidad = 1;

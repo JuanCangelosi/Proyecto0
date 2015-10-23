@@ -4,7 +4,6 @@
  */
 package Personajes;
 
-import Grafica.BombermanGrafico;
 import Threads.*;
 import mapa.Celda;
 
@@ -17,7 +16,6 @@ public abstract class Enemigo extends Personaje{
 	protected Enemigo(Celda c) {
 		super(c);
 		t=new ThreadEnemigo(this);
-		t.start();
 	}
 
 	// Metodos Abstractos

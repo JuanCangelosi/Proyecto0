@@ -12,7 +12,7 @@ public class Rugulos extends Enemigo{
 	// Constructor
 	public Rugulos(Celda c) {
 		super(c);
-		p=new RugulosGrafico(celda.getPosX()*32,celda.getPosY()*32);
+		p=new RugulosGrafico(celda.getPosY()*32,celda.getPosX()*32);
 		puntaje = 15;
 		especial = false;
 		velocidad = 1;
@@ -30,18 +30,22 @@ public class Rugulos extends Enemigo{
 		switch (n) {
 		case 1: {
 			arriba();
+			System.out.println("arriba");
 			break;
 		}
 		case 2: {
 			abajo();
+			System.out.println("abajo");
 			break;
 		}
 		case 3: {
 			izquierda();
+			System.out.println("izquierda");
 			break;
 		}
 		case 4: {
 			derecha();
+			System.out.println("derecha");
 			break;
 		}
 		}

@@ -13,7 +13,7 @@ public class Sirius extends Enemigo {
 	// Constructor
 	public Sirius(Celda c) {
 		super(c);
-		p=new SiriusGrafico(celda.getPosX()*32,celda.getPosY()*32);
+		p=new SiriusGrafico(celda.getPosY()*32,celda.getPosX()*32);
 		puntaje = 50;
 		especial = false;
 		velocidad = 3;

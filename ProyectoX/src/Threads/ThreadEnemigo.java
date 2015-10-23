@@ -24,6 +24,7 @@ public class ThreadEnemigo extends Thread {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		this.interrupt();
 	}
 	
 	/**
@@ -31,6 +32,5 @@ public class ThreadEnemigo extends Thread {
 	 */
 	public void detener(){
 		activado=false;
-		this.detener();
 	}
 }
