@@ -163,63 +163,20 @@ public class Celda {
 			puntaje += e.morir();
 		if (bomberM != null)
 			bomberM.morir();
-		puntaje += m.getCelda(posX+1, posY).explosionArriba(radio);
-		puntaje += m.getCelda(posX-1, posY).explosionAbajo(radio);
-		puntaje += m.getCelda(posX, posY-1).explosionIzq(radio);
-		puntaje += m.getCelda(posX, posY+1).explosionDer(radio);
+		puntaje += m.getCelda(posX+1, posY).explosion(radio,0);
+		puntaje += m.getCelda(posX-1, posY).explosion(radio,1);
+		puntaje += m.getCelda(posX, posY-1).explosion(radio,2);
+		puntaje += m.getCelda(posX, posY+1).explosion(radio,3);
 		return puntaje;
 	}
-
-	/**
-	 * Mata a todos los personajes de la celda y luego se chequea el estado para
-	 * enviar el mensaje a las celdas adyacentes
-	 */
-	public int explosionArriba(int r) {
+	public int explosion(int r, int pos){
 		int puntaje = 0;
 		if (e != null)
 			puntaje += e.morir();
 		if (bomberM != null)
 			bomberM.morir();
-		return puntaje + estado.explosionArriba(this, r);
-	}
-
-	/**
-	 * Mata a todos los personajes de la celda y luego se chequea el estado para
-	 * enviar el mensaje a las celdas adyacentes
-	 */
-	public int explosionAbajo(int r) {
-		int puntaje = 0;
-		if (e != null)
-			puntaje += e.morir();
-		if (bomberM != null)
-			bomberM.morir();
-		return puntaje + estado.explosionAbajo(this, r);
-	}
-
-	/**
-	 * Mata a todos los personajes de la celda y luego se chequea el estado para
-	 * enviar el mensaje a las celdas adyacentes
-	 */
-	public int explosionIzq(int r) {
-		int puntaje = 0;
-		if (e != null)
-			puntaje += e.morir();
-		if (bomberM != null)
-			bomberM.morir();
-		return puntaje + estado.explosionIzq(this, r);
-	}
-
-	/**
-	 * Mata a todos los personajes de la celda y luego se chequea el estado para
-	 * enviar el mensaje a las celdas adyacentes
-	 */
-	public int explosionDer(int r) {
-		int puntaje = 0;
-		if (e != null)
-			puntaje += e.morir();
-		if (bomberM != null)
-			bomberM.morir();
-		return puntaje + estado.explosionDer(this, r);
+		puntaje+=estado.explosion(this, r,pos);
+		return puntaje;
 	}
 
 	/**

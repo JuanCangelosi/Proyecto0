@@ -33,28 +33,7 @@ public class Pared implements EstadoCelda {
 	 */
 	public void ocuparBomba(Bomba b,Celda c){
 	}
-	/**
-	 * Las paredes cortan la explosion
-	 */
-	public int explosionArriba(Celda c,int r){
-		return 0;
-	}
-	/**
-	 * Las paredes cortan la explosion
-	 */
-	public int explosionAbajo(Celda c,int r){
-		return 0;
-	}
-	/**
-	 * Las paredes cortan la explosion
-	 */
-	public int explosionIzq(Celda c,int r){
-		return 0;
-	}
-	/**
-	 * Las paredes cortan la explosion
-	 */
-	public int explosionDer(Celda c,int r){
+	public int explosion(Celda c, int r, int pos){
 		return 0;
 	}
 	public void setImagen(EstadoGrafico e){

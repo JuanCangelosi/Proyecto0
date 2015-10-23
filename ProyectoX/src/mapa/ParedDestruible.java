@@ -62,31 +62,10 @@ public class ParedDestruible implements EstadoCelda {
 	 */
 	public void ocuparBomba(Bomba b,Celda c){
 	}
+	public int explosion(Celda c, int r, int pos){
+		return destruir(c);
+	}
 	
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
-	 */
-	public int explosionArriba(Celda c,int r){
-		return destruir(c);
-	}
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
-	 */
-	public int explosionAbajo(Celda c,int r){
-		return destruir(c);		
-	}
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
-	 */
-	public int explosionIzq(Celda c,int r){
-		return destruir(c);
-	}
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
-	 */
-	public int explosionDer(Celda c,int r){
-		return destruir(c);
-	}
 	public void setImagen(EstadoGrafico e){
 		e.setParedDestruible();
 	}

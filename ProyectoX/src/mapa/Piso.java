@@ -94,54 +94,26 @@ public class Piso implements EstadoCelda {
 		c.setBomba(b);
 		b.activar();
 	}
-
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio
-	 * disminuido
-	 */
-	public int explosionArriba(Celda c, int r) {
-		if (r != 0)
-			return c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
-					.explosionArriba(r - 1);
-		else
-			return 0;
+	public int explosion(Celda c, int r, int pos){
+		int puntaje=0;
+		if(r!=0){
+			switch(pos){
+			case 0: {puntaje+=c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
+				.explosion(r-1,pos);
+			}
+			case 1: {puntaje+=c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
+				.explosion(r-1,pos);}
+			case 2: {puntaje+=c.getMapa().getCelda(c.getPosX(), c.getPosY()-1)
+				.explosion(r-1,pos);
+			}
+			case 3: {puntaje+=c.getMapa().getCelda(c.getPosX(), c.getPosY()+1)
+				.explosion(r-1,pos);
+			}
+		}
+		}
+		return puntaje;
 	}
 
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio
-	 * disminuido
-	 */
-	public int explosionAbajo(Celda c, int r) {
-		if (r != 0)
-			return c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
-					.explosionAbajo(r - 1);
-		else
-			return 0;
-	}
-
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio
-	 * disminuido
-	 */
-	public int explosionIzq(Celda c, int r) {
-		if (r != 0)
-			return c.getMapa().getCelda(c.getPosX(), c.getPosY() - 1)
-					.explosionIzq(r - 1);
-		else
-			return 0;
-	}
-
-	/**
-	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio
-	 * disminuido
-	 */
-	public int explosionDer(Celda c, int r) {
-		if (r != 0)
-			return c.getMapa().getCelda(c.getPosX(), c.getPosY() + 1)
-					.explosionDer(r - 1);
-		else
-			return 0;
-	}
 
 	public void setImagen(EstadoGrafico e) {
 		e.setPiso();
