@@ -230,7 +230,7 @@ public class Celda {
 		return m;
 	}
 
-	public EntidadGrafica getEntidadGrafica() {
+	public EstadoGrafico getEntidadGrafica() {
 		return estadog;
 	}
 

@@ -25,6 +25,7 @@ public class ThreadEnemigo extends Thread {
 			e.printStackTrace();
 		}
 		this.interrupt();
+		e.grafico().setVisible(false);
 	}
 	
 	/**
