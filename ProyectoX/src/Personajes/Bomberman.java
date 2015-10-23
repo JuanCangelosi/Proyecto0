@@ -81,7 +81,7 @@ public class Bomberman extends Personaje {
 		Bomba b1=null;
 		if (especial) {
 			b1=a.darBomba(celda);
-			celda.setBomba(b1);
+			celda.ponerBomba(b1);
 		} else {
 			if (a.cantBombas() < cantBombas){
 				b1=a.darBomba(celda);

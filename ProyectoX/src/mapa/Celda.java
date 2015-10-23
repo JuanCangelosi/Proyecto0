@@ -175,7 +175,7 @@ public class Celda {
 			puntaje += e.morir();
 		if (bomberM != null)
 			bomberM.morir();
-		puntaje+=estado.explosion(this, r,pos);
+		puntaje+=estado.explosion(this, r-1,pos);
 		return puntaje;
 	}
 

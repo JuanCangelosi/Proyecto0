@@ -67,23 +67,23 @@ public class Piso implements EstadoCelda {
 			c.setEnemigo(e);
 			PersonajeGrafico pg = e.grafico();
 			switch (n) {
-				case 0: {
-					pg.arriba();
-					break;
-				}
-				case 1: {
-					pg.abajo();
-					break;
-				}
-				case 2: {
-					pg.izquierda();
-					break;
-				}
+			case 0: {
+				pg.arriba();
+				break;
+			}
+			case 1: {
+				pg.abajo();
+				break;
+			}
+			case 2: {
+				pg.izquierda();
+				break;
+			}
 			case 3: {
 				pg.derecha();
 				break;
 			}
-		}
+			}
 		}
 	}
 
@@ -94,26 +94,35 @@ public class Piso implements EstadoCelda {
 		c.setBomba(b);
 		b.activar();
 	}
-	public int explosion(Celda c, int r, int pos){
-		int puntaje=0;
-		if(r!=0){
-			switch(pos){
-			case 0: {puntaje+=c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
-				.explosion(r-1,pos);
+
+	public int explosion(Celda c, int r, int pos) {
+		int puntaje = 0;
+		if (r != 0) {
+			switch (pos) {
+			case 0: {
+				puntaje += c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
+						.explosion(r , pos);
+				break;
 			}
-			case 1: {puntaje+=c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
-				.explosion(r-1,pos);}
-			case 2: {puntaje+=c.getMapa().getCelda(c.getPosX(), c.getPosY()-1)
-				.explosion(r-1,pos);
+			case 1: {
+				puntaje += c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
+						.explosion(r , pos);
+				break;
 			}
-			case 3: {puntaje+=c.getMapa().getCelda(c.getPosX(), c.getPosY()+1)
-				.explosion(r-1,pos);
+			case 2: {
+				puntaje += c.getMapa().getCelda(c.getPosX(), c.getPosY() - 1)
+						.explosion(r , pos);
+				break;
 			}
-		}
+			case 3: {
+				puntaje += c.getMapa().getCelda(c.getPosX(), c.getPosY() + 1)
+						.explosion(r , pos);
+				break;
+			}
+			}
 		}
 		return puntaje;
 	}
-
 
 	public void setImagen(EstadoGrafico e) {
 		e.setPiso();
