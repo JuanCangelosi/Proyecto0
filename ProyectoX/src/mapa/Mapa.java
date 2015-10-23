@@ -89,9 +89,9 @@ public class Mapa {
 		while(cantParedesDes<paredesDest){
 			int posX=0;
 			int posY=0;
-			while((posX<3 && posY<3) || (posX>10 && posY>27) || celdas[posX][posY]!=null){
-				posX=1+generador.nextInt(10);
-				posY=1+generador.nextInt(28);
+			while((posX<3 && posY<3) || (posX>9 && posY>27) || celdas[posX][posY]!=null){
+				posX=1+generador.nextInt(11);
+				posY=1+generador.nextInt(29);
 			}
 			celdas[posX][posY]=new Celda(new ParedDestruible(),this,posY,posX);
 			cantParedesDes++;
