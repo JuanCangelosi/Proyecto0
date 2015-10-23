@@ -17,6 +17,7 @@ public class Logica {
 		
 		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),100);
 		
+		
 				
 	}
 	
