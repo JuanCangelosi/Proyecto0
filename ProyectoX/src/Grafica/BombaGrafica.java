@@ -20,11 +20,11 @@ public class BombaGrafica extends EntidadGrafica{
 		super(x, y);
 		try {
 			
-			image  = null;
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
 			imageB = ImageIO.read(getClass().getResource("/Imagenes/bom2.png"));
 			imageC = ImageIO.read(getClass().getResource("/Imagenes/bom3.png"));
-			girar  = false;
+			image  = imageA;
+			girar  = true;
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -59,7 +59,7 @@ public class BombaGrafica extends EntidadGrafica{
 			image = imageC;
 		}
 		else if(image == imageC){
-			image = imageA;
+			image = imageB;
 		}
 		
 	}
