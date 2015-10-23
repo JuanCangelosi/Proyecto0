@@ -11,9 +11,14 @@ public class Logica {
 		nivel=new Nivel();
 		this.gui = gui;
 		
-		for(int i=0; i< 13; i++)
-			for(int j=0; j<31; j++)
+		for(int i=0; i< 13; i++){
+			for(int j=0; j<31; j++){
 				gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getEntidadGrafica(),new Integer(1));
+				if(nivel.getMapa().getCelda(i, j).getPowerUp()!=null){
+					gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica(),new Integer(10));
+				}
+			}
+		}
 		
 		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),new Integer(3));
 		for(int i=0; i<6; i++){

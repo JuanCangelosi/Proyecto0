@@ -163,8 +163,8 @@ public class Celda {
 			puntaje += e.morir();
 		if (bomberM != null)
 			bomberM.morir();
-		puntaje += m.getCelda(posX+1, posY).explosion(radio,0);
-		puntaje += m.getCelda(posX-1, posY).explosion(radio,1);
+		puntaje += m.getCelda(posX-1, posY).explosion(radio,0);
+		puntaje += m.getCelda(posX+1, posY).explosion(radio,1);
 		puntaje += m.getCelda(posX, posY-1).explosion(radio,2);
 		puntaje += m.getCelda(posX, posY+1).explosion(radio,3);
 		return puntaje;
