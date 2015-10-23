@@ -20,6 +20,7 @@ public class Bomberman extends Personaje {
 		velocidad = 3;
 		especial = false;
 		cantBombas = 1;
+		a=new FabricaBomba();
 	}
 
 	// Metodos

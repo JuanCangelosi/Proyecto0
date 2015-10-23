@@ -39,7 +39,7 @@ public abstract class Personaje {
 		int x, y;
 		x = celda.getPosX();
 		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x, y + 1);
+		Celda c = celda.getMapa().getCelda(x+1, y) ;
 		ocupar(c,0);
 		}
 
@@ -50,7 +50,7 @@ public abstract class Personaje {
 		int x, y;
 		x = celda.getPosX();
 		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x, y - 1);
+		Celda c = celda.getMapa().getCelda(x-1, y );
 		ocupar(c,1);
 	}
 
@@ -61,7 +61,7 @@ public abstract class Personaje {
 		int x, y;
 		x = celda.getPosX();
 		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x - 1, y);
+		Celda c = celda.getMapa().getCelda(x, y-1);
 		ocupar(c,3);
 	}
 
@@ -72,7 +72,7 @@ public abstract class Personaje {
 		int x, y;
 		x = celda.getPosX();
 		y = celda.getPosY();
-		Celda c = celda.getMapa().getCelda(x + 1, y);
+		Celda c = celda.getMapa().getCelda(x,  y+1);
 		ocupar(c,4);
 	}
 
