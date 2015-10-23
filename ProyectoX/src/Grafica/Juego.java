@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
 import Logica.Logica;
-import Bomba.*;
 
 public class Juego extends JFrame {
 	
@@ -61,8 +60,8 @@ public class Juego extends JFrame {
 					logica.getNivel().getMapa().getHeroe().derecha();
 				
 				else if(arg0.getKeyCode() == KeyEvent.VK_SPACE){
-					Bomba b= logica.getNivel().getMapa().getHeroe().colocarBomba();
-					logica.getNivel().getMapa().getHeroe().getCelda().setBomba(b);
+					contentPane.add(logica.getNivel().getMapa().getHeroe().colocarBomba().getBombaGrafica(),50);
+
 				}
 			}
 		});
