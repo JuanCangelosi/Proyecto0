@@ -126,9 +126,11 @@ public class Mapa {
 			}
 			celdas[posX][posY]=new Celda(new Piso(),this,posX,posY);
 			celdas[posX][posY].setEnemigo(enemigos[i]);
+			enemigos[i].darThread().start();
 		}
 		celdas[11][29]=new Celda(new Piso(),this,29,11);
 		celdas[11][29].setEnemigo(enemigos[5]);
+		enemigos[5].darThread().start();
 	}
 	/**
 	 * Metodo auxiliar que crea y devuelve un arreglo de powerUps
