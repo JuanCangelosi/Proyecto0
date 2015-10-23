@@ -85,7 +85,7 @@ public class Celda {
 			if (e != null) {
 				bm.morir();
 			}
-			if (b != null) {
+			if (b == null) {
 				if (bm.getCelda() != null)
 					bm.getCelda().setBomberman(null);
 				bomberM = bm;
@@ -113,7 +113,7 @@ public class Celda {
 			if (bomberM != null) {
 				bomberM.morir();
 			}
-			if (e != null && b != null) {
+			if (e != null && b == null) {
 				if (enem.getCelda() != null)
 					enem.getCelda().setEnemigo(null);
 				e = enem;
