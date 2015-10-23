@@ -44,6 +44,7 @@ public abstract class Enemigo extends Personaje{
 	public int morir() {
 		muerto = true;
 		t.detener();
+		celda.setEnemigo(null);
 		return puntaje;
 	}
 	

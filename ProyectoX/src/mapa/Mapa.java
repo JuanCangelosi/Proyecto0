@@ -35,6 +35,7 @@ public class Mapa {
 		enemigos[2].darThread().start();
 		enemigos[3].darThread().start();
 		enemigos[4].darThread().start();
+		enemigos[5].darThread().start();
 	}
 	/**
 	 * Retorna la celda en las coordenadas x, y
@@ -118,7 +119,7 @@ public class Mapa {
 		aux[3].setEnemigo(enemigos[3]);
 		enemigos[4]=new Altair(aux[4]);
 		aux[4].setEnemigo(enemigos[4]);
-		enemigos[4]=new Sirius(aux[5]);
+		enemigos[5]=new Sirius(aux[5]);
 		aux[5].setEnemigo(enemigos[5]);
 	}
 	/**

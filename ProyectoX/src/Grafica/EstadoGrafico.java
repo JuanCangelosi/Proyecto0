@@ -46,6 +46,7 @@ public class EstadoGrafico extends EntidadGrafica{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		repaint();
 
 		
 	}
@@ -56,7 +57,7 @@ public class EstadoGrafico extends EntidadGrafica{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		repaint();
 		
 	}
 	
