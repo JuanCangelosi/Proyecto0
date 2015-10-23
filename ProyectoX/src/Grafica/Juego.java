@@ -60,7 +60,7 @@ public class Juego extends JFrame {
 					logica.getNivel().getMapa().getHeroe().derecha();
 				
 				else if(arg0.getKeyCode() == KeyEvent.VK_SPACE){
-					contentPane.add(logica.getNivel().getMapa().getHeroe().colocarBomba().getBombaGrafica(),50);
+					logica.getNivel().getMapa().getHeroe().colocarBomba();
 
 				}
 			}
