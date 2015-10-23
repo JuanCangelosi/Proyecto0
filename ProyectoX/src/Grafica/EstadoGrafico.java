@@ -33,12 +33,6 @@ public class EstadoGrafico extends EntidadGrafica{
 		
 	}
 	
-	public void mostrarPowerUp(PowerupGrafico p){
-		
-			imageA = p.imagen();
-
-		
-	}
 	
 	public void setPared(){
 		try {

@@ -13,31 +13,46 @@ public class BombaGrafica extends EntidadGrafica{
 	
 	private static final long serialVersionUID = 1L;
 	private BufferedImage image,imageA,imageB,imageC;
-
+	private Timer timer;
+	private boolean girar;
 
 	public BombaGrafica(int x, int y) {
 		super(x, y);
-		imageA = null;
+		try {
+			
+			image  = null;
+			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
+			imageB = ImageIO.read(getClass().getResource("/Imagenes/bom2.png"));
+			imageC = ImageIO.read(getClass().getResource("/Imagenes/bom3.png"));
+			girar  = false;
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 	
 	public void colocarBomba(){
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
-			/*imageB = ImageIO.read(getClass().getResource("/Imagenes/bom2.png"));
-			imageC = ImageIO.read(getClass().getResource("/Imagenes/bom3.png"));*/
-			image = imageA;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		
-		
+	    timer = new Timer(500,new ActionListener () 
+	    { 
+		public void actionPerformed(ActionEvent e) 
+			 {
+			    	girar = true;
+			    	image = imageA;
+			        
+	         } 
+		});
+			
+		timer.start();
+
 		repaint();
 		
 	}
 	
 	private void cambiarImagen(){
 		if(image == imageA){
+			
 			image = imageB;
 		}
 		else if(image == imageB){
@@ -55,14 +70,19 @@ public class BombaGrafica extends EntidadGrafica{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
+		timer.stop();
 		repaint();
 		
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		if(image!=null)
+		if(image!=null){
+			if(girar)
+				cambiarImagen();
 			g.drawImage(image, 0, 0, this);
+		}
+		
 	}
 
 }

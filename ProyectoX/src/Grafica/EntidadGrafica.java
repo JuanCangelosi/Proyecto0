@@ -16,5 +16,16 @@ public abstract class EntidadGrafica extends JComponent{
 		setBounds(x,y,width,height);
 	}
 	
+	public void setX(int x){
+		this.x = x;
+		setBounds(x,y,width,height);
+		
+	}
+	
+	public void setY(int y){
+		this.y = y;
+		setBounds(x,y,width,height);
+		
+	}
 
 }
