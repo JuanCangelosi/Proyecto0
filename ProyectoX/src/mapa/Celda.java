@@ -246,4 +246,8 @@ public class Celda {
 	public void setEstado(EstadoCelda est){
 		estado=est;
 	}
+	
+	public Bomba getBomba(){
+		return b;
+	}
 }

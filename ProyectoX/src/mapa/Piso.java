@@ -28,33 +28,58 @@ public class Piso implements EstadoCelda {
 	 */
 	public void serAvanzado(Bomberman b, PowerUp p, Celda c, int n) {
 		System.out.println("piso");
-		c.setBomberman(b);
-		PersonajeGrafico pg= b.grafico();
-		switch(n){
-		case 0: {pg.arriba(); break;}
-		case 1: {pg.abajo(); break;}
-		case 2: {pg.izquierda(); break;}
-		case 3: {pg.derecha(); break;}
+		if (c.getBomba() == null) {
+			c.setBomberman(b);
+			PersonajeGrafico pg = b.grafico();
+			switch (n) {
+			case 0: {
+				pg.arriba();
+				break;
+			}
+			case 1: {
+				pg.abajo();
+				break;
+			}
+			case 2: {
+				pg.izquierda();
+				break;
+			}
+			case 3: {
+				pg.derecha();
+				break;
+			}
+			}
+			if (p != null) {
+				p.dar(b);
+				c.setPowerUp(null);
+			}
 		}
-		if (p != null) {
-			p.dar(b);
-			c.setPowerUp(null);
-		}
-
 	}
 
 	/**
 	 * El enemigo puede avanzar por el piso, pero solo si la celda se encuentra
 	 * desocupada.
 	 */
-	public void serAvanzado(Enemigo e, Celda c,int n) {
+	public void serAvanzado(Enemigo e, Celda c, int n) {
 		c.setEnemigo(e);
-		PersonajeGrafico pg= e.grafico();
-		switch(n){
-		case 0: {pg.arriba(); break;}
-		case 1: {pg.abajo(); break;}
-		case 2: {pg.izquierda(); break;}
-		case 3: {pg.derecha(); break;}
+		PersonajeGrafico pg = e.grafico();
+		switch (n) {
+		case 0: {
+			pg.arriba();
+			break;
+		}
+		case 1: {
+			pg.abajo();
+			break;
+		}
+		case 2: {
+			pg.izquierda();
+			break;
+		}
+		case 3: {
+			pg.derecha();
+			break;
+		}
 		}
 	}
 
