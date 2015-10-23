@@ -72,7 +72,7 @@ public class Piso implements EstadoCelda {
 	 */
 	public int explosionArriba(Celda c, int r) {
 		if (r != 0)
-			return c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
+			return c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
 					.explosionArriba(r - 1);
 		else
 			return 0;
@@ -84,7 +84,7 @@ public class Piso implements EstadoCelda {
 	 */
 	public int explosionAbajo(Celda c, int r) {
 		if (r != 0)
-			return c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
+			return c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
 					.explosionAbajo(r - 1);
 		else
 			return 0;

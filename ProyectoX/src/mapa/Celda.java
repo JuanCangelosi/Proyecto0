@@ -136,7 +136,7 @@ public class Celda {
 	 */
 
 	public void ponerBomba(Bomba bomb) {
-		if (b != null)
+		if (b == null)
 			estado.ocuparBomba(bomb, this);
 	}
 
@@ -169,10 +169,10 @@ public class Celda {
 			puntaje += e.morir();
 		if (bomberM != null)
 			bomberM.morir();
-		puntaje += m.getCelda(posX, posY + 1).explosionArriba(radio);
-		puntaje += m.getCelda(posX, posY - 1).explosionAbajo(radio);
-		puntaje += m.getCelda(posX - 1, posY).explosionIzq(radio);
-		puntaje += m.getCelda(posX + 1, posY).explosionDer(radio);
+		puntaje += m.getCelda(posX+1, posY).explosionArriba(radio);
+		puntaje += m.getCelda(posX-1, posY).explosionAbajo(radio);
+		puntaje += m.getCelda(posX, posY-1).explosionIzq(radio);
+		puntaje += m.getCelda(posX, posY+1).explosionDer(radio);
 		return puntaje;
 	}
 

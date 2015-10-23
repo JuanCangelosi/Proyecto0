@@ -24,8 +24,8 @@ public class BombaGrafica extends EntidadGrafica{
 	public void colocarBomba(){
 		try {
 			imageA = ImageIO.read(getClass().getResource("/Imagenes/bom1.png"));
-			imageB = ImageIO.read(getClass().getResource("/Imagenes/bom2.png"));
-			imageC = ImageIO.read(getClass().getResource("/Imagenes/bom3.png"));
+			/*imageB = ImageIO.read(getClass().getResource("/Imagenes/bom2.png"));
+			imageC = ImageIO.read(getClass().getResource("/Imagenes/bom3.png"));*/
 			image = imageA;
 		} catch (IOException e) {
 			e.printStackTrace();

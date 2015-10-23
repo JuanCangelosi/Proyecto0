@@ -7,20 +7,23 @@ package Bomba;
 
 import mapa.Celda;
 import Grafica.BombaGrafica;
-import java.lang.Thread;
+import Threads.*;
 
-public class Bomba extends Thread {
+public class Bomba{
 	// Atributos de Instancia
 	protected int radio;
 	protected Celda c;
 	protected AbstractFactory a;
 	protected BombaGrafica b;
+	protected ThreadBomba t;
 
 	// Constructor
 	public Bomba(Celda celda, AbstractFactory a) {
 		this.a = a;
 		c = celda;
 		radio = 1;
+		b=new BombaGrafica(celda.getPosX()*32,celda.getPosY()*32);
+		t=new ThreadBomba(this);
 	}
 
 	// Metodos
@@ -40,20 +43,9 @@ public class Bomba extends Thread {
 	public void activar() {
 		a.bombaMas();
 		b.colocarBomba();
-		run();
+		t.run();
 	}
 	
-	/**
-	 * Espera 5 segundos y luego explota la bomba
-	 */
-	public void run() {
-		try {
-			Thread.sleep(5000);
-			explotar();
-		} catch (InterruptedException e) {
-			
-		}
-	}
 
 	// Consultas
 

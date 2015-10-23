@@ -77,17 +77,18 @@ public class Bomberman extends Personaje {
 	 * 
 	 * @return Devuelve la bomba colocada en el mapa
 	 */
-	public void colocarBomba() {
-		Bomba b1;
+	public Bomba colocarBomba() {
+		Bomba b1=null;
 		if (especial) {
 			b1=a.darBomba(celda);
 			celda.setBomba(b1);
 		} else {
 			if (a.cantBombas() < cantBombas){
 				b1=a.darBomba(celda);
-				celda.setBomba(b1);
-			}
+				celda.ponerBomba(b1);
+			}	
 		}
+		return b1;
 	}
 
 	/**

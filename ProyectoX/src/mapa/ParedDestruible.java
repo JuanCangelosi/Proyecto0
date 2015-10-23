@@ -62,37 +62,25 @@ public class ParedDestruible implements EstadoCelda {
 	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
 	 */
 	public int explosionArriba(Celda c,int r){
-		int punt=destruir(c);
-		if(r!=0)
-		return punt+c.getMapa().getCelda(c.getPosX()+1,c.getPosY()).explosionArriba(r-1);
-		else return punt;
+		return destruir(c);
 	}
 	/**
 	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
 	 */
 	public int explosionAbajo(Celda c,int r){
-		int punt=destruir(c);
-		if(r!=0)
-		return punt+c.getMapa().getCelda(c.getPosX()-1,c.getPosY()).explosionAbajo(r-1);
-		else return punt;
+		return destruir(c);		
 	}
 	/**
 	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
 	 */
 	public int explosionIzq(Celda c,int r){
-		int punt=destruir(c);
-		if(r!=0)
-		return punt+c.getMapa().getCelda(c.getPosX(),c.getPosY()-1).explosionIzq(r-1);
-		else return punt;
+		return destruir(c);
 	}
 	/**
 	 * Se le envia a las celdas adyacentes el mensaje explosion con el radio disminuido
 	 */
 	public int explosionDer(Celda c,int r){
-		int punt=destruir(c);
-		if(r!=0)
-		return punt+c.getMapa().getCelda(c.getPosX(),c.getPosY()+1).explosionDer(r-1);
-		else return punt;
+		return destruir(c);
 	}
 	public void setImagen(EstadoGrafico e){
 		e.setParedDestruible();
