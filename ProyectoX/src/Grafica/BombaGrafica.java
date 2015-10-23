@@ -38,9 +38,8 @@ public class BombaGrafica extends EntidadGrafica{
 	    { 
 		public void actionPerformed(ActionEvent e) 
 			 {
-			    	girar = true;
-			    	image = imageA;
-			        
+			    	
+			    	cambiarImagen();
 	         } 
 		});
 			
@@ -51,8 +50,8 @@ public class BombaGrafica extends EntidadGrafica{
 	}
 	
 	private void cambiarImagen(){
+	
 		if(image == imageA){
-			
 			image = imageB;
 		}
 		else if(image == imageB){
@@ -61,6 +60,8 @@ public class BombaGrafica extends EntidadGrafica{
 		else if(image == imageC){
 			image = imageB;
 		}
+		
+		repaint();
 		
 	}
 	
@@ -78,8 +79,7 @@ public class BombaGrafica extends EntidadGrafica{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		if(image!=null){
-			if(girar)
-				cambiarImagen();
+
 			g.drawImage(image, 0, 0, this);
 		}
 		
