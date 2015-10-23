@@ -95,6 +95,10 @@ public class Bomba{
 		return c;
 	}
 	
+	/**
+	 * Devuelve el objeto grafico de la bomba
+	 * @return Retorna el objeto grafico de la bomba
+	 */
 	public BombaGrafica getBombaGrafica(){
 		return b;
 	}

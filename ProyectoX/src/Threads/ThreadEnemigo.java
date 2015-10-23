@@ -12,6 +12,9 @@ public class ThreadEnemigo extends Thread {
 		activado = true;
 	}
 
+	/**
+	 * Envia al enemigo a moverse una vez por segundo
+	 */
 	public void run() {
 		try {
 			while (activado == true) {
@@ -23,6 +26,9 @@ public class ThreadEnemigo extends Thread {
 		}
 	}
 	
+	/**
+	 * Detiene el thread en el momento que el enemigo muere
+	 */
 	public void detener(){
 		activado=false;
 		this.detener();
