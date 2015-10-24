@@ -14,7 +14,6 @@ public class ParedDestruible implements EstadoCelda {
 	 * La pared Destruible solo puede ser avanzada por bomberman si es especial
 	 */
 	public void serAvanzado(Bomberman b,PowerUp p, Celda c, int n){
-		System.out.println("pared dest");
 		if(b.esEspecial()){
 			c.setBomberman(b);
 			PersonajeGrafico pg= b.grafico();

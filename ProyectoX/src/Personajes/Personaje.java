@@ -36,7 +36,6 @@ public abstract class Personaje {
 	 * Mueve al personaje hacia arriba
 	 */
 	public void arriba() {
-		//System.out.println(celda.getPosX()+" "+celda.getPosY());
 		int x, y;
 		x = celda.getPosX();
 		y = celda.getPosY();

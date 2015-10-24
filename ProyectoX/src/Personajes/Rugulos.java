@@ -30,22 +30,18 @@ public class Rugulos extends Enemigo{
 		switch (n) {
 		case 1: {
 			arriba();
-			System.out.println("arriba");
 			break;
 		}
 		case 2: {
 			abajo();
-			System.out.println("abajo");
 			break;
 		}
 		case 3: {
 			izquierda();
-			System.out.println("izquierda");
 			break;
 		}
 		case 4: {
 			derecha();
-			System.out.println("derecha");
 			break;
 		}
 		}

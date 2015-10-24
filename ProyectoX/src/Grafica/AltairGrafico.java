@@ -10,21 +10,21 @@ public class AltairGrafico extends PersonajeGrafico{
 		super(x, y);
 		try {
 			
-			centro = ImageIO.read(getClass().getResource("/Imagenes/sirius-abajo1.png"));
-			abajo1 = ImageIO.read(getClass().getResource("/Imagenes/sirius-abajo2.png"));
-			abajo2 = ImageIO.read(getClass().getResource("/Imagenes/sirius-abajo3.png"));
+			centro = ImageIO.read(getClass().getResource("/Imagenes/altair3.png"));
+			abajo1 = ImageIO.read(getClass().getResource("/Imagenes/altair3.png"));
+			abajo2 = ImageIO.read(getClass().getResource("/Imagenes/altair3.png"));
 			
-			arriba1 = ImageIO.read(getClass().getResource("/Imagenes/sirius-arriba1.png"));
-			arriba2 = ImageIO.read(getClass().getResource("/Imagenes/sirius-arriba2.png"));
-			arriba3 = ImageIO.read(getClass().getResource("/Imagenes/sirius-arriba3.png"));
+			arriba1 = ImageIO.read(getClass().getResource("/Imagenes/altair1.png"));
+			arriba2 = ImageIO.read(getClass().getResource("/Imagenes/altair1.png"));
+			arriba3 = ImageIO.read(getClass().getResource("/Imagenes/altair1.png"));
 			
-			derecha1 = ImageIO.read(getClass().getResource("/Imagenes/sirius-derecha1.png"));
-			derecha2 = ImageIO.read(getClass().getResource("/Imagenes/sirius-derecha2.png"));
-			derecha3 = ImageIO.read(getClass().getResource("/Imagenes/sirius-derecha3.png"));
+			derecha1 = ImageIO.read(getClass().getResource("/Imagenes/altair4.png"));
+			derecha2 = ImageIO.read(getClass().getResource("/Imagenes/altair4.png"));
+			derecha3 = ImageIO.read(getClass().getResource("/Imagenes/altair4.png"));
 			
-			izquierda1 = ImageIO.read(getClass().getResource("/Imagenes/sirius-izquierda1.png"));
-			izquierda2 = ImageIO.read(getClass().getResource("/Imagenes/sirius-izquierda2.png"));
-			izquierda3 = ImageIO.read(getClass().getResource("/Imagenes/sirius-izquierda3.png"));
+			izquierda1 = ImageIO.read(getClass().getResource("/Imagenes/altair2.png"));
+			izquierda2 = ImageIO.read(getClass().getResource("/Imagenes/altair2.png"));
+			izquierda3 = ImageIO.read(getClass().getResource("/Imagenes/altair2.png"));
 			
 			
 		} catch (IOException e) {

@@ -14,13 +14,11 @@ public class Pared implements EstadoCelda {
 	 * Una pared no puede ser avanzada por nadie
 	 */
 	public void serAvanzado(Bomberman b,PowerUp p, Celda c, int n){
-		System.out.println("pared");
 	}
 	/**
 	 * Una pared no puede ser avanzada por nadie
 	 */
 	public void serAvanzado(Enemigo e, Celda c, int n){
-
 	}
 	/**
 	 * Una pared no puede ser destruida

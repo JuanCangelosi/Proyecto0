@@ -14,6 +14,7 @@ public class SpeedUp implements PowerUp {
 	
 	public int dar(Bomberman b){
 		b.setVelocidad(b.getVelocidad()*2);
+		System.out.println("SpeedUp otorgado, bomberman tiene el doble de velocidad");
 		eg.setVisible(false);
 		return 30;
 	}
