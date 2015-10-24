@@ -25,5 +25,9 @@ public class BombalityGrafico extends PowerupGrafico{
 		repaint();
 		
 	}
+	
+	public void ocultar() {
+		setVisible(false);
+	}
 
 }
