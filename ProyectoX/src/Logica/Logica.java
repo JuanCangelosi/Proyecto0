@@ -17,7 +17,7 @@ public class Logica {
 				if(nivel.getMapa().getCelda(i, j).getPowerUp()!=null){
 					nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica().setX(j*32);
 					nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica().setY(i*32);
-					gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica(),new Integer(10));
+					gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica(),new Integer(2));
 				}
 			}
 		}

@@ -1,5 +1,6 @@
 package Grafica;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public abstract class PowerupGrafico extends EntidadGrafica{
@@ -13,4 +14,11 @@ public abstract class PowerupGrafico extends EntidadGrafica{
 	}
 
 	public abstract void mostrar();
+	
+	public void paintComponent(Graphics g){
+		super.paintComponent(g);
+		if(imageA!=null){
+			g.drawImage(imageA, 0, 0, this);
+		}
+	}
 }
