@@ -14,6 +14,7 @@ public class Bombality implements PowerUp {
 	
 	public int dar(Bomberman b){
 		b.setCantBombas(b.cantBombas()*2);
+		eg.setVisible(false);
 		return 35;
 	}
 	

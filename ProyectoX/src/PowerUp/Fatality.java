@@ -16,6 +16,7 @@ public class Fatality implements PowerUp {
 	
 	public int dar(Bomberman b){
 		b.fabrica().duplicar();
+		eg.setVisible(false);
 		return 35;
 	}
 	

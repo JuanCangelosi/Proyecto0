@@ -13,6 +13,7 @@ public class Masacrality implements PowerUp {
 	}
 	public int dar(Bomberman b){
 		b.ponerEspecial(true);
+		eg.setVisible(false);
 		return 50;
 	}
 	public PowerupGrafico getEntidadGrafica(){

@@ -44,6 +44,7 @@ public class Juego extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
+				if(!logica.getNivel().getMapa().getHeroe().murio()){
 
 				if (arg0.getKeyCode() == KeyEvent.VK_UP)
 					logica.getNivel().getMapa().getHeroe().arriba();
@@ -64,8 +65,10 @@ public class Juego extends JFrame {
 					if (b1 != null) {
 						contentPane.add(b1.getBombaGrafica(), new Integer(2));
 					}
-
 				}
+
+			}
+				else logica.getNivel().getMapa().getHeroe().grafico().setVisible(false);
 			}
 		});
 
