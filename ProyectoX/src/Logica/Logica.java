@@ -2,11 +2,18 @@ package Logica;
 import mapa.Nivel;
 import Personajes.*;
 import Grafica.Juego;
-
+/**
+ * Control logico del juego, administracion de la coordinacion grafica-logica
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
 public class Logica {
 	protected Nivel nivel;
 	protected Juego gui;
-	
+	/**
+	 * Inicializa la logica recibiendo como parametro la gui, colocando las entidades graficas de las celdas en 
+	 * la misma
+	 *  @param gui el panel donde se colocaran las entidades graficas
+	 */
 	public Logica(Juego gui){
 		nivel=new Nivel();
 		this.gui = gui;
@@ -30,11 +37,17 @@ public class Logica {
 		
 				
 	}
-	
+	/**
+	 *Devuelve el nivel actual
+	 *@return el nivel que se creo
+	 */
 	public Nivel getNivel(){
 		return nivel;
 	}
-	
+	/**
+	 * Decide si el juego termino
+	 * @return true si bomberman murio y false caso contrario
+	 */
 	public boolean gameOver(){
 		return nivel.getMapa().getHeroe().murio();
 	}

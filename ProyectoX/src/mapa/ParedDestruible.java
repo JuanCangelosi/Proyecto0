@@ -7,6 +7,7 @@ import Grafica.*;
 /**
  * Clase ParedDestruible representa a las paredes que al explotar la bomba se destruyen y pueden ser atravesadas
  * por bomberman en modos dios y por Altair.
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class ParedDestruible implements EstadoCelda {
 

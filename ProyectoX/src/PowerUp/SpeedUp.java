@@ -4,6 +4,7 @@ import Grafica.*;
 /**
  * Clase Speedup es uno de los powerUps disponibles en el juego.
  * el metodo dar duplica la velocidad de bomberman y retorna el puntaje correspondiente.
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class SpeedUp implements PowerUp {
 	protected PowerupGrafico eg;

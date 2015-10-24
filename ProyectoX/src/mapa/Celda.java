@@ -7,6 +7,7 @@ import PowerUp.PowerUp;
 
 /**
  * Clase celda define los comportamientos de las celdas del mapa del juego.
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes 
  */
 public class Celda {
 	// atributos de instancia
@@ -23,6 +24,10 @@ public class Celda {
 	// constructor
 	/**
 	 * Crea una nueva celda con un estado e, un mapa m y sus coordenadas X e Y
+	 * @param es es el estado de la celda: piso, pared o pared destruible
+	 * @param map es el mapa al que pertenece la celda
+	 * @param x la posicion X de la celda en la matriz
+	 * @param y la posicion Y de la celda en la matriz
 	 */
 
 	public Celda(EstadoCelda es, Mapa map, int x, int y) {
@@ -38,8 +43,8 @@ public class Celda {
 	}
 
 	/**
-	 * Retorna el powerUp asociado a la celda, en caso de no poseer ninguno
-	 * retorna nulo
+	 * Retorna el powerUp asociado a la celda, en caso de no poseer ninguno retorna nulo
+	 * @returns null si celda no posee powerup y el powerup caso contrario.
 	 */
 
 	public PowerUp getPowerUp() {
@@ -48,6 +53,7 @@ public class Celda {
 
 	/**
 	 * Retorna el bomberMan que ocupa la celda, en caso de poseer retorna nulo
+	 * @return null si no hay un bomberman en la celda y el bomberman en caso contrario.
 	 */
 	public Bomberman getBomberMan() {
 		return bomberM;
@@ -55,6 +61,7 @@ public class Celda {
 
 	/**
 	 * Retorna el Enemigo que ocupa la celda, en caso de poseer retorna nulo
+	 * @return null si no hay enemigo en la celda, y el enemigo en caso contrario
 	 */
 	public Enemigo getEnemigo() {
 		return e;
@@ -62,6 +69,7 @@ public class Celda {
 
 	/**
 	 * Retorna la posicion X de la celda
+	 *  @return un entero que representa la posicion X
 	 */
 	public int getPosX() {
 		return posX;
@@ -69,6 +77,7 @@ public class Celda {
 
 	/**
 	 * Retorna la posicion Y de la celda
+	 * @return un entero que representa la posicion Y
 	 */
 	public int getPosY() {
 		return posY;
@@ -77,6 +86,7 @@ public class Celda {
 	/**
 	 * Setea, de ser posible a bomberman en la celda, liberando la celda en la
 	 * que estaba antes Si bm es nulo, entonces libera la celda.
+	 * @param bm el bomberman que se desea setear en la celda
 	 */
 	public void setBomberman(Bomberman bm) {
 		if (bm == null) {
@@ -103,6 +113,7 @@ public class Celda {
 	/**
 	 * Setea, de ser posible al enemigo en la celda, liberando la celda en la
 	 * que estaba antes Si bm es nulo, entonces libera la celda.
+	 * @param enem el enemigo que se desea setear en la celda.
 	 */
 	public void setEnemigo(Enemigo enem) {
 		if (enem == null) {
@@ -118,6 +129,8 @@ public class Celda {
 
 	/**
 	 * Intenta que el enemigo avance la celda basandose en su estado.
+	 * @param enem: el enemigo que desa avanzar
+	 * @param n: la posicion de avance 0=arriba, 1=abajo, 2= izq, 3= der
 	 */
 
 	public void avanzar(Enemigo enem,int n) {
@@ -127,6 +140,7 @@ public class Celda {
 	/**
 	 * Intenta colocar la bomba en la celda, controlando que no haya una bomba
 	 * en la misma y que la celda sea piso
+	 * @param bomb bomba que se desea setear en la celda
 	 */
 
 	public void ponerBomba(Bomba bomb) {
@@ -136,6 +150,7 @@ public class Celda {
 
 	/**
 	 * Coloca la bomba en la celda
+	 *   @param bomba a setear en la celda
 	 */
 
 	public void setBomba(Bomba bomb) {
@@ -144,6 +159,7 @@ public class Celda {
 
 	/**
 	 * Agrega un powerup a la celda
+	 * @param p powerup a setear
 	 */
 	public void setPowerUp(PowerUp p) {
 		this.p = p;
@@ -153,6 +169,7 @@ public class Celda {
 	 * La celda recibe un mensaje de explosion, matando a todo personaje de la
 	 * celda, liberando la bomba y enviando los mensajes explosion a las celdas
 	 * adyacentes. Retorna el puntaje obtenido de la explosion.
+	 * @return puntaje resultante de la explosion
 	 */
 	public int explotarBomba() {
 		int puntaje = 0;
@@ -181,23 +198,38 @@ public class Celda {
 
 	/**
 	 * Retorna el mapa asociado a la celda
+	 * @return mapa al que pertenece la celda
 	 */
 
 	public Mapa getMapa() {
 		return m;
 	}
+	/**
+	 * retorna la entidad grafica de la celda
+	 * @return entidad grafica de la celda
+	 */
 
 	public EstadoGrafico getEntidadGrafica() {
 		return estadog;
 	}
+	/**
+	 * activa la visibilidad del powerup
+	 */
 
 	public void mostrarPowerUp() {
 		p.getEntidadGrafica().mostrar();
 	}
+	/**
+	 * cambia el estado de la celda por un nuevo estado
+	 * @param estado que se le seteara a la celda
+	 */
 	public void setEstado(EstadoCelda est){
 		estado=est;
 	}
-	
+	/**
+	 * retorna la bomba de la celda
+	 * @return la bomba si es que posee una o nulo en caso contrario
+	 */
 	public Bomba getBomba(){
 		return b;
 	}

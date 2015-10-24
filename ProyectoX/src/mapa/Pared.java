@@ -7,6 +7,7 @@ import Grafica.*;
 /**
  * Clase Pared representa las paredes indestructibles del mapa, que no pueden ser atravesadas y bloquean las 
  * explosiones.
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Pared implements EstadoCelda {
 	

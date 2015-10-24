@@ -4,6 +4,7 @@ import Grafica.*;
 /**
  * Clase Masacrality es uno de los powerUps disponibles en el juego.
  * el metodo dar vuelve especial a bomberman (godmode) y retorna el puntaje del powerup.
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Masacrality implements PowerUp {
 	protected PowerupGrafico eg;

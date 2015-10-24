@@ -3,6 +3,7 @@ import Personajes.*;
 import Grafica.*;
 /**
  * Interfaz powerup
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public interface PowerUp {
 	/**

@@ -10,6 +10,7 @@ import PowerUp.PowerUp;
 import PowerUp.SpeedUp;
 /**
  * Clase Mapa representa al mapa del juego, que sera de 31x13 celdas.
+ * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Mapa {
 	//atributos
@@ -39,10 +40,15 @@ public class Mapa {
 	}
 	/**
 	 * Retorna la celda en las coordenadas x, y
+	 * @param x: la posicion x
+	 * @param y: la posicion y
 	 */
 	public Celda getCelda(int x, int y){
 		return celdas[x][y];
 	}
+	/**
+	 * Retorna el enemigo del arreglo de enemigos, entre 0 y 5
+	 */
 	
 	public Enemigo getEnemigo(int x){
 		return enemigos[x];
@@ -157,13 +163,23 @@ public class Mapa {
 		powerups[10]=new Masacrality();
 		return powerups;
 	}
+	/**
+	 * Retorna la cantidad de paredes destruibles que quedan en el mapa
+	 * @return cantidad de paredes destruibles que quedan en el mapa
+	 */
 	public int getCantParedesDest(){
 		return paredesDest;
 	}
+	/**
+	 * Decrementa la cantidad de paredes destruibles en 1
+	 */
 	public void decrementarPared(){
 		paredesDest--;
 	}
-	
+	/**
+	 * Retorna el bomberman del mapa
+	 * @return bomberman
+	 */
 	public Bomberman getHeroe() {
 		return bomberman;
 	}

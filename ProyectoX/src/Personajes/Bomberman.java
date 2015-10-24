@@ -18,7 +18,7 @@ public class Bomberman extends Personaje {
 		super(c);
 		p=new BombermanGrafico(celda.getPosX()*32,celda.getPosY()*32);
 		velocidad = 3;
-		especial = true;
+		especial = false;
 		cantBombas = 1;
 		a=new FabricaBomba();
 	}
@@ -61,6 +61,7 @@ public class Bomberman extends Personaje {
 	 * muere
 	 */
 	public void morir() {
+		System.out.println("bomberman murio, game over");
 		muerto = true;
 	}
 
