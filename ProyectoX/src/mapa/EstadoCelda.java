@@ -39,7 +39,7 @@ public interface EstadoCelda {
 	 * Se determinara que accion toma la celda frente a una explosion
 	 * @param c: celda a la que pertenece el estado
 	 * @param r: radio de la explosion
-	 * @para pos: direccion de la explosion 0=arriba, 1=abajo, 2= izq, 3=der
+	 * @param pos: direccion de la explosion 0=arriba, 1=abajo, 2= izq, 3=der
 	 * @return el puntaje de la explosion
 	 */
 	public int explosion(Celda c, int r, int pos);

@@ -1,13 +1,12 @@
 package mapa;
 import Bomba.Bomba;
-import PowerUp.*;
 import Personajes.*;
 import PowerUp.PowerUp;
 import Grafica.*;
 /**
  * Clase Pared representa las paredes indestructibles del mapa, que no pueden ser atravesadas y bloquean las 
  * explosiones.
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Pared implements EstadoCelda {
 	

@@ -1,9 +1,8 @@
 package mapa;
 
-import Personajes.*;
 /**
  * Clase nivel representa el nivel en que se esta jugando.
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Nivel {
 	protected int tiempo;

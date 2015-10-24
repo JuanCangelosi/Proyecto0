@@ -1,7 +1,6 @@
 package mapa;
 import java.util.Random;
 
-import Bomba.*;
 import Personajes.*;
 import PowerUp.Bombality;
 import PowerUp.Fatality;
@@ -10,7 +9,7 @@ import PowerUp.PowerUp;
 import PowerUp.SpeedUp;
 /**
  * Clase Mapa representa al mapa del juego, que sera de 31x13 celdas.
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Mapa {
 	//atributos
@@ -42,12 +41,15 @@ public class Mapa {
 	 * Retorna la celda en las coordenadas x, y
 	 * @param x: la posicion x
 	 * @param y: la posicion y
+	 * @return Retorna la celda en las coordenadas x, y
 	 */
 	public Celda getCelda(int x, int y){
 		return celdas[x][y];
 	}
 	/**
 	 * Retorna el enemigo del arreglo de enemigos, entre 0 y 5
+	 * @param x es el numero del enemigo en el arreglo
+	 * @return Retorna el enemigo del arreglo de enemigos, entre 0 y 5
 	 */
 	
 	public Enemigo getEnemigo(int x){

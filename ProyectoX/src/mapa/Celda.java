@@ -7,7 +7,7 @@ import PowerUp.PowerUp;
 
 /**
  * Clase celda define los comportamientos de las celdas del mapa del juego.
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes 
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes 
  */
 public class Celda {
 	// atributos de instancia
@@ -44,9 +44,8 @@ public class Celda {
 
 	/**
 	 * Retorna el powerUp asociado a la celda, en caso de no poseer ninguno retorna nulo
-	 * @returns null si celda no posee powerup y el powerup caso contrario.
+	 * @return null si celda no posee powerup y el powerup caso contrario.
 	 */
-
 	public PowerUp getPowerUp() {
 		return p;
 	}
@@ -104,8 +103,9 @@ public class Celda {
 
 	/**
 	 * Intenta que bomberman avance la celda basandose en su estado.
+	 * @param bm Bomberman
+	 * @param n es la direccion del movimiento; 0 para arriba, 1 para abajo, 2 para izquierda, 3 para derecha
 	 */
-
 	public void avanzar(Bomberman bm,int n) {
 		estado.serAvanzado(bm, p, this, n);
 	}
@@ -148,11 +148,11 @@ public class Celda {
 			estado.ocuparBomba(bomb, this);
 	}
 
+	
 	/**
 	 * Coloca la bomba en la celda
-	 *   @param bomba a setear en la celda
+	 * @param bomb bomba a setear en la celda
 	 */
-
 	public void setBomba(Bomba bomb) {
 		b = bomb;
 	}
@@ -221,7 +221,7 @@ public class Celda {
 	}
 	/**
 	 * cambia el estado de la celda por un nuevo estado
-	 * @param estado que se le seteara a la celda
+	 * @param est estado que se le seteara a la celda
 	 */
 	public void setEstado(EstadoCelda est){
 		estado=est;

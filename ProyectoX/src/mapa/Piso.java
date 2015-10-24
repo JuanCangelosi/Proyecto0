@@ -1,8 +1,6 @@
 package mapa;
 
 import Bomba.Bomba;
-import PowerUp.*;
-import Grafica.EntidadGrafica;
 import Grafica.PersonajeGrafico;
 import Personajes.*;
 import PowerUp.PowerUp;

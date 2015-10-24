@@ -1,3 +1,7 @@
+/**
+ * La clase activa el hilo de los enemigos para que comiencen a moverse por el mapa
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
 package Threads;
 
 import Personajes.*;

@@ -1,3 +1,7 @@
+/**
+ * La clase implementa el hilo para explotar la bomba 5 segundos despues de haber sido colocada
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
 package Threads;
 
 import Bomba.*;

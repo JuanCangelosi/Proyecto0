@@ -4,7 +4,7 @@ import Grafica.*;
 /**
  * Clase bombality es uno de los powerUps disponibles en el juego.
  * el metodo dar duplica la cantidad de bombas de bomberman y retorna el puntaje.
-* @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Bombality implements PowerUp {
 	protected PowerupGrafico eg;
