@@ -1,7 +1,6 @@
 package Grafica;
 
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class ParedDestruibleGrafico extends EstadoGrafico{
 	
@@ -9,11 +8,8 @@ public class ParedDestruibleGrafico extends EstadoGrafico{
 	
 	public ParedDestruibleGrafico(int x, int y) {
 		super(x, y);
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/paredDestruible.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/paredDestruible.png"));
 
 	}
 	

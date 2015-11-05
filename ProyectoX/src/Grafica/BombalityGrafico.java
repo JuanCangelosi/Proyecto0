@@ -1,33 +1,26 @@
 package Grafica;
 
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class BombalityGrafico extends PowerupGrafico{
 
+	private static final long serialVersionUID = 1L;
+
 	public BombalityGrafico(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public BombalityGrafico(){
 		super(0,0);
+		
 	}
 
 	public void mostrar() {
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/bombality.png"));
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/bombality.png"));	
 		repaint();
 		
-	}
-	
-	public void ocultar() {
-		setVisible(false);
 	}
 
 }

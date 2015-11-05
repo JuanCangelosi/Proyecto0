@@ -1,35 +1,30 @@
 package Grafica;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class AltairGrafico extends PersonajeGrafico{
 
+	private static final long serialVersionUID = 1L;
+
 	public AltairGrafico(int x, int y) {
 		super(x, y);
-		try {
 			
-			centro = ImageIO.read(getClass().getResource("/Imagenes/altair3.png"));
-			abajo1 = ImageIO.read(getClass().getResource("/Imagenes/altair3.png"));
-			abajo2 = ImageIO.read(getClass().getResource("/Imagenes/altair3.png"));
+		centro = new ImageIcon(getClass().getResource("/Imagenes/altair-abajo1.png"));
+		abajo1 = new ImageIcon(getClass().getResource("/Imagenes/altair-abajo2.png"));
+		abajo2 = new ImageIcon(getClass().getResource("/Imagenes/altair-abajo1.png"));
 			
-			arriba1 = ImageIO.read(getClass().getResource("/Imagenes/altair1.png"));
-			arriba2 = ImageIO.read(getClass().getResource("/Imagenes/altair1.png"));
-			arriba3 = ImageIO.read(getClass().getResource("/Imagenes/altair1.png"));
+		arriba1 = new ImageIcon(getClass().getResource("/Imagenes/altair-arriba1.png"));
+		arriba2 = new ImageIcon(getClass().getResource("/Imagenes/altair-arriba2.png"));
+		arriba3 = new ImageIcon(getClass().getResource("/Imagenes/altair-arriba1.png"));
 			
-			derecha1 = ImageIO.read(getClass().getResource("/Imagenes/altair4.png"));
-			derecha2 = ImageIO.read(getClass().getResource("/Imagenes/altair4.png"));
-			derecha3 = ImageIO.read(getClass().getResource("/Imagenes/altair4.png"));
+		derecha1 = new ImageIcon(getClass().getResource("/Imagenes/altair-derecha1.png"));
+		derecha2 = new ImageIcon(getClass().getResource("/Imagenes/altair-derecha2.png"));
+		derecha3 = new ImageIcon(getClass().getResource("/Imagenes/altair-derecha1.png"));
 			
-			izquierda1 = ImageIO.read(getClass().getResource("/Imagenes/altair2.png"));
-			izquierda2 = ImageIO.read(getClass().getResource("/Imagenes/altair2.png"));
-			izquierda3 = ImageIO.read(getClass().getResource("/Imagenes/altair2.png"));
+		izquierda1 = new ImageIcon(getClass().getResource("/Imagenes/altair-izquierda1.png"));
+		izquierda2 = new ImageIcon(getClass().getResource("/Imagenes/altair-izquierda2.png"));
+		izquierda3 = new ImageIcon(getClass().getResource("/Imagenes/altair-izquierda1.png"));	
 			
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 }

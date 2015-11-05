@@ -1,28 +1,25 @@
 package Grafica;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class MasacralityGrafico extends PowerupGrafico{
 
+	private static final long serialVersionUID = 1L;
+
 	public MasacralityGrafico(int x, int y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public MasacralityGrafico(){
 		super(0,0);
+		
 	}
 
 	public void mostrar() {
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/masacrality.png"));
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/masacrality.png"));
 		repaint();
+		
 	}
 
 }

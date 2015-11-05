@@ -1,8 +1,6 @@
 package Grafica;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class ParedGrafico extends EstadoGrafico{
 
@@ -10,11 +8,8 @@ public class ParedGrafico extends EstadoGrafico{
 	
 	public ParedGrafico(int x, int y) {
 		super(x, y);
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/pared2.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/pared2.png"));
 
 	}
 	

@@ -1,15 +1,12 @@
 package Grafica;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class EstadoGrafico extends EntidadGrafica{
 
 	private static final long serialVersionUID = 1L;
-	protected BufferedImage imageA;
+	protected ImageIcon imagen;
 	
 	public EstadoGrafico(int x, int y) {
 		super(x, y);
@@ -35,39 +32,27 @@ public class EstadoGrafico extends EntidadGrafica{
 	
 	
 	public void setPared(){
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/pared2.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/pared2.png"));
 		repaint();
 
 		
 	}
 	
 	public void setPiso(){
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/piso.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/piso.png"));
 		repaint();
 		
 	}
 	
 	public void setParedDestruible(){
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/paredDestruible.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/paredDestruible.png"));
+		repaint();
 		
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-	    g.drawImage(imageA, 0, 0, this);
+	    g.drawImage(imagen.getImage(), 0, 0, this);
 	    
 	}
 

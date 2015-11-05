@@ -1,8 +1,6 @@
 package Grafica;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class PisoGrafico extends EstadoGrafico{
 
@@ -10,11 +8,8 @@ public class PisoGrafico extends EstadoGrafico{
 	
 	public PisoGrafico(int x, int y) {
 		super(x, y);
-		try {
-			imageA = ImageIO.read(getClass().getResource("/Imagenes/piso.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
+		imagen = new ImageIcon(getClass().getResource("/Imagenes/piso.png"));
 		
 	}
 	
