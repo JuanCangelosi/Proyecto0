@@ -62,6 +62,7 @@ public class Bomberman extends Personaje {
 	 */
 	public void morir() {
 		System.out.println("bomberman murio, game over");
+		celda.setBomberman(null);
 		muerto = true;
 	}
 
