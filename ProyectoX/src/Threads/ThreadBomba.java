@@ -20,9 +20,9 @@ public class ThreadBomba extends Thread {
 	@Override
 	public void run() {
 		try {
-			sleep(5000);
+			sleep(4000);
 			b.explotar();
-			sleep(2000);
+			sleep(750);
 			b.getBombaGrafica().setVisible(false);
 		} catch (InterruptedException e) {
 
