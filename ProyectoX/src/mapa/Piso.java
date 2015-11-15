@@ -104,6 +104,7 @@ public class Piso implements EstadoCelda {
 			case 0: {
 				puntaje += c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
 						.explosion(r , pos);
+			
 				break;
 			}
 			case 1: {
