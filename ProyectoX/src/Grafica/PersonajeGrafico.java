@@ -34,6 +34,12 @@ public abstract class PersonajeGrafico extends EntidadGrafica{
 				direccion = 30;
 
 			setBounds(x,y,32,32);
+			
+			/*for(int i=4; i<= 32; i=i+4){
+			  t.sleep(100*velocidad);
+			  iconImage= pasito izquierda
+			  setBounds();
+			  } */
 		}
 	}
 	
