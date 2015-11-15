@@ -81,6 +81,11 @@ public class Piso implements EstadoCelda {
 				break;
 			}
 			}
+			try{
+				e.darThread().sleep(1000);}
+			catch(InterruptedException exc){
+				exc.printStackTrace();
+			}
 		}
 	}
 

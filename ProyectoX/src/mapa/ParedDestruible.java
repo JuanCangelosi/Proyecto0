@@ -43,6 +43,11 @@ public class ParedDestruible implements EstadoCelda {
 			case 2: {pg.izquierda(); break;}
 			case 3: {pg.derecha(); break;}
 			}
+			try{
+				e.darThread().sleep(1000);
+			}catch(InterruptedException exc){
+				
+			}
 		}
 		}
 	}
