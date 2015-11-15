@@ -2,12 +2,17 @@ package Grafica;
 
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EstadoGrafico extends EntidadGrafica{
 
 	private static final long serialVersionUID = 1L;
 	protected ImageIcon imagen,animacion;
 	protected boolean espared;
+	protected Timer timer;
+	
 	
 	public EstadoGrafico(int x, int y) {
 		super(x, y);
@@ -33,13 +38,48 @@ public class EstadoGrafico extends EntidadGrafica{
 		
 	}
 	
-	public void explosion(int i){
-		if(espared)
-			animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaPared.gif"));
-		if(i==0)
+	public void explotarPared(){
+		timer = new Timer(1500,new ActionListener () 
+		{ 
+		    public void actionPerformed(ActionEvent e) 
+		    {
+		    	animacion = null;
+		    	repaint();
+		        timer.stop();
+		    } 
+		});
+		
+		timer.start();
+		
+		setPiso();
+		animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaPared.gif"));
+		
+	
+	}
+	
+	public void explotarPiso(int i){
+		
+		timer = new Timer(1500,new ActionListener () 
+		{ 
+		    public void actionPerformed(ActionEvent e) 
+		    {
+		    	animacion = null;
+		    	repaint();
+		        timer.stop();
+		    } 
+		});
+		
+		timer.start();
+		
+
+		if(i==0){
 			animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaArriba.gif"));
-		else if(i==1)
+		}
+		else if(i==1){
 			animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaCostados.gif"));
+		}
+		
+		repaint();
 	}
 	
 	
