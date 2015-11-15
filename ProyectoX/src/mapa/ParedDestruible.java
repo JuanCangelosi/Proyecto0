@@ -68,7 +68,7 @@ public class ParedDestruible implements EstadoCelda {
 	public void ocuparBomba(Bomba b,Celda c){
 	}
 	public int explosion(Celda c, int r, int pos){
-		c.getEntidadGrafica().explosion(2);
+		c.getEntidadGrafica().explotarPared();
 		return destruir(c);
 	}
 	
