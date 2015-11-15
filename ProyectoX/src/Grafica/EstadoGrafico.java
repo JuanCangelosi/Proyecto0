@@ -33,7 +33,7 @@ public class EstadoGrafico extends EntidadGrafica{
 		
 	}
 	
-	public void explocion(int i){
+	public void explosion(int i){
 		if(espared)
 			animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaPared.gif"));
 		if(i==0)
