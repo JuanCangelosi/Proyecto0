@@ -64,7 +64,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		if(semaforo){
 			semaforo = false;
 			timer.start();
-
+			semaforo=true;
 		}
 			
 
@@ -106,6 +106,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		if(semaforo){
 			semaforo = false;
 			timer.start();
+			semaforo=true;
 		}
 
 	}
@@ -145,6 +146,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		if(semaforo){
 			semaforo = false;
 			timer.start();
+			semaforo=true;
 		}
 	}
 
@@ -183,6 +185,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		if(semaforo){
 			semaforo = false;
 			timer.start();
+			semaforo=true;
 		}
 	}
 
