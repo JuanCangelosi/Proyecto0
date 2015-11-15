@@ -54,7 +54,36 @@ public class EstadoGrafico extends EntidadGrafica{
 		setPiso();
 		animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaPared.gif"));
 		
+		repaint();
+		
 	
+	}
+	
+	public void explotarBorde(int pos){
+		
+		timer = new Timer(1500,new ActionListener () 
+		{ 
+		    public void actionPerformed(ActionEvent e) 
+		    {
+		    	animacion = null;
+		    	repaint();
+		        timer.stop();
+		    } 
+		});
+		
+		timer.start();
+		
+
+		if(pos==0 || pos ==1){
+			animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaArriba.gif"));
+		}
+		else if(pos==2 || pos==3){
+			animacion = new ImageIcon(getClass().getResource("/Imagenes/BombaCostados.gif"));
+		}
+		
+		repaint();
+		
+		
 	}
 	
 	public void explotarPiso(int i){

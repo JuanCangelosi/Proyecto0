@@ -132,7 +132,7 @@ public class Piso implements EstadoCelda {
 			}
 		}
 		else{
-			c.getEntidadGrafica().explosionBorde(pos);
+			c.getEntidadGrafica().explotarBorde(pos);
 		}
 		return puntaje;
 	}
