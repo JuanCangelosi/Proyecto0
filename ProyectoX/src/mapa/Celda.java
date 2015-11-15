@@ -188,17 +188,17 @@ public class Celda {
 	}
 	public int explosion(int r, int pos){
 		int puntaje = 0;
+		if(pos==0 || pos==1){
+			estadog.explosion(0);
+		}
+		else{
+			estadog.explosion(1);
+		}
 		if (e != null)
 			puntaje += e.morir();
 		if (bomberM != null)
 			bomberM.morir();
 		puntaje+=estado.explosion(this, r-1,pos);
-		if(pos==0 || pos==1){
-			estadog.explosion(0);
-		}
-		else{
-			estadog.explosion(1;)
-		}
 		return puntaje;
 	}
 
