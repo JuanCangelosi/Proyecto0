@@ -102,27 +102,31 @@ public class Piso implements EstadoCelda {
 		if (r != 0) {
 			switch (pos) {
 			case 0: {
+				c.getEntidadGrafica().explotarPiso(0);
 				puntaje += c.getMapa().getCelda(c.getPosX() - 1, c.getPosY())
 						.explosion(r , pos);
-				c.getEntidadGrafica().explotarPiso(0);
+				
 				break;
 			}
 			case 1: {
+				c.getEntidadGrafica().explotarPiso(0);
 				puntaje += c.getMapa().getCelda(c.getPosX() + 1, c.getPosY())
 						.explosion(r , pos);
-				c.getEntidadGrafica().explotarPiso(0);
+				
 				break;
 			}
 			case 2: {
+				c.getEntidadGrafica().explotarPiso(1);
 				puntaje += c.getMapa().getCelda(c.getPosX(), c.getPosY() - 1)
 						.explosion(r , pos);
-				c.getEntidadGrafica().explotarPiso(1);
+				
 				break;
 			}
 			case 3: {
+				c.getEntidadGrafica().explotarPiso(1);
 				puntaje += c.getMapa().getCelda(c.getPosX(), c.getPosY() + 1)
 						.explosion(r , pos);
-				c.getEntidadGrafica().explotarPiso(1);
+			
 				break;
 			}
 			}
