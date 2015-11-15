@@ -58,7 +58,6 @@ public class ParedDestruible implements EstadoCelda {
 	public int destruir(Celda c){
 		c.setEstado(new Piso());
 		c.getMapa().decrementarPared();
-		c.getEntidadGrafica().setPiso();
 		if(c.getPowerUp()!=null)
 			c.mostrarPowerUp();
 		return 10;
@@ -69,12 +68,7 @@ public class ParedDestruible implements EstadoCelda {
 	public void ocuparBomba(Bomba b,Celda c){
 	}
 	public int explosion(Celda c, int r, int pos){
-		if(pos==0 || pos==1){
-			c.getEntidadGrafica().explosion(0);
-		}
-		else{
-			c.getEntidadGrafica().explosion(1);
-		}
+		c.getEntidadGrafica().explosion(2);
 		return destruir(c);
 	}
 	
