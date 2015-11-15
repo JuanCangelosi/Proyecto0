@@ -12,7 +12,7 @@ public class BombaGrafica extends EntidadGrafica{
 	public BombaGrafica(int x, int y) {
 		super(x, y);
 		bomba     = new ImageIcon(getClass().getResource("/Imagenes/bomba.gif"));
-		explosion = new ImageIcon(getClass().getResource("/Imagenes/fire-middle1.png"));
+		explosion = new ImageIcon(getClass().getResource("/Imagenes/BombaCentro.gif"));
 		imagen    = null;
 
 	}
