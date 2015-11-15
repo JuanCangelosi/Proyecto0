@@ -30,7 +30,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	public void derecha() {
 
-		timer = new Timer(10, new ActionListener() {
+		timer = new Timer(100, new ActionListener() {
 			int contador = 0;
 
 			public void actionPerformed(ActionEvent e) {
@@ -72,7 +72,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	public void izquierda() {
 
-		timer = new Timer(10, new ActionListener() {
+		timer = new Timer(100, new ActionListener() {
 			int contador = 0;
 
 			public void actionPerformed(ActionEvent e) {
@@ -113,7 +113,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	public void arriba() {
 
-		timer = new Timer(10, new ActionListener() {
+		timer = new Timer(100, new ActionListener() {
 			int contador = 0;
 
 			public void actionPerformed(ActionEvent e) {
@@ -152,7 +152,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	public void abajo() {
 
-		timer = new Timer(10, new ActionListener() {
+		timer = new Timer(100, new ActionListener() {
 			int contador = 0;
 
 			public void actionPerformed(ActionEvent e) {

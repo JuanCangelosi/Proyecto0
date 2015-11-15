@@ -20,15 +20,16 @@ public class ThreadEnemigo extends Thread {
 	 * Envia al enemigo a moverse una vez por segundo
 	 */
 	public void run() {
-			while (activado == true) {
+		while (activado == true) {
+			if (e.semaforo())
 				e.loop();
-			}
+		}
 	}
-	
+
 	/**
 	 * Detiene el thread en el momento que el enemigo muere
 	 */
-	public void detener(){
-		activado=false;
+	public void detener() {
+		activado = false;
 	}
 }
