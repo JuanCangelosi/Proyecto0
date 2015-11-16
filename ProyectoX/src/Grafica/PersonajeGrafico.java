@@ -1,6 +1,7 @@
 package Grafica;
 
 import java.awt.Graphics;
+import Threads.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,27 +17,30 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	private static final long serialVersionUID = 1L;
 	private static final int recorrido = 4;
 	private boolean semaforo;
+	private int vel;
+	
 
 	public PersonajeGrafico(int x, int y) {
 		super(x, y);
 		direccion = 0;
 		muerto    = 0;
 		semaforo  = true;
+		vel=1;
+	}
+	public void setVelocidad(int v){
+		vel=v;
 	}
 	
 	public boolean semaforo(){
 		return semaforo;
 	}
-
+	
 	public void derecha() {
-
-		timer = new Timer(100, new ActionListener() {
-			int contador = 0;
-
-			public void actionPerformed(ActionEvent e) {
-				
-				x        += recorrido;
-				contador += recorrido;
+		for(int i = 0; i < 32; i += vel){
+			try{
+			Thread.sleep(100-2*vel);
+			}catch(Exception e){}
+			x+=vel;
 				if (direccion != 30 && direccion != 31 && direccion != 32)
 					direccion = 30;
 				else if (direccion == 30)
@@ -51,35 +55,16 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 				setBounds(x, y, 32, 32);
 
 				repaint();
-
-				if (contador >= 32) {
-					contador = 0;
-					//semaforo = true;
-					timer.stop();
-					
-				}
-			}
-		});
-
-		if(semaforo){
-			semaforo = false;
-			timer.start();
-			semaforo=true;
 		}
-			
 
 	}
 
 	public void izquierda() {
-
-		timer = new Timer(100, new ActionListener() {
-			int contador = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				x        -= recorrido;
-				contador += recorrido;
-
+		for(int i = 0; i < 32; i += vel){
+			try{
+			Thread.sleep(100-2*vel);
+			}catch(Exception e){}
+			x-=vel;
 				if (direccion != 10 && direccion != 11 && direccion != 12)
 					direccion = 10;
 
@@ -95,31 +80,16 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 				setBounds(x, y, 32, 32);
 
 				repaint();
-
-				if (contador >= 32) {
-					contador = 0;
-					//semaforo = true;
-					timer.stop();
-				}
-			}
-		});
-		if(semaforo){
-			semaforo = false;
-			timer.start();
-			semaforo=true;
 		}
 
 	}
 
 	public void arriba() {
-
-		timer = new Timer(100, new ActionListener() {
-			int contador = 0;
-
-			public void actionPerformed(ActionEvent e) {
-
-				y -= recorrido;
-				contador += recorrido;
+		for(int i = 0; i < 32; i += vel){
+			try{
+			Thread.sleep(100-2*vel);
+			}catch(Exception e){}
+			y-=vel;
 				if (direccion != 40 && direccion != 41 && direccion != 42)
 					direccion = 40;
 
@@ -134,31 +104,15 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 				setBounds(x, y, 32, 32);
 				repaint();
-
-				if (contador >= 32) {
-					contador = 0;
-					//semaforo = true;
-					timer.stop();
-				}
-			}
-		});
-
-		if(semaforo){
-			semaforo = false;
-			timer.start();
-			semaforo=true;
 		}
 	}
 
 	public void abajo() {
-
-		timer = new Timer(100, new ActionListener() {
-			int contador = 0;
-
-			public void actionPerformed(ActionEvent e) {
-				
-				y += recorrido;
-				contador += recorrido;
+		for(int i = 0; i < 32; i += vel){
+			try{
+			Thread.sleep(100-2*vel);
+			}catch(Exception e){}
+			y+=vel;
 				if (direccion != 0 && direccion != 20 && direccion != 21)
 					direccion = 0;
 
@@ -173,20 +127,8 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 				setBounds(x, y, 32, 32);
 				repaint();
-
-				if (contador >= 32) {
-					contador = 0;
-					//semaforo = true;
-					timer.stop();
-				}
-			}
-		});
-
-		if(semaforo){
-			semaforo = false;
-			timer.start();
-			semaforo=true;
 		}
+				
 	}
 
 	public void morir() {

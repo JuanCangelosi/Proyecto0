@@ -17,6 +17,7 @@ public class Sirius extends Enemigo {
 		puntaje = 50;
 		especial = false;
 		velocidad = 3;
+		p.setVelocidad(velocidad);
 	}
 
 	// Metodos

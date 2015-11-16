@@ -21,6 +21,7 @@ public class Bomberman extends Personaje {
 		especial = false;
 		cantBombas = 1;
 		a=new FabricaBomba();
+		p.setVelocidad(velocidad);
 	}
 
 	// Metodos
@@ -32,6 +33,7 @@ public class Bomberman extends Personaje {
 	 */
 	public void setVelocidad(int n) {
 		velocidad = n;
+		p.setVelocidad(n);
 	}
 
 	/**

@@ -16,6 +16,7 @@ public class Rugulos extends Enemigo{
 		puntaje = 15;
 		especial = false;
 		velocidad = 1;
+		p.setVelocidad(velocidad);
 	}
 
 	// Metodos

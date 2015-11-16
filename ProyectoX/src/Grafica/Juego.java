@@ -3,10 +3,12 @@ package Grafica;
 import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
 import Logica.Logica;
+import Threads.ThreadListener;
 import Bomba.*;
 import mapa.*;
 
@@ -15,6 +17,9 @@ public class Juego extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JLayeredPane contentPane;
 	private Logica logica;
+	private boolean semaforo;
+	private int dir;
+	private ThreadListener t;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -36,6 +41,10 @@ public class Juego extends JFrame {
 		setBounds(100, 100, 992, 480);
 		setLocationRelativeTo(null);
 		setLayout(null);
+		semaforo=true;
+		dir=0;
+		t=new ThreadListener(this);
+		t.start();
 
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
@@ -44,33 +53,62 @@ public class Juego extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-				if(!logica.gameOver()){
-
-				if (arg0.getKeyCode() == KeyEvent.VK_UP)
-					logica.getNivel().getMapa().getHeroe().arriba();
-
-				else if (arg0.getKeyCode() == KeyEvent.VK_DOWN)
-					logica.getNivel().getMapa().getHeroe().abajo();
-
-				else if (arg0.getKeyCode() == KeyEvent.VK_LEFT)
-					logica.getNivel().getMapa().getHeroe().izquierda();
-
-				else if (arg0.getKeyCode() == KeyEvent.VK_RIGHT)
-					logica.getNivel().getMapa().getHeroe().derecha();
-
-				else if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-					logica.getNivel().getMapa().getHeroe().colocarBomba();
-					Celda c=logica.getNivel().getMapa().getHeroe().getCelda();
-					Bomba b1=logica.getNivel().getMapa().getCelda(c.getPosX(), c.getPosY()).getBomba();
-					if (b1 != null) {
-						contentPane.add(b1.getBombaGrafica(), new Integer(2));
-					}
+				
+				if(!logica.gameOver() && semaforo){
+				if (arg0.getKeyCode() == KeyEvent.VK_UP){
+					dir=0;
+					semaforo=false;
 				}
 
-			}
-				else logica.getNivel().getMapa().getHeroe().grafico().setVisible(false);
+				else if (arg0.getKeyCode() == KeyEvent.VK_DOWN){
+					dir=1;
+					semaforo=false;
+				}
+				else if (arg0.getKeyCode() == KeyEvent.VK_LEFT){
+					dir=2;
+					semaforo=false;
+				}
+				else if (arg0.getKeyCode() == KeyEvent.VK_RIGHT){
+					dir=3;
+					semaforo=false;
+					}
+				}
+				if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+					dir=4;
+					semaforo=false;
+				}
 			}
 		});
 
+	}
+	public void bloqueado(boolean b){
+		semaforo=!b;
+	}
+	public boolean estaBloqueado(){
+		return !semaforo;
+	}
+	public void mover(){
+		switch(dir){
+		case 0: {logica.getNivel().getMapa().getHeroe().arriba();
+				break;
+		}
+		case 1:{logica.getNivel().getMapa().getHeroe().abajo();
+			break;
+		}
+		case 2:{logica.getNivel().getMapa().getHeroe().izquierda();
+		break;
+		}
+		case 3:{logica.getNivel().getMapa().getHeroe().derecha();
+			break;
+		}
+		case 4:{
+			logica.getNivel().getMapa().getHeroe().colocarBomba();
+			Celda c=logica.getNivel().getMapa().getHeroe().getCelda();
+			Bomba b1=logica.getNivel().getMapa().getCelda(c.getPosX(), c.getPosY()).getBomba();
+			if (b1 != null) {
+				contentPane.add(b1.getBombaGrafica(), new Integer(2));
+			}
+		}
+	}
 	}
 }

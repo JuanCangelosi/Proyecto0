@@ -16,6 +16,7 @@ public class Altair extends Enemigo {
 		puntaje = 20;
 		especial = true;
 		velocidad = 1;
+		p.setVelocidad(velocidad);
 	}
 
 	// Metodos
