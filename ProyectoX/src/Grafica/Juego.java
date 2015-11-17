@@ -21,24 +21,11 @@ public class Juego extends JFrame {
 	private int dir;
 	private ThreadListener t;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Juego frame = new Juego();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	public Juego() {
 
 		setTitle("Bomberman");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 992, 480);
+		setBounds(100, 100, 1010, 460);
 		setLocationRelativeTo(null);
 		setLayout(null);
 		semaforo=true;
