@@ -4,6 +4,7 @@
  */
 package Personajes;
 
+import java.util.Random;
 
 import mapa.Celda;
 import Grafica.SiriusGrafico;
@@ -13,7 +14,7 @@ public class Sirius extends Enemigo {
 	// Constructor
 	public Sirius(Celda c) {
 		super(c);
-		p=new SiriusGrafico(celda.getPosY()*32,celda.getPosX()*32);
+		p = new SiriusGrafico(celda.getPosY() * 32, celda.getPosX() * 32);
 		puntaje = 50;
 		especial = false;
 		velocidad = 3;
@@ -27,6 +28,63 @@ public class Sirius extends Enemigo {
 	 * ataques
 	 */
 	public void loop() {
-		/* A completar */
+		int xB = celda.getMapa().getHeroe().getCelda().getPosX();
+		int yB = celda.getMapa().getHeroe().getCelda().getPosY();
+
+		int x = celda.getPosX();
+		int y = celda.getPosY();
+		if (!celda.getMapa().getHeroe().murio()) {
+			if (xB < x && yB < y) {
+				arriba();
+				if (celda.getPosX() == x && celda.getPosY() == y) {
+					izquierda();
+				}
+			} else {
+				if (xB > x && yB > y) {
+					abajo();
+					if (celda.getPosX() == x && celda.getPosY() == y) {
+						derecha();
+					}
+				} else {
+					if (xB < x)
+						izquierda();
+					else {
+						if (yB < y)
+							arriba();
+						else {
+							if (xB > x)
+								derecha();
+							else {
+								if (yB > y)
+									abajo();
+							}
+						}
+					}
+				}
+			}
+		}
+		if (celda.getPosX() == x && celda.getPosY() == y) {
+			Random rnd = new Random();
+			int n = rnd.nextInt(4) + 1;
+			switch (n) {
+			case 1: {
+				arriba();
+				break;
+			}
+			case 2: {
+				abajo();
+				break;
+			}
+			case 3: {
+				izquierda();
+				break;
+			}
+			case 4: {
+				derecha();
+				break;
+			}
+			}
+		}
 	}
+
 }
