@@ -11,21 +11,11 @@ public class ThreadListener extends Thread {
 
 	public void run() {
 		while (true) {
-			try {
-				sleep(75);
-				if (gui.estaBloqueado()) {
-					if (!gui.getLogica().getNivel().getMapa().getHeroe()
-							.murio()) {
-						gui.mover();
-						gui.bloqueado(false);
-					} else
-						this.stop();
-				}
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (!gui.estaBloqueado()) {
+				System.out.println("entre");
+				gui.mover();
+				gui.bloqueado(false);
 			}
-
 		}
 	}
 }

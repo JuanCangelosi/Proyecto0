@@ -28,78 +28,87 @@ public class Juego extends JFrame {
 		setBounds(100, 100, 1010, 460);
 		setLocationRelativeTo(null);
 		setLayout(null);
-		semaforo=true;
-		dir=0;
-		t=new ThreadListener(this);
-		t.start();
+		semaforo = true;
+		dir = 5;
 
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
 		logica = new Logica(this);
+		t = new ThreadListener(this);
+		t.start();
 
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
-				
-				if(!logica.gameOver() && semaforo){
-				if (arg0.getKeyCode() == KeyEvent.VK_UP){
-					dir=0;
-					semaforo=false;
-				}
 
-				else if (arg0.getKeyCode() == KeyEvent.VK_DOWN){
-					dir=1;
-					semaforo=false;
-				}
-				else if (arg0.getKeyCode() == KeyEvent.VK_LEFT){
-					dir=2;
-					semaforo=false;
-				}
-				else if (arg0.getKeyCode() == KeyEvent.VK_RIGHT){
-					dir=3;
-					semaforo=false;
+				if (!logica.gameOver()) {
+					if (semaforo) {
+						if (arg0.getKeyCode() == KeyEvent.VK_UP) {
+							dir = 0;
+							semaforo = false;
+						}
+
+						else if (arg0.getKeyCode() == KeyEvent.VK_DOWN) {
+							dir = 1;
+							semaforo = true;
+						} else if (arg0.getKeyCode() == KeyEvent.VK_LEFT) {
+							dir = 2;
+							semaforo = true;
+						} else if (arg0.getKeyCode() == KeyEvent.VK_RIGHT) {
+							dir = 3;
+							semaforo = true;
+						}
 					}
-				}
-				if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-					dir=4;
-					semaforo=false;
+
+					if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+						dir = 4;
+						semaforo = true;
+					}
 				}
 			}
 		});
 
 	}
-	public void bloqueado(boolean b){
-		semaforo=!b;
+
+	public void bloqueado(boolean b) {
+		semaforo = !b;
 	}
-	public boolean estaBloqueado(){
+
+	public boolean estaBloqueado() {
 		return !semaforo;
 	}
-	public void mover(){
-		switch(dir){
-		case 0: {logica.getNivel().getMapa().getHeroe().arriba();
-				break;
-		}
-		case 1:{logica.getNivel().getMapa().getHeroe().abajo();
+
+	public void mover() {
+		switch (dir) {
+		case 0: {
+			logica.getNivel().getMapa().getHeroe().arriba();
 			break;
 		}
-		case 2:{logica.getNivel().getMapa().getHeroe().izquierda();
-		break;
-		}
-		case 3:{logica.getNivel().getMapa().getHeroe().derecha();
+		case 1: {
+			logica.getNivel().getMapa().getHeroe().abajo();
 			break;
 		}
-		case 4:{
+		case 2: {
+			logica.getNivel().getMapa().getHeroe().izquierda();
+			break;
+		}
+		case 3: {
+			logica.getNivel().getMapa().getHeroe().derecha();
+			break;
+		}
+		case 4: {
 			logica.getNivel().getMapa().getHeroe().colocarBomba();
-			Celda c=logica.getNivel().getMapa().getHeroe().getCelda();
-			Bomba b1=logica.getNivel().getMapa().getCelda(c.getPosX(), c.getPosY()).getBomba();
+			Celda c = logica.getNivel().getMapa().getHeroe().getCelda();
+			Bomba b1 = logica.getNivel().getMapa()
+					.getCelda(c.getPosX(), c.getPosY()).getBomba();
 			if (b1 != null) {
 				contentPane.add(b1.getBombaGrafica(), new Integer(2));
 			}
+			break;
 		}
-	}
-	}
-	
-	public Logica getLogica(){
-		return logica;
+		case 5: {// Mantenga al bomberman quieto
+		}
+		}
+		dir = 5;
 	}
 }
