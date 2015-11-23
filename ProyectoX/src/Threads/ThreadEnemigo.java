@@ -21,8 +21,7 @@ public class ThreadEnemigo extends Thread {
 	 */
 	public void run() {
 		while (activado == true) {
-			if (e.semaforo())
-				e.loop();
+			e.loop();
 		}
 	}
 

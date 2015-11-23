@@ -98,4 +98,8 @@ public class Juego extends JFrame {
 		}
 	}
 	}
+	
+	public Logica getLogica(){
+		return logica;
+	}
 }

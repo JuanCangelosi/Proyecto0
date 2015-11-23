@@ -13,7 +13,6 @@ public abstract class Personaje {
 	protected int velocidad;
 	protected boolean muerto;
 	protected boolean especial;
-	protected boolean semaforo;
 	protected Celda celda;
 	protected PersonajeGrafico p;
 
@@ -21,7 +20,6 @@ public abstract class Personaje {
 	protected Personaje(Celda c) {
 		celda = c;
 		muerto = false;
-		semaforo = true;
 	}
 
 	// Metodos abstractos
@@ -38,60 +36,44 @@ public abstract class Personaje {
 	 * Mueve al personaje hacia arriba
 	 */
 	public void arriba() {
-		if (semaforo) {
-			semaforo = false;
 			int x, y;
 			x = celda.getPosX();
 			y = celda.getPosY();
 			Celda c = celda.getMapa().getCelda(x - 1, y);
 			ocupar(c, 0);
-			semaforo = true;
-		}
 	}
 
 	/**
 	 * Mueve al personaje hacia abajo
 	 */
 	public void abajo() {
-		if (semaforo) {
-			semaforo = false;
 			int x, y;
 			x = celda.getPosX();
 			y = celda.getPosY();
 			Celda c = celda.getMapa().getCelda(x + 1, y);
 			ocupar(c, 1);
-			semaforo = true;
-		}
 	}
 
 	/**
 	 * Mueve al personaje hacia la izquierda
 	 */
 	public void izquierda() {
-		if (semaforo) {
-			semaforo = false;
 			int x, y;
 			x = celda.getPosX();
 			y = celda.getPosY();
 			Celda c = celda.getMapa().getCelda(x, y - 1);
 			ocupar(c, 2);
-			semaforo = true;
-		}
 	}
 
 	/**
 	 * Mueve al personaje hacia la derecha
 	 */
 	public void derecha() {
-		if (semaforo) {
-			semaforo = false;
 			int x, y;
 			x = celda.getPosX();
 			y = celda.getPosY();
 			Celda c = celda.getMapa().getCelda(x, y + 1);
 			ocupar(c, 3);
-			semaforo = true;
-		}
 	}
 
 	/**
@@ -141,9 +123,5 @@ public abstract class Personaje {
 	 */
 	public PersonajeGrafico grafico() {
 		return p;
-	}
-
-	public boolean semaforo() {
-		return semaforo;
 	}
 }
