@@ -11,8 +11,7 @@ public class Nivel {
 	protected Mapa mapa;
 
 	public Nivel() {
-		mapa = new Mapa();
-		
+		mapa = new Mapa(this);
 		puntaje=0;
 		
 	}
@@ -38,5 +37,8 @@ public class Nivel {
 	 */
 	public boolean gano() {
 		return mapa.getCantParedesDest()==0;
+	}
+	public int getPuntaje(){
+		return puntaje;
 	}
 }

@@ -13,6 +13,7 @@ import PowerUp.SpeedUp;
  */
 public class Mapa {
 	//atributos
+	protected Nivel n;
 	protected Celda[][] celdas;
 	protected Enemigo[] enemigos;
 	protected int paredesDest=125;
@@ -21,7 +22,8 @@ public class Mapa {
 	/**
 	 * Crea un nuevo Mapa de 31x13, inicializando los bordes, las paredes y el piso
 	 */
-	public Mapa(){
+	public Mapa(Nivel niv){
+		n=niv;
 		celdas=new Celda[13][31];
 		enemigos=new Enemigo[6];
 		inicializarBordes();
@@ -184,6 +186,9 @@ public class Mapa {
 	 */
 	public Bomberman getHeroe() {
 		return bomberman;
+	}
+	public Nivel getNivel(){
+		return n;
 	}
 }
 

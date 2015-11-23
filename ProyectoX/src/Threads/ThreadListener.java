@@ -12,7 +12,7 @@ public class ThreadListener extends Thread {
 	public void run() {
 		while (true) {
 			try {
-				sleep(100);
+				sleep(75);
 				if (gui.estaBloqueado()) {
 					if (!gui.getLogica().getNivel().getMapa().getHeroe()
 							.murio()) {
