@@ -35,15 +35,43 @@ public class Sirius extends Enemigo {
 		int y = celda.getPosY();
 		if (!celda.getMapa().getHeroe().murio()) {
 			if (xB < x && yB < y) {
-				arriba();
-				if (celda.getPosX() == x && celda.getPosY() == y) {
+				Random rnd = new Random();
+				int n = rnd.nextInt(2) + 1;
+				switch (n) {
+				case 1: {
+					arriba();
+					break;
+				}
+				case 2: {
 					izquierda();
+					break;
+				}
+				}
+				if (celda.getPosX() == x && celda.getPosY() == y) {
+					if (n == 1)
+						izquierda();
+					else
+						arriba();
 				}
 			} else {
 				if (xB > x && yB > y) {
-					abajo();
-					if (celda.getPosX() == x && celda.getPosY() == y) {
+					Random rnd = new Random();
+					int n = rnd.nextInt(2) + 1;
+					switch (n) {
+					case 1: {
+						abajo();
+						break;
+					}
+					case 2: {
 						derecha();
+						break;
+					}
+					}
+					if (celda.getPosX() == x && celda.getPosY() == y) {
+						if (n == 1)
+							derecha();
+						else
+							abajo();
 					}
 				} else {
 					if (xB < x)
