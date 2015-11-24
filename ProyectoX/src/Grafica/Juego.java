@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
 import Logica.Logica;
+import Menu.Menu;
 import Threads.ThreadListener;
 import Bomba.*;
 import mapa.*;
@@ -18,10 +19,24 @@ public class Juego extends JFrame {
 	private JLayeredPane contentPane;
 	private Logica logica;
 	private boolean semaforo;
+	private Menu menu;
 	private int dir;
 	private ThreadListener t;
 	private ThreadMusica musica;
 
+	public static void main(String[] args) {
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						Juego frame = new Juego();
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+	}
+	
 	public Juego() {
 
 		setTitle("Bomberman");
@@ -29,28 +44,28 @@ public class Juego extends JFrame {
 		setBounds(100, 100, 1010, 460);
 		setLocationRelativeTo(null);
 		setLayout(null);
-		semaforo = true;
-		dir = 5;
 
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
-		logica = new Logica(this);
-		t = new ThreadListener(this);
+		
+		menu     = new Menu(this);
+		t        = new ThreadListener(this);
+		musica   = new ThreadMusica();
+		
 		t.start();
-		musica=new ThreadMusica();
 		musica.start();
-
+		
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 
-				if (!logica.gameOver()) {
+				if (logica!=null && !logica.gameOver()) {
 					if (semaforo) {
 						if (arg0.getKeyCode() == KeyEvent.VK_UP) {
+							System.out.println("HOLA");
 							dir = 0;
 							semaforo = false;
 						}
-
 						else if (arg0.getKeyCode() == KeyEvent.VK_DOWN) {
 							dir = 1;
 							semaforo = true;
@@ -113,5 +128,16 @@ public class Juego extends JFrame {
 		}
 		}
 		dir = 5;
+	}
+	
+	public void iniciarJuego(){
+		semaforo = true;
+		dir      = 5;
+		logica   = new Logica(this);
+		
+	}
+	
+	public void salirJuego(){
+		System.exit(0);
 	}
 }

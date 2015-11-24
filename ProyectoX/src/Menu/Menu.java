@@ -1,65 +1,64 @@
 package Menu;
 
-import Grafica.*;
-
-import java.applet.Applet;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 
-import javax.imageio.ImageIO;
-import javax.print.DocFlavor.URL;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
-import com.sun.media.jfxmedia.AudioClip;
+import Grafica.*;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
 
-public class Menu extends JFrame {
-	JPanelConFondo panel;
-	JLabel hola;
-	JButton pantalla;
-	Juego j;
 
-	public static void main(String[] args) {
-		Menu m = new Menu();
-		m.setVisible(true);
+public class Menu {
+
+	JLabel fondo;
+	JButton iniciar,salir;
+	Juego gui;
+
+
+	public Menu(Juego gui) {
+		
+		this.gui     = gui;
+		fondo   = new JLabel();
+		iniciar = new JButton("Iniciar Juego");
+		salir   = new JButton("Salir");
+		
+		fondo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/fondo.png")));
+		
+		fondo.setBounds(0,0,1010,460);
+		iniciar.setBounds(100, 200, 200, 50);
+		salir.setBounds(100, 300, 200, 50);
+		
+		iniciar.addActionListener(new iniciarBoton());
+		salir.addActionListener(new salirBoton());
+		
+		
+		this.gui.getContentPane().add(fondo,0);
+		this.gui.getContentPane().add(iniciar,1);
+		this.gui.getContentPane().add(salir,1);
+		
+	
 	}
 
-	public Menu() {
-		setTitle("Bomberman");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1000, 540);
-		setLayout(new GridLayout());
-			panel = new JPanelConFondo();
-			hola = new JLabel("hola");
-			panel.add(hola);
-			setContentPane(panel);
-			pantalla = new JButton("press");
-			pantalla.addActionListener(new OyenteBoton());
-			panel.add(pantalla);
-	}
-
-	private class OyenteBoton implements ActionListener {
+	private class iniciarBoton implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			setVisible(false);
-			j = new Juego();
-			j.setVisible(true);
+			
+			gui.getContentPane().remove(fondo);
+			gui.getContentPane().remove(iniciar);
+			gui.getContentPane().remove(salir);
+			
+			gui.iniciarJuego();
+			
 		}
 	}
+	
+	private class salirBoton implements ActionListener {
+		public void actionPerformed(ActionEvent e) {	
+			gui.salirJuego();
+			
+		}
+	}
+		
 }
