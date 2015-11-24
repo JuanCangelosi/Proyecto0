@@ -18,7 +18,6 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	private static final int recorrido = 4;
 	private boolean semaforo;
 	private int vel;
-	
 
 	public PersonajeGrafico(int x, int y) {
 		super(x, y);
@@ -36,11 +35,8 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	}
 	
 	public void derecha() {
-		for(int i = 0; i < 32; i += (4)){
-			try{
-			Thread.sleep(75-2*vel);
-			}catch(Exception e){}
-			x+=(4);
+		for(int i = 0; i < 32; i += (vel)){
+			x+=(vel);
 				if (direccion != 30 && direccion != 31 && direccion != 32)
 					direccion = 30;
 				else if (direccion == 30)
@@ -53,6 +49,9 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 					direccion = 30;
 
 				setBounds(x, y, 32, 32);
+				try{
+					Thread.sleep(64-2*vel);
+					}catch(Exception e){}
 
 				repaint();
 		}
@@ -60,11 +59,8 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	}
 
 	public void izquierda() {
-		for(int i = 0; i < 32; i += (4)){
-			try{
-			Thread.sleep(75-2*vel);
-			}catch(Exception e){}
-			x-=(4);
+		for(int i = 0; i < 32; i += (vel)){
+			x-=(vel);
 				if (direccion != 10 && direccion != 11 && direccion != 12)
 					direccion = 10;
 
@@ -78,6 +74,9 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 					direccion = 10;
 
 				setBounds(x, y, 32, 32);
+				try{
+					Thread.sleep(64-2*vel);
+					}catch(Exception e){}
 
 				repaint();
 		}
@@ -85,11 +84,8 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	}
 
 	public void arriba() {
-		for(int i = 0; i < 32; i +=(4)){
-			try{
-			Thread.sleep(75-2*vel);
-			}catch(Exception e){}
-			y-=(4);
+		for(int i = 0; i < 32; i +=(vel)){
+			y-=(vel);
 				if (direccion != 40 && direccion != 41 && direccion != 42)
 					direccion = 40;
 
@@ -103,16 +99,16 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 					direccion = 40;
 
 				setBounds(x, y, 32, 32);
+				try{
+					Thread.sleep(64-2*vel);
+					}catch(Exception e){}
 				repaint();
 		}
 	}
 
 	public void abajo() {
-		for(int i = 0; i < 32; i += (4)){
-			try{
-			Thread.sleep(75-2*vel);
-			}catch(Exception e){}
-			y+=(4);
+		for(int i = 0; i < 32; i += (vel)){
+			y+=(vel);
 				if (direccion != 0 && direccion != 20 && direccion != 21)
 					direccion = 0;
 
@@ -126,6 +122,9 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 					direccion = 0;
 
 				setBounds(x, y, 32, 32);
+				try{
+					Thread.sleep(64-2*vel);
+					}catch(Exception e){}
 				repaint();
 		}
 				

@@ -12,7 +12,9 @@ public class ThreadListener extends Thread {
 	public void run() {
 		while (true) {
 			if (!gui.estaBloqueado()) {
-				System.out.println("entre");
+				try{
+					sleep(000000001);
+				}catch (Exception e){}
 				gui.mover();
 				gui.bloqueado(false);
 			}

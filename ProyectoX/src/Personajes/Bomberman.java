@@ -17,7 +17,7 @@ public class Bomberman extends Personaje {
 	public Bomberman(Celda c) {
 		super(c);
 		p=new BombermanGrafico(celda.getPosX()*32,celda.getPosY()*32);
-		velocidad = 3;
+		velocidad = 2;
 		especial = false;
 		cantBombas = 1;
 		a=new FabricaBomba();
