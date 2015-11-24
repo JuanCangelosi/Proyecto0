@@ -11,7 +11,7 @@ import Logica.Logica;
 import Threads.ThreadListener;
 import Bomba.*;
 import mapa.*;
-
+import Threads.ThreadMusica;
 public class Juego extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -20,6 +20,7 @@ public class Juego extends JFrame {
 	private boolean semaforo;
 	private int dir;
 	private ThreadListener t;
+	private ThreadMusica musica;
 
 	public Juego() {
 
@@ -36,6 +37,8 @@ public class Juego extends JFrame {
 		logica = new Logica(this);
 		t = new ThreadListener(this);
 		t.start();
+		musica=new ThreadMusica();
+		musica.start();
 
 		addKeyListener(new KeyAdapter() {
 			@Override

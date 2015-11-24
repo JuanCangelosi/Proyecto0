@@ -74,20 +74,62 @@ public class Sirius extends Enemigo {
 							abajo();
 					}
 				} else {
-					if (xB < x)
-						arriba();
-					else {
-						if (yB < y)
+					if ((xB > x) && (yB < y)) {
+						Random rnd = new Random();
+						int n = rnd.nextInt(2) + 1;
+						switch (n) {
+						case 1: {
+							abajo();
+							break;
+						}
+						case 2: {
 							izquierda();
-						else {
-							if (xB > x)
+							break;
+						}
+						}
+						if (celda.getPosX() == x && celda.getPosY() == y) {
+							if (n == 1)
+								izquierda();
+							else
 								abajo();
-							else {
-								if (yB > y)
+						}
+					} else {
+						if((xB < x) && (yB > y)){
+							Random rnd = new Random();
+							int n = rnd.nextInt(2) + 1;
+							switch (n) {
+							case 1: {
+								arriba();
+								break;
+							}
+							case 2: {
+								derecha();
+								break;
+							}
+							}
+							if (celda.getPosX() == x && celda.getPosY() == y) {
+								if (n == 1)
 									derecha();
+								else
+									arriba();
+							}
+							
+						}else{
+						if (xB < x)
+							arriba();
+						else {
+							if (yB < y)
+								izquierda();
+							else {
+								if (xB > x)
+									abajo();
+								else {
+									if (yB > y)
+										derecha();
+								}
 							}
 						}
-					}
+					}}
 				}
 			}
 		}
@@ -114,5 +156,4 @@ public class Sirius extends Enemigo {
 			}
 		}
 	}
-
 }
