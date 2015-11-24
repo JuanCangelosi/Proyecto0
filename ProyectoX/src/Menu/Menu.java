@@ -34,6 +34,8 @@ public class Menu {
 		iniciar.addActionListener(new iniciarBoton());
 		salir.addActionListener(new salirBoton());
 		
+		iniciar.setFocusable(true);
+		salir.setFocusable(true);
 		
 		this.gui.getContentPane().add(fondo,0);
 		this.gui.getContentPane().add(iniciar,1);

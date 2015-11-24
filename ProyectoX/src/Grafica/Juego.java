@@ -19,7 +19,6 @@ public class Juego extends JFrame {
 	private JLayeredPane contentPane;
 	private Logica logica;
 	private boolean semaforo;
-	private Menu menu;
 	private int dir;
 	private ThreadListener t;
 	private ThreadMusica musica;
@@ -47,14 +46,8 @@ public class Juego extends JFrame {
 
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
-		
-		menu     = new Menu(this);
-		t        = new ThreadListener(this);
-		musica   = new ThreadMusica();
-		
-		t.start();
-		musica.start();
-		
+		Menu menu     = new Menu(this);
+
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -62,7 +55,6 @@ public class Juego extends JFrame {
 				if (logica!=null && !logica.gameOver()) {
 					if (semaforo) {
 						if (arg0.getKeyCode() == KeyEvent.VK_UP) {
-							System.out.println("HOLA");
 							dir = 0;
 							semaforo = false;
 						}
@@ -85,6 +77,9 @@ public class Juego extends JFrame {
 				}
 			}
 		});
+
+		
+		
 
 	}
 
@@ -131,9 +126,17 @@ public class Juego extends JFrame {
 	}
 	
 	public void iniciarJuego(){
+
 		semaforo = true;
 		dir      = 5;
+		t        = new ThreadListener(this);
+		musica   = new ThreadMusica();
 		logica   = new Logica(this);
+		
+		t.start();
+		musica.start();
+		
+		this.requestFocus();
 		
 	}
 	
