@@ -47,11 +47,6 @@ public class Piso implements EstadoCelda {
 			}
 			
 			}
-			try{
-				Thread.sleep(100);
-			}catch (Exception e){
-				
-			}
 			if (p != null) {
 				p.dar(b);
 				c.setPowerUp(null);
@@ -86,11 +81,6 @@ public class Piso implements EstadoCelda {
 				pg.derecha();
 				break;
 			}
-			}
-			try{
-				e.darThread().sleep(1000);}
-			catch(InterruptedException exc){
-				exc.printStackTrace();
 			}
 		}
 	}

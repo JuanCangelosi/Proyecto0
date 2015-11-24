@@ -58,7 +58,6 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 			repaint();
 		}
-
 	}
 
 	public void izquierda() {
