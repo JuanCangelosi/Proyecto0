@@ -12,8 +12,9 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	protected int direccion, muerto;
 	protected Timer timer;
-	protected ImageIcon morir, centro, abajo1, abajo2, arriba1, arriba2, arriba3, derecha1, derecha2, derecha3,
-			izquierda1, izquierda2, izquierda3;
+	protected ImageIcon morir, centro, abajo1, abajo2, arriba1, arriba2,
+			arriba3, derecha1, derecha2, derecha3, izquierda1, izquierda2,
+			izquierda3;
 	private static final long serialVersionUID = 1L;
 	private static final int recorrido = 4;
 	private boolean semaforo;
@@ -22,112 +23,117 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	public PersonajeGrafico(int x, int y) {
 		super(x, y);
 		direccion = 0;
-		muerto    = 0;
-		semaforo  = true;
-		vel=1;
+		muerto = 0;
+		semaforo = true;
+		vel = 1;
 	}
-	public void setVelocidad(int v){
-		vel=v;
+
+	public void setVelocidad(int v) {
+		vel = v;
 	}
-	
-	public boolean semaforo(){
+
+	public boolean semaforo() {
 		return semaforo;
 	}
-	
+
 	public void derecha() {
-		for(int i = 0; i < 32; i += (vel)){
-			x+=(vel);
-				if (direccion != 30 && direccion != 31 && direccion != 32)
-					direccion = 30;
-				else if (direccion == 30)
-					direccion = 31;
+		for (int i = 0; i < 32; i += 4) {
+			x += 4;
+			if (direccion != 30 && direccion != 31 && direccion != 32)
+				direccion = 30;
+			else if (direccion == 30)
+				direccion = 31;
 
-				else if (direccion == 31)
-					direccion = 32;
+			else if (direccion == 31)
+				direccion = 32;
 
-				else if (direccion == 32)
-					direccion = 30;
+			else if (direccion == 32)
+				direccion = 30;
 
-				setBounds(x, y, 32, 32);
-				try{
-					Thread.sleep(64-2*vel);
-					}catch(Exception e){}
+			setBounds(x, y, 32, 32);
+			try {
+				Thread.sleep(calcular());
+			} catch (Exception e) {
+			}
 
-				repaint();
+			repaint();
 		}
 
 	}
 
 	public void izquierda() {
-		for(int i = 0; i < 32; i += (vel)){
-			x-=(vel);
-				if (direccion != 10 && direccion != 11 && direccion != 12)
-					direccion = 10;
+		for (int i = 0; i < 32; i += 4) {
+			x -= 4;
+			if (direccion != 10 && direccion != 11 && direccion != 12)
+				direccion = 10;
 
-				else if (direccion == 10)
-					direccion = 11;
+			else if (direccion == 10)
+				direccion = 11;
 
-				else if (direccion == 11)
-					direccion = 12;
+			else if (direccion == 11)
+				direccion = 12;
 
-				else if (direccion == 12)
-					direccion = 10;
+			else if (direccion == 12)
+				direccion = 10;
 
-				setBounds(x, y, 32, 32);
-				try{
-					Thread.sleep(64-2*vel);
-					}catch(Exception e){}
+			setBounds(x, y, 32, 32);
+			try {
+				Thread.sleep(calcular());
+			} catch (Exception e) {
+			}
 
-				repaint();
+			repaint();
 		}
 
 	}
 
 	public void arriba() {
-		for(int i = 0; i < 32; i +=(vel)){
-			y-=(vel);
-				if (direccion != 40 && direccion != 41 && direccion != 42)
-					direccion = 40;
+		for (int i = 0; i < 32; i += 4) {
+			y -= 4;
+			if (direccion != 40 && direccion != 41 && direccion != 42)
+				direccion = 40;
 
-				else if (direccion == 40)
-					direccion = 41;
+			else if (direccion == 40)
+				direccion = 41;
 
-				else if (direccion == 41)
-					direccion = 42;
+			else if (direccion == 41)
+				direccion = 42;
 
-				else if (direccion == 42)
-					direccion = 40;
+			else if (direccion == 42)
+				direccion = 40;
 
-				setBounds(x, y, 32, 32);
-				try{
-					Thread.sleep(64-2*vel);
-					}catch(Exception e){}
-				repaint();
+			setBounds(x, y, 32, 32);
+			try {
+				Thread.sleep(calcular());
+			} catch (Exception e) {
+			}
+			repaint();
 		}
 	}
 
 	public void abajo() {
-		for(int i = 0; i < 32; i += (vel)){
-			y+=(vel);
-				if (direccion != 0 && direccion != 20 && direccion != 21)
-					direccion = 0;
+		for (int i = 0; i < 32; i += 4) {
+			y += 4;
+			if (direccion != 0 && direccion != 20 && direccion != 21)
+				direccion = 0;
 
-				else if (direccion == 0)
-					direccion = 20;
+			else if (direccion == 0)
+				direccion = 20;
 
-				else if (direccion == 20)
-					direccion = 21;
+			else if (direccion == 20)
+				direccion = 21;
 
-				else if (direccion == 21)
-					direccion = 0;
+			else if (direccion == 21)
+				direccion = 0;
 
-				setBounds(x, y, 32, 32);
-				try{
-					Thread.sleep(64-2*vel);
-					}catch(Exception e){}
-				repaint();
+			setBounds(x, y, 32, 32);
+			try {
+				Thread.sleep(calcular());
+			} catch (Exception e) {
+			}
+			repaint();
 		}
-				
+
 	}
 
 	public void morir() {
@@ -169,6 +175,37 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		else if (direccion == 42)
 			g.drawImage(arriba3.getImage(), 0, 0, this);
 
+	}
+
+	private int calcular() {
+		int n = 0;
+		switch (vel) {
+		case 1: {
+			n = 120;
+			break;
+		}
+		case 2: {
+			n = 100;
+			break;
+		}
+		case 4: {
+			n = 80;
+			break;
+		}
+		case 8: {
+			n = 60;
+			break;
+		}
+		case 16:{
+			n= 40;
+			break;
+		}
+		case 32:{
+			n=20;
+			break;
+		}
+		}
+		return n;
 	}
 
 }

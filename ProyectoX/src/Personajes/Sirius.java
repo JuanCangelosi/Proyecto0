@@ -17,7 +17,7 @@ public class Sirius extends Enemigo {
 		p = new SiriusGrafico(celda.getPosY() * 32, celda.getPosX() * 32);
 		puntaje = 50;
 		especial = false;
-		velocidad = 3;
+		velocidad = 4;
 		p.setVelocidad(velocidad);
 	}
 
