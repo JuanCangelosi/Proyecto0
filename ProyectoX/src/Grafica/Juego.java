@@ -7,6 +7,10 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 import Logica.Logica;
 import Menu.Menu;
 import Threads.ThreadListener;
@@ -45,7 +49,7 @@ public class Juego extends JFrame {
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
 		Menu menu     = new Menu(this);
-
+		startMusic();
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -143,5 +147,18 @@ public class Juego extends JFrame {
 		if(logica.gameOver()){
 			salirJuego();
 		}
+	}
+	public void startMusic(){
+	    AudioPlayer myBackgroundPlayer = AudioPlayer.player;
+	    ContinuousAudioDataStream myLoop = null;
+	    try {
+	    	AudioStream myBackgroundMusic = new AudioStream(getClass().getResourceAsStream("/Sonidos/Blop.wav"));
+	          AudioData myData = myBackgroundMusic.getData();
+	          myLoop = new ContinuousAudioDataStream(myData);
+	    }catch(Exception error){
+	        System.out.println("File Not Found");
+	        System.out.println(error);
+	    }
+	    myBackgroundPlayer.start(myLoop);  
 	}
 }
