@@ -139,4 +139,9 @@ public class Juego extends JFrame {
 	public void salirJuego(){
 		System.exit(0);
 	}
+	public void termine(){
+		if(logica.gameOver()){
+			salirJuego();
+		}
+	}
 }

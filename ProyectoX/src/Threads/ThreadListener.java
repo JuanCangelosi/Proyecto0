@@ -11,6 +11,7 @@ public class ThreadListener extends Thread {
 
 	public void run() {
 		while (true) {
+			gui.termine();
 			if (!gui.estaBloqueado()) {
 				try{
 					sleep(000000001);
