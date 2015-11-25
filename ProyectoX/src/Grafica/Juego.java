@@ -8,16 +8,11 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import javax.sound.sampled.*;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
+import sun.audio.*;
 import Logica.Logica;
 import Menu.Menu;
 import Threads.ThreadListener;
@@ -26,6 +21,7 @@ import mapa.*;
 public class Juego extends JFrame {
 
 	private static final long serialVersionUID = 1L;
+	private static final int LOOP_CONTINUOUSLY = -1;
 	private JLayeredPane contentPane;
 	private Logica logica;
 	private boolean semaforo;
@@ -56,7 +52,6 @@ public class Juego extends JFrame {
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
 		Menu menu     = new Menu(this);
-		startMusic();
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -142,7 +137,7 @@ public class Juego extends JFrame {
 		logica   = new Logica(this);
 		
 		t.start();
-		
+		startMusic();
 		this.requestFocus();
 		
 	}
@@ -161,7 +156,7 @@ public class Juego extends JFrame {
 	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/Electrodynamix.wav").toURI()));
 	        Clip c = AudioSystem.getClip();
 	        c.open(a);
-	        c.start();
+	        c.loop(LOOP_CONTINUOUSLY);
 	    }catch(Exception error){
 	        System.out.println("File Not Found");
 	        System.out.println(error);
