@@ -12,6 +12,7 @@ public class Bomberman extends Personaje {
 	// Atributos de Instancia
 	private AbstractFactory a;
 	protected int cantBombas;
+	protected boolean termino;
 
 	// Constructor
 	public Bomberman(Celda c) {
@@ -19,6 +20,7 @@ public class Bomberman extends Personaje {
 		p=new BombermanGrafico(celda.getPosX()*32,celda.getPosY()*32);
 		velocidad = 2;
 		especial = false;
+		termino= false; //Indicara que el efecto masacrality termino pero permitira a el personaje salir de un lugar rodeado de paredes
 		cantBombas = 1;
 		a=new FabricaBomba();
 		p.setVelocidad(velocidad);
@@ -121,5 +123,18 @@ public class Bomberman extends Personaje {
 	public AbstractFactory fabrica() {
 		return a;
 	}
-
+	/**
+	 * Avisa a bomberman que el efecto termino asi puede escapar de una pared indestructible
+	 */
+	public void setTermino(boolean b){
+		termino=b;
+	}
+	
+	/**
+	 * Devuelve el flag de que termino el efecto
+	 */
+	public boolean termino(){
+		return termino;
+	}
+	
 }

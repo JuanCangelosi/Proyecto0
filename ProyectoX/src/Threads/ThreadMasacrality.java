@@ -14,7 +14,7 @@ public class ThreadMasacrality extends Thread {
 	public void run() {
 		try {
 				sleep(5000);
-				bomb.ponerEspecial(false);
+				bomb.setTermino(true);
 				
 				
 			} catch (InterruptedException e) {

@@ -148,7 +148,7 @@ public class Juego extends JFrame {
 	}
 	public void termine(){
 		if(logica.gameOver()){
-			//startGameOver() bug en la reproduccion;
+			//startGameOver(); //bug en la reproduccion;
 			salirJuego();
 		}
 	}

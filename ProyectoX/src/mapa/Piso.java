@@ -25,6 +25,10 @@ public class Piso implements EstadoCelda {
 	 * powerup, se lo otorga a bomberman
 	 */
 	public void serAvanzado(Bomberman b, PowerUp p, Celda c, int n) {
+		if(b.termino() && b.esEspecial()){
+			b.ponerEspecial(false);
+			b.setTermino(false);
+		}
 		if (c.getBomba() == null) {
 			c.setBomberman(b);
 			PersonajeGrafico pg = b.grafico();
