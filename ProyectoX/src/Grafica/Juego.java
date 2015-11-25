@@ -3,7 +3,14 @@ package Grafica;
 import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.URL;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
@@ -149,16 +156,15 @@ public class Juego extends JFrame {
 		}
 	}
 	public void startMusic(){
-	    AudioPlayer myBackgroundPlayer = AudioPlayer.player;
-	    ContinuousAudioDataStream myLoop = null;
+
 	    try {
-	    	AudioStream myBackgroundMusic = new AudioStream(getClass().getResourceAsStream("/Sonidos/Blop.wav"));
-	          AudioData myData = myBackgroundMusic.getData();
-	          myLoop = new ContinuousAudioDataStream(myData);
+	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/Electrodynamix.wav").toURI()));
+	        Clip c = AudioSystem.getClip();
+	        c.open(a);
+	        c.start();
 	    }catch(Exception error){
 	        System.out.println("File Not Found");
 	        System.out.println(error);
-	    }
-	    myBackgroundPlayer.start(myLoop);  
+	    }  
 	}
 }
