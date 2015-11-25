@@ -120,6 +120,7 @@ public class Juego extends JFrame {
 					.getCelda(c.getPosX(), c.getPosY()).getBomba();
 			if (b1 != null) {
 				contentPane.add(b1.getBombaGrafica(), new Integer(2));
+				startBomba();
 			}
 			break;
 		}
@@ -147,6 +148,7 @@ public class Juego extends JFrame {
 	}
 	public void termine(){
 		if(logica.gameOver()){
+			//startGameOver() bug en la reproduccion;
 			salirJuego();
 		}
 	}
@@ -156,7 +158,33 @@ public class Juego extends JFrame {
 	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/Electrodynamix.wav").toURI()));
 	        Clip c = AudioSystem.getClip();
 	        c.open(a);
+	        FloatControl gainControl =  (FloatControl) c.getControl(FloatControl.Type.MASTER_GAIN);
+	        gainControl.setValue(-10.0f); // Reduce volume by 10 decibels.
 	        c.loop(LOOP_CONTINUOUSLY);
+	    }catch(Exception error){
+	        System.out.println("File Not Found");
+	        System.out.println(error);
+	    }  
+	}
+	public void startBomba(){
+
+	    try {
+	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/boom.wav").toURI()));
+	        Clip c = AudioSystem.getClip();
+	        c.open(a);
+	        c.start();
+	    }catch(Exception error){
+	        System.out.println("File Not Found");
+	        System.out.println(error);
+	    }  
+	}
+	public void startGameOver(){
+
+	    try {
+	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/gameover.wav").toURI()));
+	        Clip c = AudioSystem.getClip();
+	        c.open(a);
+	        c.start();
 	    }catch(Exception error){
 	        System.out.println("File Not Found");
 	        System.out.println(error);
