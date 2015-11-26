@@ -52,7 +52,8 @@ public class Piso implements EstadoCelda {
 			
 			}
 			if (p != null) {
-				p.dar(b);
+				int puntaje=p.dar(b);
+				c.getMapa().getNivel().sumarPuntaje(puntaje);
 				c.setPowerUp(null);
 			}
 		}
