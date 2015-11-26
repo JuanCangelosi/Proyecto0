@@ -170,6 +170,10 @@ public class Juego extends JFrame {
 	}
 	public void gameOver(){
 		startGameOver();
+		Mensaje m = new Mensaje(0,0);
+		contentPane.add(m,new Integer(400));
+		m.GameOver();
+		contentPane.moveToFront(m);
 		try{
 		Thread.sleep(5000);
 		}catch (Exception e){}
