@@ -25,6 +25,7 @@ public class Juego extends JFrame {
 	private static final int LOOP_CONTINUOUSLY = -1;
 	private JLayeredPane contentPane;
 	private Logica logica;
+	private Panel panel;
 	private boolean semaforo;
 	private int dir;
 	private ThreadListener t;
@@ -136,12 +137,16 @@ public class Juego extends JFrame {
 		dir      = 5;
 		t        = new ThreadListener(this);
 		logica   = new Logica(this);
-		Panel panel = new Panel(this);
+		panel = new Panel(this);
 		
 		t.start();
 		startMusic();
 		this.requestFocus();
 		
+	}
+	
+	public Panel getPanel(){
+		return panel;
 	}
 	
 	public void salirJuego(){
