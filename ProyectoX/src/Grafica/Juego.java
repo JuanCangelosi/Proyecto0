@@ -57,7 +57,7 @@ public class Juego extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 
-				if (logica!=null && !logica.gameOver()) {
+				if (logica!=null && !logica.getNivel().getMapa().getHeroe().murio()) {
 					if (semaforo) {
 						if (arg0.getKeyCode() == KeyEvent.VK_UP) {
 							dir = 0;
@@ -121,7 +121,6 @@ public class Juego extends JFrame {
 					.getCelda(c.getPosX(), c.getPosY()).getBomba();
 			if (b1 != null) {
 				contentPane.add(b1.getBombaGrafica(), new Integer(2));
-				startBomba();
 			}
 			break;
 		}
@@ -148,12 +147,6 @@ public class Juego extends JFrame {
 	public void salirJuego(){
 		System.exit(0);
 	}
-	public void termine(){
-		if(logica.gameOver()){
-			//startGameOver(); //bug en la reproduccion;
-			salirJuego();
-		}
-	}
 	public void startMusic(){
 
 	    try {
@@ -168,17 +161,14 @@ public class Juego extends JFrame {
 	        System.out.println(error);
 	    }  
 	}
-	public void startBomba(){
-
-	    try {
-	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/boom.wav").toURI()));
-	        Clip c = AudioSystem.getClip();
-	        c.open(a);
-	        c.start();
-	    }catch(Exception error){
-	        System.out.println("File Not Found");
-	        System.out.println(error);
-	    }  
+	public void gameOver(){
+		startGameOver();
+		try{
+		Thread.sleep(5000);
+		}catch (Exception e){}
+		salirJuego();
+		
+		
 	}
 	public void startGameOver(){
 

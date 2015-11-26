@@ -93,6 +93,7 @@ public class Celda {
 		} else {
 			if (e != null) {
 				bm.morir();
+				m.getNivel().gameOver();
 			}
 				if (bm.getCelda() != null)
 					bm.getCelda().setBomberman(null);
@@ -121,6 +122,7 @@ public class Celda {
 		} else {
 			if (bomberM != null) {
 				bomberM.morir();
+				m.getNivel().gameOver();
 			}
 				e = enem;
 				enem.setCelda(this);
@@ -178,8 +180,10 @@ public class Celda {
 		puntaje += estado.destruir(this);
 		if (e != null)
 			puntaje += e.morir();
-		if (bomberM != null)
+		if (bomberM != null){
 			bomberM.morir();
+			m.getNivel().gameOver();
+		}
 		puntaje += m.getCelda(posX-1, posY).explosion(radio,0);
 		puntaje += m.getCelda(posX+1, posY).explosion(radio,1);
 		puntaje += m.getCelda(posX, posY-1).explosion(radio,2);
@@ -190,8 +194,10 @@ public class Celda {
 		int puntaje = 0;
 		if (e != null)
 			puntaje += e.morir();
-		if (bomberM != null)
+		if (bomberM != null){
 			bomberM.morir();
+			m.getNivel().gameOver();
+		}
 		puntaje+=estado.explosion(this, r-1,pos);
 		return puntaje;
 	}

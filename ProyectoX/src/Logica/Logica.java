@@ -14,7 +14,7 @@ public class Logica {
 	 *  @param gui el panel donde se colocaran las entidades graficas
 	 */
 	public Logica(Juego gui){
-		nivel=new Nivel();
+		nivel=new Nivel(this);
 		this.gui = gui;
 		
 		for(int i=0; i< 13; i++){
@@ -47,7 +47,7 @@ public class Logica {
 	 * Decide si el juego termino
 	 * @return true si bomberman murio y false caso contrario
 	 */
-	public boolean gameOver(){
-		return nivel.getMapa().getHeroe().murio();
+	public void gameOver(){
+		gui.gameOver();
 	}
 }
