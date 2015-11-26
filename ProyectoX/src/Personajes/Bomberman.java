@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 import Bomba.*;
 import Grafica.BombermanGrafico;
-import Grafica.GameOver;
+//import Grafica.GameOver;
 import Grafica.Mensaje;
 
 public class Bomberman extends Personaje {
