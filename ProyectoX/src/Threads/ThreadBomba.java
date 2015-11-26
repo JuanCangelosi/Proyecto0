@@ -22,6 +22,7 @@ public class ThreadBomba extends Thread {
 		try {
 			sleep(4000);
 			b.explotar();
+			this.interrupt();
 		} catch (InterruptedException e) {
 
 		}
