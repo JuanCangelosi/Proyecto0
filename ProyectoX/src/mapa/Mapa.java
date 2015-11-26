@@ -200,5 +200,12 @@ public class Mapa {
 	public Nivel getNivel(){
 		return n;
 	}
+	
+	public void limpiarMapa(){
+		for(int i=0; i<6; i++){
+			if(!enemigos[i].murio())
+			enemigos[i].morir();
+		}
+	}
 }
 

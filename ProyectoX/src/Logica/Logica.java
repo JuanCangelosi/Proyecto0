@@ -60,6 +60,7 @@ public class Logica {
 	 * @return true si bomberman murio y false caso contrario
 	 */
 	public void gameOver(){
+		nivel.getMapa().limpiarMapa();
 		gui.gameOver();
 	}
 	
