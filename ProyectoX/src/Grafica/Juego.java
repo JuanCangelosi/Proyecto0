@@ -56,7 +56,7 @@ public class Juego extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 
-				if (logica!=null) {
+				if (logica!=null && !logica.getNivel().getMapa().getHeroe().murio()) {
 					if (semaforo) {
 						if (arg0.getKeyCode() == KeyEvent.VK_UP) {
 							dir = 0;
