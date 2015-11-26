@@ -17,7 +17,7 @@ public class BombalityGrafico extends PowerupGrafico{
 	}
 
 	public void mostrar() {
-		posicion=1;
+		//posicion=1;
 		imagen = new ImageIcon(getClass().getResource("/Imagenes/bombality.png"));	
 		repaint();
 		

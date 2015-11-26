@@ -156,15 +156,25 @@ public class Mapa {
 	 * Metodo auxiliar que crea y devuelve un arreglo de powerUps
 	 */
 	private PowerUp[] inicializarPowerUps(){
+		int n=1;
 		PowerUp powerups[]=new PowerUp[11];
 		for(int i=0; i<4; i++){
 			powerups[i]=new SpeedUp();
+			powerups[i].getEntidadGrafica().setPosicion(n);
+			n++;
+			
 		}
 		for(int i=4; i<7;i++){
 			powerups[i]=new Fatality();
+			powerups[i].getEntidadGrafica().setPosicion(n);
+			
 			powerups[i+3]=new Bombality();
+			powerups[i+3].getEntidadGrafica().setPosicion(n+3);
+			
+			n++;
 		}
 		powerups[10]=new Masacrality();
+		powerups[10].getEntidadGrafica().setPosicion(11);
 		return powerups;
 	}
 	/**
