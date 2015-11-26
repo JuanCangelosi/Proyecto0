@@ -17,6 +17,7 @@ public class Menu {
 	protected JButton iniciar,salir,musica;
 	protected Juego gui;
 	protected boolean sonido;
+	protected JLabel imagen;
 
 	public Menu(Juego gui) {
 		sonido=true;
