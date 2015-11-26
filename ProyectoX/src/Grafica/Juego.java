@@ -30,6 +30,7 @@ public class Juego extends JFrame {
 	private int dir;
 	private ThreadListener t;
 	private Menu menu;
+	private Clip c;
 
 	public static void main(String[] args) {
 			EventQueue.invokeLater(new Runnable() {
@@ -46,15 +47,7 @@ public class Juego extends JFrame {
 	
 	public Juego() {
 
-		setTitle("Bomberman");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 992, 500);
-		setLocationRelativeTo(null);
-		setLayout(null);
-
-		contentPane = new JLayeredPane();
-		setContentPane(contentPane);
-		menu     = new Menu(this);
+		start();
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -88,6 +81,19 @@ public class Juego extends JFrame {
 		
 		
 
+	}
+	
+	public void start(){
+		setTitle("Bomberman");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 992, 500);
+		setLocationRelativeTo(null);
+		setLayout(null);
+
+		contentPane = new JLayeredPane();
+		setContentPane(contentPane);
+		menu     = new Menu(this);
+		
 	}
 
 	public void bloqueado(boolean b) {
@@ -158,7 +164,7 @@ public class Juego extends JFrame {
 
 	    try {
 	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/Electrodynamix.wav").toURI()));
-	        Clip c = AudioSystem.getClip();
+	        c = AudioSystem.getClip();
 	        c.open(a);
 	        FloatControl gainControl =  (FloatControl) c.getControl(FloatControl.Type.MASTER_GAIN);
 	        gainControl.setValue(-10.0f); // Reduce volume by 10 decibels.
@@ -177,7 +183,15 @@ public class Juego extends JFrame {
 		try{
 		Thread.sleep(5000);
 		}catch (Exception e){}
-		salirJuego();
+		
+		
+		logica = null;
+		panel  = null;
+		t.interrupt();
+		contentPane.removeAll();
+		contentPane.repaint();
+		c.close();
+		menu     = new Menu(this);
 		
 		
 	}
