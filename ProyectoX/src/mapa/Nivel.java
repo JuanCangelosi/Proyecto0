@@ -33,13 +33,7 @@ public class Nivel {
 	public Mapa getMapa() {
 		return mapa;
 	}
-	/**
-	 * Retorna true si no hay mas paredes en el mapa
-	 * @return true si no hay mas paredes en el mapa, false caso contrario
-	 */
-	public boolean gano() {
-		return mapa.getCantParedesDest()==0;
-	}
+	
 	public int getPuntaje(){
 		return puntaje;
 	}

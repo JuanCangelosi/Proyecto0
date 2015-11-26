@@ -62,4 +62,12 @@ public class Logica {
 	public void gameOver(){
 		gui.gameOver();
 	}
+	
+	/**
+	 * Retorna true si no hay mas paredes en el mapa
+	 * @return true si no hay mas paredes en el mapa, false caso contrario
+	 */
+	public boolean gano() {
+		return nivel.getMapa().getCantParedesDest()==0;
+	}
 }
