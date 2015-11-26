@@ -1,18 +1,19 @@
 package mapa;
+import Logica.*;
 
 /**
  * Clase nivel representa el nivel en que se esta jugando.
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Nivel {
-	protected int tiempo;
 	protected int puntaje;
-	
 	protected Mapa mapa;
+	protected Logica log;
 
-	public Nivel() {
+	public Nivel(Logica l) {
 		mapa = new Mapa(this);
 		puntaje=0;
+		log=l;
 		
 	}
 	/**
@@ -40,5 +41,8 @@ public class Nivel {
 	}
 	public int getPuntaje(){
 		return puntaje;
+	}
+	public void gameOver(){
+		log.gameOver();
 	}
 }

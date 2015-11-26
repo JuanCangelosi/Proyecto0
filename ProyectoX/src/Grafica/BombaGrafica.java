@@ -3,7 +3,11 @@ package Grafica;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
@@ -25,6 +29,7 @@ public class BombaGrafica extends EntidadGrafica{
 	public void colocarBomba(){
 		imagen = bomba;
 		repaint();
+		startBomba();
 		
 	}
 	
@@ -52,6 +57,18 @@ public class BombaGrafica extends EntidadGrafica{
 		super.paintComponent(g);
 		if(imagen!=null)
 			g.drawImage(imagen.getImage(), 0, 0, this);
+	}
+	public void startBomba(){
+
+	    try {
+	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/boom.wav").toURI()));
+	        Clip c = AudioSystem.getClip();
+	        c.open(a);
+	        c.start();
+	    }catch(Exception error){
+	        System.out.println("File Not Found");
+	        System.out.println(error);
+	    }  
 	}
 
 }
