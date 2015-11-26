@@ -43,6 +43,9 @@ public class Logica {
 	public Nivel getNivel(){
 		return nivel;
 	}
+	public void actualizarPuntaje(){
+		gui.getPanel().setPuntaje(nivel.getPuntaje());
+	}
 	/**
 	 * Decide si el juego termino
 	 * @return true si bomberman murio y false caso contrario

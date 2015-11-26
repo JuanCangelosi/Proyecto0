@@ -23,6 +23,7 @@ public class Nivel {
 
 	public void sumarPuntaje(int n) {
 		puntaje += n;
+		log.actualizarPuntaje();
 	}
 	/**
 	 * Retorna el mapa asociado al nivel
