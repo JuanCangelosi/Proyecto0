@@ -29,6 +29,7 @@ public class Juego extends JFrame {
 	private boolean semaforo;
 	private int dir;
 	private ThreadListener t;
+	private Menu menu;
 
 	public static void main(String[] args) {
 			EventQueue.invokeLater(new Runnable() {
@@ -53,7 +54,7 @@ public class Juego extends JFrame {
 
 		contentPane = new JLayeredPane();
 		setContentPane(contentPane);
-		Menu menu     = new Menu(this);
+		menu     = new Menu(this);
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -140,7 +141,8 @@ public class Juego extends JFrame {
 		panel = new Panel(this);
 		
 		t.start();
-		startMusic();
+		if (menu.sonido())
+			startMusic();
 		this.requestFocus();
 		
 	}

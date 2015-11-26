@@ -74,5 +74,9 @@ public class Menu {
 			
 		}
 	}
+	
+	public boolean sonido(){
+		return sonido;
+	}
 		
 }
