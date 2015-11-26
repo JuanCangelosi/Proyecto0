@@ -61,12 +61,13 @@ public class Bomberman extends Personaje {
 	}
 
 	/**
-	 * Si el personaje es tocado por algun enemigo ó alcanzado por la bomba, se
+	 * Si el personaje es tocado por algun enemigo ï¿½ alcanzado por la bomba, se
 	 * muere
 	 */
 	public void morir() {
 		System.out.println("bomberman murio, game over");
 		celda.setBomberman(null);
+		p.morir();
 		muerto = true;
 	}
 

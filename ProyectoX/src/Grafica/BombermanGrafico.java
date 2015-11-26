@@ -25,7 +25,7 @@ public class BombermanGrafico extends PersonajeGrafico{
 		izquierda2 = new ImageIcon(getClass().getResource("/Imagenes/player-izquierda2.png"));
 		izquierda3 = new ImageIcon(getClass().getResource("/Imagenes/player-izquierda3.png"));
 		
-		morir	   = new ImageIcon(getClass().getResource("/Imagenes/GameOver.png"));
+		morir	   = new ImageIcon(getClass().getResource("/Imagenes/bomberman-muere.gif"));
 		
 	}	
 }

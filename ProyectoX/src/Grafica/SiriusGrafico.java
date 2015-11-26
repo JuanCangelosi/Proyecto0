@@ -25,5 +25,6 @@ public class SiriusGrafico extends PersonajeGrafico{
 		izquierda2 = new ImageIcon(getClass().getResource("/Imagenes/sirius-izquierda2.png"));
 		izquierda3 = new ImageIcon(getClass().getResource("/Imagenes/sirius-izquierda3.png"));
 
+		morir	   = new ImageIcon(getClass().getResource("/Imagenes/sirius-muere.gif"));
 	}
 }

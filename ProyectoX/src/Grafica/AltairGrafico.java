@@ -24,6 +24,8 @@ public class AltairGrafico extends PersonajeGrafico{
 		izquierda1 = new ImageIcon(getClass().getResource("/Imagenes/altair-izquierda1.png"));
 		izquierda2 = new ImageIcon(getClass().getResource("/Imagenes/altair-izquierda2.png"));
 		izquierda3 = new ImageIcon(getClass().getResource("/Imagenes/altair-izquierda1.png"));	
+		
+		morir	   = new ImageIcon(getClass().getResource("/Imagenes/altair-muere.gif"));
 			
 	}
 

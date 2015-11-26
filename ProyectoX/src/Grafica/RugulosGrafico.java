@@ -25,6 +25,7 @@ public class RugulosGrafico extends PersonajeGrafico{
 		izquierda2 = new ImageIcon(getClass().getResource("/Imagenes/rugulos-izquierda2.png"));
 		izquierda3 = new ImageIcon(getClass().getResource("/Imagenes/rugulos-izquierda1.png"));
 	
+		morir	   = new ImageIcon(getClass().getResource("/Imagenes/rugulos-muere.gif"));
 	}
 
 }

@@ -1,6 +1,9 @@
 package Grafica;
 
+import java.awt.Container;
+
 import javax.swing.JComponent;
+
 
 public abstract class EntidadGrafica extends JComponent{
 	
@@ -9,6 +12,7 @@ public abstract class EntidadGrafica extends JComponent{
 	protected final int height = 32;
 	protected int velocidad;
 	protected int x,y;
+	protected Container container;
 	
 	protected EntidadGrafica(int x, int y) {
 		this.x = x;
@@ -27,6 +31,15 @@ public abstract class EntidadGrafica extends JComponent{
 		this.y = y;
 		setBounds(x,y,width,height);
 		
+	}
+	
+	public void setContainer(Container c){
+		container = c;
+	}
+	
+	public void eliminar(){
+		setVisible(false);
+		container.remove(this);
 	}
 
 }

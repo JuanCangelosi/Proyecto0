@@ -6,8 +6,10 @@ import Grafica.Juego;
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 public class Logica {
+	
 	protected Nivel nivel;
 	protected Juego gui;
+	
 	/**
 	 * Inicializa la logica recibiendo como parametro la gui, colocando las entidades graficas de las celdas en 
 	 * la misma
@@ -20,17 +22,24 @@ public class Logica {
 		for(int i=0; i< 13; i++){
 			for(int j=0; j<31; j++){
 				gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getEntidadGrafica(),new Integer(1));
+				nivel.getMapa().getCelda(i, j).getEntidadGrafica().setContainer(gui.getContentPane());
 				if(nivel.getMapa().getCelda(i, j).getPowerUp()!=null){
+					
 					nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica().setX(j*32);
 					nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica().setY(i*32);
+					
 					gui.getContentPane().add(nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica(),new Integer(2));
+					nivel.getMapa().getCelda(i, j).getPowerUp().getEntidadGrafica().setContainer(gui.getContentPane());
 				}
 			}
 		}
 		
 		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),new Integer(3));
+		nivel.getMapa().getHeroe().grafico().setContainer(gui.getContentPane());
+		
 		for(int i=0; i<6; i++){
 			gui.getContentPane().add(nivel.getMapa().getEnemigo(i).grafico(), new Integer(3));
+			nivel.getMapa().getEnemigo(i).grafico().setContainer(gui.getContentPane());
 		}
 		
 		

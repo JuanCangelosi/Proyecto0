@@ -136,7 +136,19 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 	}
 
 	public void morir() {
-		muerto = 1;
+		muerto    = 1;
+		direccion = -1;
+		
+		timer = new Timer(1500,new ActionListener () 
+		{ 
+		    public void actionPerformed(ActionEvent e) 
+		    {
+		    	timer.stop();
+		    	eliminar();
+		     } 
+		});
+	
+		timer.start();
 		repaint();
 	}
 
@@ -145,8 +157,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 		if (muerto == 1)
 			g.drawImage(morir.getImage(), 0, 0, null);
-
-		if (direccion == 0)
+		else if (direccion == 0)
 			g.drawImage(centro.getImage(), 0, 0, this);
 		else if (direccion == 20)
 			g.drawImage(abajo1.getImage(), 0, 0, this);
