@@ -30,5 +30,6 @@ public class ThreadEnemigo extends Thread {
 	 */
 	public void detener() {
 		activado = false;
+		this.interrupt();
 	}
 }
