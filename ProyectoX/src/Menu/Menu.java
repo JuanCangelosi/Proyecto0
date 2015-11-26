@@ -17,15 +17,12 @@ public class Menu {
 	JButton iniciar,salir;
 	Juego gui;
 
-
 	public Menu(Juego gui) {
 		
-		this.gui     = gui;
-		fondo   = new JLabel();
-		iniciar = new JButton("Iniciar Juego");
-		salir   = new JButton("Salir");
-		
-		fondo.setIcon(new ImageIcon(getClass().getResource("/Imagenes/fondo.png")));
+		this.gui = gui;
+		fondo    = new JLabel(new ImageIcon(getClass().getResource("/Imagenes/fondo.png")));
+		iniciar  = new JButton(new ImageIcon(getClass().getResource("/Imagenes/iniciar.png")));
+		salir    = new JButton(new ImageIcon(getClass().getResource("/Imagenes/salir.png")));		
 		
 		fondo.setBounds(0,0,1010,460);
 		iniciar.setBounds(100, 200, 200, 50);
@@ -34,13 +31,9 @@ public class Menu {
 		iniciar.addActionListener(new iniciarBoton());
 		salir.addActionListener(new salirBoton());
 		
-		iniciar.setFocusable(true);
-		salir.setFocusable(true);
-		
 		this.gui.getContentPane().add(fondo,0);
 		this.gui.getContentPane().add(iniciar,1);
-		this.gui.getContentPane().add(salir,1);
-		
+		this.gui.getContentPane().add(salir,1);	
 	
 	}
 
@@ -57,7 +50,8 @@ public class Menu {
 	}
 	
 	private class salirBoton implements ActionListener {
-		public void actionPerformed(ActionEvent e) {	
+		public void actionPerformed(ActionEvent e) {
+			
 			gui.salirJuego();
 			
 		}

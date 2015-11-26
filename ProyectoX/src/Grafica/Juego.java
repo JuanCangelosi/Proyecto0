@@ -45,7 +45,7 @@ public class Juego extends JFrame {
 
 		setTitle("Bomberman");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1010, 460);
+		setBounds(100, 100, 992, 460);
 		setLocationRelativeTo(null);
 		setLayout(null);
 
