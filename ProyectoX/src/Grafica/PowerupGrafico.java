@@ -21,8 +21,7 @@ public abstract class PowerupGrafico extends EntidadGrafica{
 		
 		super.paintComponent(g);
 		if(imagen!=null && agarrado){
-			System.out.println("posicion: "+posicion);
-			setBounds(50*posicion,425,width,height);
+			setBounds(90+(posicion*32),425,width,height);
 			g.drawImage(imagen.getImage(), 0, 0, this);
 		}
 		else if(imagen!=null)

@@ -12,10 +12,10 @@ import Grafica.Juego;
 
 public class Panel {
 
-	JLabel powerups,puntaje,tiempo;
-	Juego gui;
-	Timer timer;
-	int itiempo;
+	private JLabel powerups,puntaje,tiempo;
+	private Juego gui;
+	private Timer timer;
+	private int itiempo;
 
 	public Panel(Juego gui) {
 		
@@ -26,7 +26,7 @@ public class Panel {
 		itiempo   = 0;
 		
 		powerups.setBounds(0,420,200,50);
-		puntaje.setBounds(456, 420, 200, 50);
+		puntaje.setBounds(486, 420, 200, 50);
 		tiempo.setBounds(900, 420, 200, 50);
 		
 		
