@@ -21,7 +21,7 @@ public class Panel {
 		
 		this.gui  = gui;
 		powerups  = new JLabel("Powerups : ");
-		puntaje   = new JLabel("Puntaje : ");
+		puntaje   = new JLabel("Puntaje : 0");
 		tiempo    = new JLabel("Tiempo : "+itiempo);		
 		itiempo   = 0;
 		

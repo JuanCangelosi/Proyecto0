@@ -18,7 +18,7 @@ public class Masacrality implements PowerUp {
 	public int dar(Bomberman b){
 		System.out.println("Masacrality otorgado, bomberman puede atravesar paredes y tiene bombas ilimitadas");
 		b.ponerEspecial(true);
-		eg.setVisible(false);
+		eg.setAgarrado(true);
 		t.darBomberman(b);
 		return 50;
 	}

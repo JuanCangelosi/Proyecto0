@@ -17,7 +17,7 @@ public class Fatality implements PowerUp {
 	public int dar(Bomberman b){
 		b.fabrica().duplicar();
 		System.out.println("fatality otorgado, rango de las bombas duplicado");
-		eg.setVisible(false);
+		eg.setAgarrado(true);
 		return 35;
 	}
 	

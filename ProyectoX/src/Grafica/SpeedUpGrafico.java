@@ -8,7 +8,7 @@ public class SpeedUpGrafico extends PowerupGrafico{
 
 	public SpeedUpGrafico(int x, int y) {
 		super(x, y);
-		
+		posicion = 4;
 	}
 	
 	public SpeedUpGrafico(){
@@ -17,6 +17,7 @@ public class SpeedUpGrafico extends PowerupGrafico{
 	}
 	
 	public void mostrar(){
+		posicion=4;
 		imagen = new ImageIcon(getClass().getResource("/Imagenes/speedup.png"));	
 		repaint();	
 		
