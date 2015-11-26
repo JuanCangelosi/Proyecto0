@@ -3,6 +3,7 @@ package Grafica;
 import java.awt.Container;
 
 import javax.swing.JComponent;
+import javax.swing.JLayeredPane;
 
 
 public abstract class EntidadGrafica extends JComponent{
@@ -12,7 +13,7 @@ public abstract class EntidadGrafica extends JComponent{
 	protected final int height = 32;
 	protected int velocidad;
 	protected int x,y;
-	protected Container container;
+	protected JLayeredPane  container;
 	
 	protected EntidadGrafica(int x, int y) {
 		this.x = x;
@@ -34,7 +35,11 @@ public abstract class EntidadGrafica extends JComponent{
 	}
 	
 	public void setContainer(Container c){
-		container = c;
+		container = (JLayeredPane) c;
+	}
+	
+	public JLayeredPane getContainer(){
+		return container;
 	}
 	
 	public void eliminar(){

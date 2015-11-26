@@ -138,7 +138,7 @@ public class Juego extends JFrame {
 		dir      = 5;
 		t        = new ThreadListener(this);
 		logica   = new Logica(this);
-		panel = new Panel(this);
+		panel    = new Panel(this);
 		
 		t.start();
 		if (menu.sonido())

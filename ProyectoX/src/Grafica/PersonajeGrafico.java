@@ -150,6 +150,7 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		timer.start();
 		repaint();
 	}
+	
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

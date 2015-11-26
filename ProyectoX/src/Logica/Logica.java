@@ -34,7 +34,7 @@ public class Logica {
 			}
 		}
 		
-		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),new Integer(3));
+		gui.getContentPane().add(nivel.getMapa().getHeroe().grafico(),new Integer(4));
 		nivel.getMapa().getHeroe().grafico().setContainer(gui.getContentPane());
 		
 		for(int i=0; i<6; i++){
