@@ -1,6 +1,11 @@
+/**
+ * Este hilo bloquea la gui cuando se indico una direccion a mover en el heroe
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package Threads;
 
-import Grafica.*;
+import Menu.Juego;;
 
 public class ThreadListener extends Thread {
 	protected Juego gui;
@@ -9,6 +14,9 @@ public class ThreadListener extends Thread {
 		gui = j;
 	}
 
+	/**
+	 * Mantiene la gui bloqueada mientras bomberman tenga un movimiento para hacer
+	 */
 	public void run() {
 		while (true) {
 			if (!gui.estaBloqueado()) {

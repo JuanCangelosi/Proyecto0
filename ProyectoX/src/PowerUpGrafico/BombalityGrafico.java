@@ -1,3 +1,7 @@
+/**
+ * Implementacion grafica del powerUp Bombality
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
 package PowerUpGrafico;
 
 
@@ -15,9 +19,11 @@ public class BombalityGrafico extends PowerupGrafico{
 		super(0,0);
 		
 	}
-
+	
+	/**
+	 * Muestra el powerUp en el mapa
+	 */
 	public void mostrar() {
-		//posicion=1;
 		imagen = new ImageIcon(getClass().getResource("/Imagenes/bombality.png"));	
 		repaint();
 		

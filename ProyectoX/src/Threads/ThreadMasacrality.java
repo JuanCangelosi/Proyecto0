@@ -1,3 +1,8 @@
+/**
+ * Este hilo espera 5 segundos y luego cancela el efecto del powerUp masacrality
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package Threads;
 import Personajes.*;
 
@@ -10,7 +15,10 @@ public class ThreadMasacrality extends Thread {
 		bomb=b;
 		start();
 	}
-	@Override
+	
+	/**
+	 * Espera 5 segundos y cancela el powerUp masacrality
+	 */
 	public void run() {
 		try {
 				sleep(5000);

@@ -1,3 +1,8 @@
+/**
+ * Implementacion grafica del powerUp
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package PowerUpGrafico;
 
 import java.awt.Graphics;
@@ -29,18 +34,24 @@ public abstract class PowerupGrafico extends EntidadGrafica{
 			g.drawImage(imagen.getImage(), 0, 0, this);
 	}
 	
-	public void ocultar(){
-		
-		
-	}
-	
+	/**
+	 * Indica que el powerUp fue agarrado
+	 * @param agarrado indica que el powerUp fue agarrado
+	 */
 	public void setAgarrado(boolean agarrado){
 		this.agarrado = agarrado;
 	}
 	
+	/**
+	 * Setea posicion en el panel
+	 * @param n posicion en el panel
+	 */
 	public void setPosicion(int n){
 		posicion= n;
 	}
 	
+	/**
+	 * Muestra el powerUp en el mapa
+	 */
 	public abstract void mostrar();
 }
