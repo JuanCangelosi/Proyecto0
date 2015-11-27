@@ -1,10 +1,14 @@
+/**
+ * Abstraccion grafica de los personajes dentro del escenario
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package PersonajesGraficos;
 
 import java.awt.Graphics;
-import Threads.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import Grafica.EntidadGrafica;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
@@ -16,26 +20,28 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 			arriba3, derecha1, derecha2, derecha3, izquierda1, izquierda2,
 			izquierda3;
 	private static final long serialVersionUID = 1L;
-	private static final int recorrido = 4;
-	private boolean semaforo;
 	private int vel;
 
 	public PersonajeGrafico(int x, int y) {
 		super(x, y);
 		direccion = 0;
 		muerto = 0;
-		semaforo = true;
 		vel = 1;
 	}
 
+	/**
+	 * Setea la velocidad del personaje logico
+	 * 
+	 * @param v
+	 *            velocidad incorporar
+	 */
 	public void setVelocidad(int v) {
 		vel = v;
 	}
-
-	public boolean semaforo() {
-		return semaforo;
-	}
-
+	
+	/**
+	 * Realiza graficamente el movimiento a derecha
+	 */
 	public void derecha() {
 		for (int i = 0; i < 32; i += 4) {
 			x += 4;
@@ -59,7 +65,9 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 			repaint();
 		}
 	}
-
+	/**
+	 * Realiza graficamente el movimiento a izquierda
+	 */
 	public void izquierda() {
 		for (int i = 0; i < 32; i += 4) {
 			x -= 4;
@@ -86,6 +94,9 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	}
 
+	/**
+	 * Realiza graficamente el movimiento a arriba
+	 */
 	public void arriba() {
 		for (int i = 0; i < 32; i += 4) {
 			y -= 4;
@@ -109,7 +120,10 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 			repaint();
 		}
 	}
-
+	
+	/**
+	 * Realiza graficamente el movimiento abajo
+	 */
 	public void abajo() {
 		for (int i = 0; i < 32; i += 4) {
 			y += 4;
@@ -134,24 +148,28 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 		}
 
 	}
-
-	public void morir() {
-		muerto    = 1;
-		direccion = -1;
-		timer = new Timer(1500,new ActionListener () 
-		{ 
-		    public void actionPerformed(ActionEvent e) 
-		    {
-		    	timer.stop();
-		    	eliminar();
-		     } 
-		});
 	
+	/**
+	 * Implementa la animacion de la muerte grafica del personaje
+	 */
+	public void morir() {
+		muerto = 1;
+		direccion = -1;
+		timer = new Timer(1500, new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				timer.stop();
+				eliminar();
+			}
+		});
+
 		timer.start();
 		repaint();
 	}
 	
-
+	/**
+	 * Pinta el componente en el mapa
+	 * @param g grafico a pintar
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
@@ -187,6 +205,10 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 
 	}
 
+	/**
+	 * Calcula la cantidad de tiempo a esperar segun la velocidad del personaje
+	 * @return retorna el tiempo de espera
+	 */
 	private int calcular() {
 		int n = 0;
 		switch (vel) {
@@ -206,12 +228,12 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 			n = 60;
 			break;
 		}
-		case 16:{
-			n= 40;
+		case 16: {
+			n = 40;
 			break;
 		}
-		case 32:{
-			n=20;
+		case 32: {
+			n = 20;
 			break;
 		}
 		}

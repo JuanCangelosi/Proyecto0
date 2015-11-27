@@ -1,3 +1,8 @@
+/**
+ * Representacion Grafica del heroe del Juego
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package PersonajesGraficos;
 
 import javax.swing.ImageIcon;

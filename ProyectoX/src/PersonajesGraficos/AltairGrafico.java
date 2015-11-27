@@ -1,3 +1,8 @@
+/**
+ * Representacion grafica del enemigo Altair
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package PersonajesGraficos;
 
 import javax.swing.ImageIcon;
