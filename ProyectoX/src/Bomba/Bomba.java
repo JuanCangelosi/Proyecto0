@@ -1,12 +1,12 @@
 /**
  * Clase con el proposito de brindar un bomba capaz de destruir los enemigos del mapa
  * asi como de destruir las paredes que lo permitan
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Bomba;
 
 import mapa.Celda;
-import Grafica.BombaGrafica;
+import BombaGrafica.BombaGrafica;
 import Threads.*;
 
 public class Bomba{

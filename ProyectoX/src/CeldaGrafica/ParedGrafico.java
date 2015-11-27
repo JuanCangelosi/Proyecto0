@@ -1,4 +1,4 @@
-package Grafica;
+package CeldaGrafica;
 
 import javax.swing.ImageIcon;
 

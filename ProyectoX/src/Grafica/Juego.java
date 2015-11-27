@@ -1,3 +1,8 @@
+/**
+ * Crea la ventana a desarrollar del juego
+ * @author LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package Grafica;
 
 import java.awt.EventQueue;
@@ -83,6 +88,9 @@ public class Juego extends JFrame {
 
 	}
 	
+	/**
+	 * Crea el menu de inicio del juego
+	 */
 	public void start(){
 		setTitle("Bomberman");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,15 +103,25 @@ public class Juego extends JFrame {
 		menu     = new Menu(this);
 		
 	}
-
+	/**
+	 * Bloquea o desbloquea el mando del jugador
+	 * @param b introduce el nuevo valor del semaforo
+	 */
 	public void bloqueado(boolean b) {
 		semaforo = !b;
 	}
-
+	
+	/**
+	 * Indica si el mando de ljugador esta bloqueado
+	 * @return true si esta bloqueado, false si no lo esta
+	 */
 	public boolean estaBloqueado() {
 		return !semaforo;
 	}
-
+	
+	/**
+	 * Mueve al personaje
+	 */
 	public void mover() {
 		switch (dir) {
 		case 0: {
@@ -138,6 +156,9 @@ public class Juego extends JFrame {
 		dir = 5;
 	}
 	
+	/**
+	 * Inicia el juego
+	 */
 	public void iniciarJuego(){
 		semaforo = true;
 		dir      = 5;
@@ -151,14 +172,24 @@ public class Juego extends JFrame {
 		this.requestFocus();
 		
 	}
-	
+	/**
+	 * Devuelve el panel principal del Juego
+	 * @return el panel principal del Juego
+	 */
 	public Panel getPanel(){
 		return panel;
 	}
 	
+	/**
+	 * Cierra el juego completamente
+	 */
 	public void salirJuego(){
 		System.exit(0);
 	}
+	
+	/**
+	 * Inicia la musica de fondo del juego
+	 */
 	public void startMusic(){
 
 	    try {
@@ -173,6 +204,10 @@ public class Juego extends JFrame {
 	        System.out.println(error);
 	    }  
 	}
+	
+	/**
+	 * Cierra el juego, volviendo al menu principal
+	 */
 	public void gameOver(){
 		startGameOver();
 		Mensaje m = new Mensaje(0,0);
@@ -190,6 +225,10 @@ public class Juego extends JFrame {
 		
 		
 	}
+	
+	/**
+	 * Reproduce la musica de Juego Terminado
+	 */
 	public void startGameOver(){
 
 	    try {

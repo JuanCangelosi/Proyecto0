@@ -1,3 +1,8 @@
+/**
+ * Pone en pantalla el mensaje de jeugo terminado en el juego
+ * @author LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package Grafica;
 
 import java.awt.Graphics;
@@ -16,15 +21,24 @@ public class Mensaje extends EntidadGrafica{
 		repaint();
 	}
 	
+	/**
+	 * Pone un mensaje de juego perdido
+	 */
 	public void GameOver(){
 		mensaje = new ImageIcon(getClass().getResource("/Imagenes/game-over.png"));
 		repaint();
 	}
 	
+	/**
+	 * Pone un mensaje de Juego ganado
+	 */
 	public void Win(){
 		mensaje = new ImageIcon(getClass().getResource("/Imagenes/winner.png"));
 	}
 	
+	/**
+	 * Pinta el grafico en el mapa
+	 */
 	public void paintComponent(Graphics g){
 		
 		super.paintComponent(g);

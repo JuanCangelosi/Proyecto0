@@ -1,7 +1,7 @@
 /**
  * Implementa la interfaz AbstractFactory y reproduce el patron mismo, 
  * ofreciendole bombas a los personajes de manera anonima
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Bomba;
 

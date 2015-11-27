@@ -1,4 +1,10 @@
-package Grafica;
+/**
+ * Representacion grafica de la bomba, actua unicamente sobre la GUI
+ * @author LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+package BombaGrafica;
+
+import Grafica.EntidadGrafica;
 
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -25,7 +31,9 @@ public class BombaGrafica extends EntidadGrafica{
 		imagen    = null;
 
 	}
-	
+	/**
+	 * Coloca la bomba en el escenario grafico del juego
+	 */
 	public void colocarBomba(){
 		imagen = bomba;
 		repaint();
@@ -33,6 +41,9 @@ public class BombaGrafica extends EntidadGrafica{
 		
 	}
 	
+	/**
+	 * Introduce en el escenario una explosion
+	 */
 	public void explotarBomba(){
 		
 		timer = new Timer(1500,new ActionListener () 
@@ -53,11 +64,19 @@ public class BombaGrafica extends EntidadGrafica{
 		
 	}
 	
+	/**
+	 * Pinta el grafico en el escenario
+	 * @param g grafico a pintar
+	 */
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		if(imagen!=null)
 			g.drawImage(imagen.getImage(), 0, 0, this);
 	}
+	
+	/**
+	 * Introduce el sonido que ocasiona la explosión de la bomba
+	 */
 	public void startBomba(){
 
 	    try {

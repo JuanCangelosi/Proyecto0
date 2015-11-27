@@ -1,4 +1,4 @@
-package Grafica;
+package PowerUpGrafico;
 
 import java.awt.Graphics;
 import javax.swing.ImageIcon;

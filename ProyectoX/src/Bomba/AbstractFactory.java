@@ -1,7 +1,7 @@
 /**
  * Interfaz con el objetivo de simular el patron AbstractFactory para proveer bombas
  * a los personajes
- * @authors LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Bomba;
 

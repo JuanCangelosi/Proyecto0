@@ -1,4 +1,4 @@
-package Grafica;
+package PersonajesGraficos;
 
 import java.awt.Graphics;
 import Threads.*;
