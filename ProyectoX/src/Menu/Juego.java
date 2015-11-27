@@ -203,6 +203,18 @@ public class Juego extends JFrame {
 		
 	}
 	
+	public void Win(){
+
+		Mensaje m = new Mensaje(0,0);
+		contentPane.add(m,new Integer(400));
+		m.Win();
+		contentPane.moveToFront(m);
+		try{
+			Thread.sleep(5000);
+			}catch (Exception e){}
+		salirJuego();
+	}
+	
 	/**
 	 * Reproduce la musica de Juego Terminado
 	 */
