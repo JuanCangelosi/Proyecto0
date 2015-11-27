@@ -80,7 +80,7 @@ public class BombaGrafica extends EntidadGrafica{
 	public void startBomba(){
 
 	    try {
-	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/boom.wav").toURI()));
+	        AudioInputStream a = AudioSystem.getAudioInputStream(getClass().getResource("/Sonidos/boom.wav"));
 	        Clip c = AudioSystem.getClip();
 	        c.open(a);
 	        c.start();

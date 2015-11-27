@@ -184,9 +184,13 @@ public class Mapa {
 	}
 	/**
 	 * Decrementa la cantidad de paredes destruibles en 1
+	 * si las paredes quedan en 0, llamo a ganar de nivel
 	 */
 	public void decrementarPared(){
 		paredesDest--;
+		if(paredesDest==0){
+			n.ganar();
+		}
 	}
 	/**
 	 * Retorna el bomberman del mapa

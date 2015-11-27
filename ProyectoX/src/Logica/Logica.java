@@ -77,13 +77,18 @@ public class Logica {
 	}
 
 	/**
-	 * Decide si el juego termino
-	 * 
-	 * @return true si bomberman murio y false caso contrario
+	 * termina el juego en derrota y limpia el mapa de los enemigos que quedan
 	 */
 	public void gameOver() {
 		nivel.getMapa().limpiarMapa();
 		gui.gameOver();
+	}
+	/**
+	 * termina el juego en victoria y limpia el mapa de los enemigos que quedan
+	 */
+	public void ganar() {
+		nivel.getMapa().limpiarMapa();
+		gui.Win();
 	}
 
 	/**

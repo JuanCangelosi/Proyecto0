@@ -174,7 +174,7 @@ public class Juego extends JFrame {
 	public void startMusic(){
 
 	    try {
-	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/Electrodynamix.wav").toURI()));
+	        AudioInputStream a = AudioSystem.getAudioInputStream((getClass().getResource("/Sonidos/Electrodynamix.wav")));
 	        c = AudioSystem.getClip();
 	        c.open(a);
 	        FloatControl gainControl =  (FloatControl) c.getControl(FloatControl.Type.MASTER_GAIN);
@@ -214,6 +214,19 @@ public class Juego extends JFrame {
 			}catch (Exception e){}
 		salirJuego();
 	}
+	public void startWin(){
+
+	    try {
+	        AudioInputStream a = AudioSystem.getAudioInputStream(getClass().getResource("/Sonidos/win.wav"));
+	        Clip c = AudioSystem.getClip();
+	        c.open(a);
+	        c.start();
+	    }catch(Exception error){
+	        System.out.println("File Not Found");
+	        System.out.println(error);
+	    }  
+	}
+
 	
 	/**
 	 * Reproduce la musica de Juego Terminado
@@ -221,7 +234,7 @@ public class Juego extends JFrame {
 	public void startGameOver(){
 
 	    try {
-	        AudioInputStream a = AudioSystem.getAudioInputStream(new File(getClass().getResource("/Sonidos/gameover.wav").toURI()));
+	        AudioInputStream a = AudioSystem.getAudioInputStream(getClass().getResource("/Sonidos/gameover.wav"));
 	        Clip c = AudioSystem.getClip();
 	        c.open(a);
 	        c.start();

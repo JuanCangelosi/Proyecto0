@@ -50,4 +50,11 @@ public class Nivel {
 	public void gameOver(){
 		log.gameOver();
 	}
+	/**
+	 * Envia el mensaje a logica de que se produzca la victoria de juego
+	 */
+	public void ganar(){
+		log.ganar();
+	}
+	
 }
