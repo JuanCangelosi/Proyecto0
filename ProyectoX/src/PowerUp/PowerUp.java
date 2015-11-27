@@ -1,6 +1,6 @@
 package PowerUp;
 import Personajes.*;
-import Grafica.*;
+import PowerUpGrafico.PowerupGrafico;;
 /**
  * Interfaz powerup
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
