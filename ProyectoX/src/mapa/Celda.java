@@ -6,7 +6,6 @@
 package mapa;
 
 import Bomba.*;
-import Grafica.*;
 import Personajes.*;
 import PowerUp.PowerUp;
 import CeldaGrafica.EstadoGrafico;
