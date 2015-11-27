@@ -204,7 +204,7 @@ public class Juego extends JFrame {
 	}
 	
 	public void Win(){
-
+		startWin();
 		Mensaje m = new Mensaje(0,0);
 		contentPane.add(m,new Integer(400));
 		m.Win();
@@ -212,12 +212,13 @@ public class Juego extends JFrame {
 		try{
 			Thread.sleep(5000);
 			}catch (Exception e){}
+		
 		salirJuego();
 	}
 	public void startWin(){
 
 	    try {
-	        AudioInputStream a = AudioSystem.getAudioInputStream(getClass().getResource("/Sonidos/win.wav"));
+	        AudioInputStream a = AudioSystem.getAudioInputStream(getClass().getResource("/Sonidos/victory.wav"));
 	        Clip c = AudioSystem.getClip();
 	        c.open(a);
 	        c.start();
