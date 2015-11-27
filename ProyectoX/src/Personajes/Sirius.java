@@ -1,13 +1,13 @@
 /**
  * Es el enemigo mas inteligente de Boomberman, capaz de perseguirlo y muy veloz
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Personajes;
 
 import java.util.Random;
 
 import mapa.Celda;
-import Grafica.SiriusGrafico;
+import PersonajesGraficos.SiriusGrafico;
 
 public class Sirius extends Enemigo {
 

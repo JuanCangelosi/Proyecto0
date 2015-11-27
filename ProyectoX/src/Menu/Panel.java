@@ -1,14 +1,13 @@
+/**
+ * Representa el menu del juego 
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
 package Menu;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.Timer;
-
-import Grafica.Juego;
 
 public class Panel {
 
@@ -46,7 +45,10 @@ public class Panel {
 	
 		timer.start();
 	}
-	
+	/**
+	 * Cambia el puntaje del escenario
+	 * @param i puntaje a actualizar
+	 */
 	public void setPuntaje(int i){
 		puntaje.setText("Puntaje : "+i);
 	}

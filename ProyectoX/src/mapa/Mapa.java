@@ -1,16 +1,14 @@
-package mapa;
-import java.util.Random;
-
-import Personajes.*;
-import PowerUp.Bombality;
-import PowerUp.Fatality;
-import PowerUp.Masacrality;
-import PowerUp.PowerUp;
-import PowerUp.SpeedUp;
 /**
  * Clase Mapa representa al mapa del juego, que sera de 31x13 celdas.
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
+
+package mapa;
+import java.util.Random;
+
+import Personajes.*;
+import PowerUp.*;
+
 public class Mapa {
 	//atributos
 	protected Nivel n;

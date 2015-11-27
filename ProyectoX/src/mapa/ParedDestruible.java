@@ -1,14 +1,17 @@
-package mapa;
-
-import Bomba.Bomba;
-import Personajes.*;
-import PowerUp.*;
-import Grafica.*;
 /**
  * Clase ParedDestruible representa a las paredes que al explotar la bomba se destruyen y pueden ser atravesadas
  * por bomberman en modos dios y por Altair.
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
+
+package mapa;
+
+import Bomba.Bomba;
+import Personajes.*;
+import PowerUp.*;
+import CeldaGrafica.EstadoGrafico;
+import PersonajesGraficos.PersonajeGrafico;
+
 public class ParedDestruible implements EstadoCelda {
 
 	/**
@@ -72,6 +75,9 @@ public class ParedDestruible implements EstadoCelda {
 		return destruir(c);
 	}
 	
+	/**
+	 * Le ordena a la grafica que setee la imagen de la respectiva pared
+	 */
 	public void setImagen(EstadoGrafico e){
 		e.setParedDestruible();
 	}

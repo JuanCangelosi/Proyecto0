@@ -3,7 +3,7 @@
  * @author LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 
-package Grafica;
+package Menu;
 
 import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
@@ -19,8 +19,6 @@ import javax.swing.JLayeredPane;
 
 import sun.audio.*;
 import Logica.Logica;
-import Menu.Menu;
-import Menu.Panel;
 import Threads.ThreadListener;
 import Bomba.*;
 import mapa.*;

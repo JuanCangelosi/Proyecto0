@@ -1,11 +1,11 @@
 /**
  * Es el enemigo de bomberman capaz de atravesar las paredes, tan inteligente como rugulos
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Personajes;
 
 import java.util.Random;
-import Grafica.*;
+import PersonajesGraficos.AltairGrafico;
 import mapa.Celda;
 
 public class Altair extends Enemigo {

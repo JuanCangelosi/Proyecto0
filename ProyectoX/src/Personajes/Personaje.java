@@ -5,7 +5,7 @@
  */
 package Personajes;
 
-import Grafica.PersonajeGrafico;
+import PersonajesGraficos.PersonajeGrafico;
 import mapa.Celda;
 
 public abstract class Personaje {

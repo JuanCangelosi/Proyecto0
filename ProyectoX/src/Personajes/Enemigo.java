@@ -1,6 +1,6 @@
 /**
  * Es la clase abstracta que engloba todo lo que los enemigos disponene para hacer
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Personajes;
 

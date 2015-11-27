@@ -1,17 +1,12 @@
 /**
  * Es el personaje principal del juego, el usuario lo utilizara para tratar de ganar el juego,
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Personajes;
 
 import mapa.Celda;
-
-import javax.swing.JOptionPane;
-
 import Bomba.*;
-import Grafica.BombermanGrafico;
-//import Grafica.GameOver;
-import Grafica.Mensaje;
+import PersonajesGraficos.BombermanGrafico;
 
 public class Bomberman extends Personaje {
 	// Atributos de Instancia

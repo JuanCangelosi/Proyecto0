@@ -3,11 +3,12 @@
  * @author LeandroFuryk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 
-package Grafica;
+package Menu;
 
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
+import Grafica.EntidadGrafica;
 
 public class Mensaje extends EntidadGrafica{
 

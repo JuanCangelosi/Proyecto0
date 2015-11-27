@@ -5,7 +5,7 @@
 
 package Logica;
 import mapa.Nivel;
-import Grafica.Juego;
+import Menu.Juego;
 
 public class Logica {
 	

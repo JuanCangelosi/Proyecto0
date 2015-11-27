@@ -1,12 +1,12 @@
 /**
  * Es el enemigo menos inteligente de Bomberman
- * @authors Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
 package Personajes;
 
 import java.util.Random;
-import Grafica.*;
 import mapa.Celda;
+import PersonajesGraficos.RugulosGrafico;
 
 public class Rugulos extends Enemigo{
 	// Constructor

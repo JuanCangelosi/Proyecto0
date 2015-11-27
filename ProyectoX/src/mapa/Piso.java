@@ -1,15 +1,17 @@
-package mapa;
-
-import Bomba.Bomba;
-import Grafica.PersonajeGrafico;
-import Personajes.*;
-import PowerUp.PowerUp;
-import Grafica.*;
-
 /**
  * Clase piso representa las celdas transitables por todos los personajes del
  * juego
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
+package mapa;
+
+import Bomba.Bomba;
+import PersonajesGraficos.PersonajeGrafico;
+import Personajes.*;
+import PowerUp.PowerUp;
+import CeldaGrafica.EstadoGrafico;;
+
+
 public class Piso implements EstadoCelda {
 
 	/**
@@ -97,7 +99,14 @@ public class Piso implements EstadoCelda {
 		c.setBomba(b);
 		b.activar();
 	}
-
+	
+	/**
+	 * Llama la explosion en la siguiente celda y en la acual
+	 * @param c celda a explotar
+	 * @param r radio de la explosion
+	 * @param pos posicion de la explosion
+	 * @return puntaje obtenido
+	 */
 	public int explosion(Celda c, int r, int pos) {
 		int puntaje = 0;
 		if (r != 0) {
@@ -137,7 +146,11 @@ public class Piso implements EstadoCelda {
 		}
 		return puntaje;
 	}
-
+	
+	/**
+	 * Ordena a la grafica que ponga el piso en escenario
+	 * @param e es la representacion grafica del piso
+	 */
 	public void setImagen(EstadoGrafico e) {
 		e.setPiso();
 	}
