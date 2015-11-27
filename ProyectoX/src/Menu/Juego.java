@@ -9,6 +9,8 @@ import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import javax.sound.sampled.*;
 import javax.swing.JFrame;
@@ -32,16 +34,8 @@ public class Juego extends JFrame {
 	private Clip c;
 
 	public static void main(String[] args) {
-			EventQueue.invokeLater(new Runnable() {
-				public void run() {
-					try {
 						Juego frame = new Juego();
 						frame.setVisible(true);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
 	}
 	
 	public Juego() {
@@ -161,6 +155,7 @@ public class Juego extends JFrame {
 		panel    = new Panel(this);
 		
 		t.start();
+
 		if (menu.sonido())
 			startMusic();
 		this.requestFocus();
@@ -211,11 +206,7 @@ public class Juego extends JFrame {
 		try{
 		Thread.sleep(5000);
 		}catch (Exception e){}
-		t.interrupt();
-		contentPane.removeAll();
-		contentPane.repaint();
-		c.close();
-		menu     = new Menu(this);
+		salirJuego();
 		
 		
 	}

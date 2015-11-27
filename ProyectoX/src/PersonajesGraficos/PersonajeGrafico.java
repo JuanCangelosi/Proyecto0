@@ -61,7 +61,6 @@ public abstract class PersonajeGrafico extends EntidadGrafica {
 				Thread.sleep(calcular());
 			} catch (Exception e) {
 			}
-
 			repaint();
 		}
 	}

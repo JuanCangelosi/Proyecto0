@@ -23,7 +23,6 @@ public class ThreadMasacrality extends Thread {
 		try {
 				sleep(5000);
 				bomb.setTermino(true);
-				this.interrupt();
 				
 				
 			} catch (InterruptedException e) {
