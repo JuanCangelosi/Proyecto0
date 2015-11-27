@@ -1,10 +1,12 @@
-package Logica;
-import mapa.Nivel;
-import Grafica.Juego;
 /**
  * Control logico del juego, administracion de la coordinacion grafica-logica
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
  */
+
+package Logica;
+import mapa.Nivel;
+import Grafica.Juego;
+
 public class Logica {
 	
 	protected Nivel nivel;

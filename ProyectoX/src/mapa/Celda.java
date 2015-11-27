@@ -1,10 +1,15 @@
+/**
+ * Simula cada celda que comforma el mapa logico del juego
+ * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes
+ */
+
 package mapa;
 
 import Bomba.*;
 import Grafica.*;
 import Personajes.*;
 import PowerUp.PowerUp;
-
+import CeldaGrafica.EstadoGrafico;
 /**
  * Clase celda define los comportamientos de las celdas del mapa del juego.
  * @author Leandro Furyk, Juan Ignacio Cangelosi, Luciano Fuentes 
@@ -190,6 +195,13 @@ public class Celda {
 		puntaje += m.getCelda(posX, posY+1).explosion(radio,3);
 		return puntaje;
 	}
+	
+	/**
+	 * Explota la celda y elimina todo lo que hay en ella
+	 * @param r radio de la explosion
+	 * @param pos posicion de la explosion
+	 * @return puntaje obtenido
+	 */
 	public int explosion(int r, int pos){
 		int puntaje = 0;
 		if (e != null)

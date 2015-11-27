@@ -2,6 +2,7 @@ package PowerUpGrafico;
 
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+import Grafica.EntidadGrafica;
 
 public abstract class PowerupGrafico extends EntidadGrafica{
 	

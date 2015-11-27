@@ -1,8 +1,9 @@
 package mapa;
-import Personajes.*;
-import Bomba.*;
-import Grafica.*;
-import PowerUp.*;
+import Personajes.Bomberman;
+import Personajes.Enemigo;
+import Bomba.Bomba;
+import CeldaGrafica.EstadoGrafico;
+import PowerUp.PowerUp;
 /**
  * Interface EstadoCelda, es el tipo de celda que puede ser pared, piso o paredIndestructible, actuando de 
  * diferentes maneras segun su tipo.
