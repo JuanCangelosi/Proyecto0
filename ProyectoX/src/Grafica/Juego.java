@@ -139,7 +139,6 @@ public class Juego extends JFrame {
 	}
 	
 	public void iniciarJuego(){
-
 		semaforo = true;
 		dir      = 5;
 		t        = new ThreadListener(this);
@@ -183,10 +182,6 @@ public class Juego extends JFrame {
 		try{
 		Thread.sleep(5000);
 		}catch (Exception e){}
-		
-		
-		logica = null;
-		panel  = null;
 		t.interrupt();
 		contentPane.removeAll();
 		contentPane.repaint();
