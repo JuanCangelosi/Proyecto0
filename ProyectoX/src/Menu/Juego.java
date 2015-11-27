@@ -9,15 +9,11 @@ import java.awt.EventQueue;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.net.URL;
 
 import javax.sound.sampled.*;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 
-import sun.audio.*;
 import Logica.Logica;
 import Threads.ThreadListener;
 import Bomba.*;
