@@ -62,7 +62,7 @@ public abstract class EntidadGrafica extends JComponent{
 	}
 	
 	/**
-	 * Elimina al personaje gráfico del mapa
+	 * Elimina al personaje grafico del mapa
 	 */
 	public void eliminar(){
 		setVisible(false);

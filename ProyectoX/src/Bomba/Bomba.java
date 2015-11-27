@@ -61,6 +61,7 @@ public class Bomba{
 		b.explotarBomba();
 		puntaje = c.explotarBomba();
 		c.getMapa().getNivel().sumarPuntaje(puntaje);
+		t.interrupt();
 		/*
 		 * Celda c1 = c.getMapa().getCelda(c.getPosX() + 1, c.getPosY());
 		 * puntaje += c1.explotarBomba();
