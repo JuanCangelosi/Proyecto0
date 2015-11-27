@@ -16,8 +16,6 @@ import javax.swing.JLayeredPane;
 
 import Logica.Logica;
 import Threads.ThreadListener;
-import Bomba.*;
-import mapa.*;
 public class Juego extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -51,7 +49,7 @@ public class Juego extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 
-				if (logica!=null && !logica.getNivel().getMapa().getHeroe().murio()) {
+				if (logica!=null && !logica.perdio()) {
 					if (semaforo) {
 						if (arg0.getKeyCode() == KeyEvent.VK_UP) {
 							dir = 0;
@@ -119,29 +117,23 @@ public class Juego extends JFrame {
 	public void mover() {
 		switch (dir) {
 		case 0: {
-			logica.getNivel().getMapa().getHeroe().arriba();
+			logica.arriba();
 			break;
 		}
 		case 1: {
-			logica.getNivel().getMapa().getHeroe().abajo();
+			logica.abajo();
 			break;
 		}
 		case 2: {
-			logica.getNivel().getMapa().getHeroe().izquierda();
+			logica.izquierda();
 			break;
 		}
 		case 3: {
-			logica.getNivel().getMapa().getHeroe().derecha();
+			logica.derecha();
 			break;
 		}
 		case 4: {
-			logica.getNivel().getMapa().getHeroe().colocarBomba();
-			Celda c = logica.getNivel().getMapa().getHeroe().getCelda();
-			Bomba b1 = logica.getNivel().getMapa()
-					.getCelda(c.getPosX(), c.getPosY()).getBomba();
-			if (b1 != null) {
-				contentPane.add(b1.getBombaGrafica(), new Integer(2));
-			}
+			logica.colocarBomba();
 			break;
 		}
 		case 5: {// Mantenga al bomberman quieto
